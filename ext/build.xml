@@ -27,7 +27,7 @@
 
             <target name="-before-init"/>
             <target name="-after-init"/>
-        
+
         The "build" target performs the call to Sencha Cmd to build the application.
 
             <target name="-before-build"/>
@@ -64,8 +64,8 @@
             <available file="${basedir}/../attic" type="dir"/>
         </condition>
     </target>
-    
-    <target name="-after-init" depends="apply-production-settings"/> 
+
+    <target name="-after-init" depends="apply-production-settings"/>
 
     <macrodef name="x-set-license">
         <attribute name="license" default="${ext.license.name}"/>
@@ -93,7 +93,7 @@
 
             <property name="watermark.beta.setting" value="$ext-beta: false !default;"/>
 
-            <condition property="watermark.setting" value="$ext-trial: true !default;">
+            <condition property="watermark.setting" value="$ext-trial: false !default;">
                 <equals arg1="@{license}" arg2="trial"/>
             </condition>
 
@@ -195,15 +195,15 @@
     <target name="load-version-properties" depends="generate-version-properties">
         <property file="${package.dir}/version.properties"/>
     </target>
-    
+
     <target name="set-build-production">
         <property name="build.production" value="1"/>
-        
+
         <replace file="${basedir}/package.json"
                  token="&quot;local&quot;: true"
                  value="&quot;local&quot;: false"/>
     </target>
-    
+
     <target name="apply-production-settings" if="build.production">
         <x-property-file file="${package.dir}/.sencha/package/sencha.cfg">
             <entry type="string" key="skip.examples" operation="=" value="1"/>
@@ -308,30 +308,30 @@
         <x-echo>=========================================</x-echo>
         <x-echo>Building framework bootstrap (Classic)</x-echo>
         <x-echo>=========================================</x-echo>
-        <x-sencha-command 
+        <x-sencha-command
                 dir="${package.dir}/classic/classic"
                 inheritall="false">
             ant
                 bootstrap
         </x-sencha-command>
     </target>
-    
+
     <target name="bootstrap-modern" depends="init"
             description="Build Ext JS Bootstrap (Modern)">
         <x-echo>=========================================</x-echo>
         <x-echo>Building framework bootstrap (Modern)</x-echo>
         <x-echo>=========================================</x-echo>
-        <x-sencha-command 
+        <x-sencha-command
                 dir="${package.dir}/modern/modern"
                 inheritall="false">
             ant
                 bootstrap
         </x-sencha-command>
     </target>
-    
+
     <target name="bootstrap" depends="bootstrap-classic,bootstrap-modern"
             description="Build Ext JS Bootstrap"/>
-    
+
     <target name="build-examples-index">
         <copy todir="${build.dir}/examples/" overwrite="true">
             <fileset dir="${basedir}/examples/">
@@ -346,7 +346,7 @@
             <fileset dir="${basedir}/examples/resources/" includes="**/*"/>
         </copy>
     </target>
-    
+
     <target name="build-non-app-examples">
         <for param="example">
             <dirset dir="${package.dir}/examples/classic" includes="*"/>
@@ -366,7 +366,7 @@
             </sequential>
         </for>
     </target>
-    
+
     <target name="prep-build-folder" depends="init,build-examples-index,build-non-app-examples">
         <copy todir="${build.dir}/welcome" overwrite="true">
             <fileset dir="${basedir}/welcome"/>
@@ -385,7 +385,7 @@
                  token="Ext.devMode = 1;"
                  value="Ext.devMode = 0;"/>
     </target>
-    
+
     <target name="-before-pkg" depends="init,copy-license">
         <if>
             <available file="${basedir}/release-notes.html"/>
@@ -479,7 +479,7 @@
 
         <delete dir="${staging.dir}"/>
         <delete file="${ext.zip}"/>
-        
+
         <mkdir dir="${ext.staging.dir}"/>
         <unzip src="${pkg.build.dir}/${pkg.file.name}" dest="${ext.staging.dir}"/>
         <copy todir="${ext.staging.dir}">
@@ -492,7 +492,7 @@
             <equals arg1="${repo.dev.mode}" arg2="true"/>
             <then>
                 <copy todir="${ext.staging.dir}/.sencha/workspace">
-                    <fileset dir="${package.dir}/../deployment_workspace" 
+                    <fileset dir="${package.dir}/../deployment_workspace"
                              includes="**/*"/>
                 </copy>
             </then>
@@ -547,7 +547,7 @@
 
     <target name="zip-only" depends="quick-build,zip-impl">
     </target>
-    
+
     <macrodef name="x-sandbox">
         <attribute name="file"/>
         <attribute name="outfile" default="@{file}"/>
@@ -568,7 +568,7 @@
             </concat>
         </sequential>
     </macrodef>
-    
+
     <target name="-after-build">
         <for list="ext-all,ext-all-rtl,ext-modern-all" param="file">
             <sequential>

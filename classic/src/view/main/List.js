@@ -9,7 +9,9 @@ Ext.define('Rdd.view.main.List', {
         'Rdd.store.Personnel'
     ],
 
-    title: 'Personnel',
+    bind: {
+        title: '{i18n.listTitle}'
+    },
 
     store: {
         type: 'personnel'
