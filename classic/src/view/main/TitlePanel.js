@@ -13,6 +13,7 @@ Ext.define('Rdd.view.main.TitlePanel', {
         align: 'end'
     },
 
+    bodyCls: 'rdd-main-title-panel',
     items: [{
         xtype: 'button',
         width: 200,

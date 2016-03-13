@@ -9,7 +9,8 @@ Ext.define('Rdd.view.main.MainModel', {
     data: {
         name: 'Rdd',
         i18n: {
-        	listTitle: 'Available transport'
+        	listTitle: 'Available transport',
+        	noAccount: 'I want to register an account'
         }
     }
 

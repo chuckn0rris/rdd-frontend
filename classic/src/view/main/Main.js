@@ -18,11 +18,11 @@ Ext.define('Rdd.view.main.Main', {
 
     items: [{
         xtype: 'titlepanel',
-        flex: 1,
+        flex: 2,
         width: '100%'
     }, {
         xtype: 'mainlist',
         width: '100%',
-        flex: 2
+        flex: 3
     }]
 });

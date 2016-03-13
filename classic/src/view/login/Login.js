@@ -1,20 +1,17 @@
 Ext.define('Rdd.view.login.Login', {
     extend: 'Ext.window.Window',
+    xtype: 'loginform',
+    controller: 'login',
 
     requires: [
         'Rdd.view.login.LoginController'
     ],
 
-    xtype: 'loginform',
-    controller: 'login',
+    title: 'Log in',
     modal: true,
-
     width: 350,
-
     layout: 'vbox',
-
     padding: 10,
-
     defaults: {
         padding: 5
     },
@@ -27,10 +24,15 @@ Ext.define('Rdd.view.login.Login', {
         xtype: 'textfield',
         fieldLabel: 'Password',
         inputType: 'password',
-        width: '100%'
+        width: '100%',
     }, {
         xtype: 'button',
         text: 'Log in',
         width: '100%'
+    }, {
+        xtype: 'container',
+        bind: {
+            html: '<a href="javascript:void(0);">{i18n.noAccount}</a>'
+        }
     }]
 })
