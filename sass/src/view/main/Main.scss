@@ -1,22 +1,26 @@
 .rdd-main-title-text {
-	padding-top: 5px;
-	font-size: 40pt;
+    padding-top: 5px;
+    font-size: 40pt;
     font-weight: 600;
     font-family: monospace;
 }
 
 .rdd-main-title-text-slogan {
-	padding-top: 40px;
-	font-size: 14pt;
+    padding-top: 40px;
+    font-size: 14pt;
     font-weight: 400;
     font-family: monospace;
 }
 
 .rdd-main-title-panel {
-	background-image: url(images/titlebg1.jpg);
-	background-size: cover;
+    background-image: url(images/titlebg1.jpg);
+    background-size: cover;
 }
 
 .rdd-mainlist-column-contacts {
-	vertical-align: middle;
+    vertical-align: middle;
+}
+
+.rdd-offerdetails-field {
+    padding: 3px;
 }

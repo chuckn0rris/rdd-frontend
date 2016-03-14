@@ -11,7 +11,7 @@ Ext.define('Rdd.view.main.MainController', {
         Ext.create('Rdd.view.login.Login').show();
     },
 
-    openTransportDetails: function(widget) {
+    openOfferDetails: function(widget) {
         this.getView();
 
         // get current offer
@@ -19,5 +19,9 @@ Ext.define('Rdd.view.main.MainController', {
         this.getViewModel().set('offer',offer);
         Ext.create('Rdd.view.main.OfferDetails').show();
 
+    },
+
+    closeOfferDetails: function() {
+        this.getView().close();
     }
 });

@@ -1,13 +1,11 @@
 Ext.define('Rdd.view.main.OfferDetails', {
     extend: 'Ext.window.Window',
-    xtype: 'loginform',
-    controller: 'login',
+    xtype: 'offerdetails',
 
     title: 'Offer details',
     modal: true,
-    width: 350,
-    layout: 'vbox',
-    padding: 10,
+    width: 400,
+
     defaults: {
         padding: 5
     },
@@ -26,26 +24,51 @@ Ext.define('Rdd.view.main.OfferDetails', {
     },
 
     items: [{
-        xtype: 'displayfield',
-        fieldLabel: 'Model',
-        width: '100%',
-        bind: '{offer.brand} {offer.model}'
-    }, {
-        xtype: 'displayfield',
-        fieldLabel: 'Color',
-        width: '100%',
-        bind: '{offer.color}'
-    }, {
-        xtype: 'displayfield',
-        fieldLabel: 'Year',
-        width: '100%',
-        bind: '{offer.year}'
-    }, {
-        xtype: 'displayfield',
-        fieldLabel: 'Model',
-        width: '100%',
-        bind: '{offer.brand} {offer.model}'
-    }, {
+        xtype: 'fieldset',
+        margin: 10,
+        bind: {
+            title: '{offer.firstName} {offer.lastName}, {offer.company}'
+        },
+        items: [{
+            xtype: 'displayfield',
+            fieldLabel: 'Phone',
+            width: '100%',
+            bind: '{offer.phone}'
+        }, {
+            xtype: 'displayfield',
+            fieldLabel: 'Mobile',
+            width: '100%',
+            bind: '{offer.mobilePhone}'
+        }, {
+            xtype: 'displayfield',
+            fieldLabel: 'Email',
+            width: '100%',
+            bind: '{offer.publicEmail}'
+        }, {
+            xtype: 'displayfield',
+            fieldLabel: 'Whatsapp',
+            width: '100%',
+            bind: '{offer.socialContacts.whatsapp}'
+        }, {
+            xtype: 'displayfield',
+            fieldLabel: 'Viber',
+            width: '100%',
+            bind: '{offer.socialContacts.viber}'
+        }, {
+            xtype: 'displayfield',
+            fieldLabel: 'Facebook',
+            width: '100%',
+            bind: '{offer.socialContacts.facebook}'
+        }, {
+            xtype: 'displayfield',
+            fieldLabel: 'Skype',
+            width: '100%',
+            bind: '{offer.socialContacts.skype}'
+        }]
+    }],
 
+    buttons: [{
+        text: 'Close',
+        handler: 'closeOfferDetails'
     }]
 })

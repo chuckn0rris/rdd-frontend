@@ -22,6 +22,7 @@ Ext.define('Rdd.store.Offers', {
             color: 'Red',
             year: '2010',
             district: 'Chalong',
+            mileage: 120000,
             photo: 'http://autosearchmanila.com/auto-search/uploads/public/models/43/2015%5C01%20Toyota-Vios-2013-2.jpg',
             isAvailable: true,
             prices: {
@@ -32,7 +33,17 @@ Ext.define('Rdd.store.Offers', {
                 perMonth6m: 15000,
                 perMonth1y: 14000
             },
-            desc: ''
+            desc: '',
+            phone: '(+66)9-17-10-16-20',
+            mobilePhone: '0917101620',
+            publicEmail: 'getcar@andamancars.com',
+            socialContacts: {
+                viber: '(+66)9-17-10-16-20',
+                skype: 'somchay003322',
+                whatsapp: '(+66)9-17-10-16-20',
+                facebook: 'htttp://facebook.com/somchai_uluwatu',
+                line: '(+66)9-17-10-16-20'
+            }
         }, {
             id: 2,
             type: 'auto',
@@ -55,7 +66,17 @@ Ext.define('Rdd.store.Offers', {
                 perMonth6m: 15000,
                 perMonth1y: 14000
             },
-            desc: ''
+            desc: '',
+            phone: '(+66)9-17-10-16-20',
+            mobilePhone: '0917101620',
+            publicEmail: 'getcar@andamancars.com',
+            socialContacts: {
+                viber: '(+66)9-17-10-16-20',
+                skype: 'somchay003322',
+                whatsapp: '(+66)9-17-10-16-20',
+                facebook: 'htttp://facebook.com/somchai_uluwatu',
+                line: '(+66)9-17-10-16-20'
+            }
         }, {
             id: 3,
             type: 'auto',
@@ -78,7 +99,17 @@ Ext.define('Rdd.store.Offers', {
                 perMonth6m: 15000,
                 perMonth1y: 14000
             },
-            desc: ''
+            desc: '',
+            phone: '(+66)9-17-10-16-20',
+            mobilePhone: '0917101620',
+            publicEmail: 'getcar@andamancars.com',
+            socialContacts: {
+                viber: '(+66)9-17-10-16-20',
+                skype: 'somchay003322',
+                whatsapp: '(+66)9-17-10-16-20',
+                facebook: 'htttp://facebook.com/somchai_uluwatu',
+                line: '(+66)9-17-10-16-20'
+            }
         }, {
             id: 4,
             type: 'auto',
@@ -102,7 +133,17 @@ Ext.define('Rdd.store.Offers', {
                 perMonth1y: 0,
                 comment: 'Short terms only!'
             },
-            desc: ''
+            desc: '',
+            phone: '(+66)9-17-10-16-20',
+            mobilePhone: '0917101620',
+            publicEmail: 'getcar@andamancars.com',
+            socialContacts: {
+                viber: '(+66)9-17-10-16-20',
+                skype: 'somchay003322',
+                whatsapp: '(+66)9-17-10-16-20',
+                facebook: 'htttp://facebook.com/somchai_uluwatu',
+                line: '(+66)9-17-10-16-20'
+            }
         }, {
             id: 5,
             type: 'auto',
@@ -125,7 +166,17 @@ Ext.define('Rdd.store.Offers', {
                 perMonth6m: 15000,
                 perMonth1y: 14000
             },
-            desc: ''
+            desc: '',
+            phone: '(+66)9-17-10-16-20',
+            mobilePhone: '0917101620',
+            publicEmail: 'getcar@andamancars.com',
+            socialContacts: {
+                viber: '(+66)9-17-10-16-20',
+                skype: 'somchay003322',
+                whatsapp: '(+66)9-17-10-16-20',
+                facebook: 'htttp://facebook.com/somchai_uluwatu',
+                line: '(+66)9-17-10-16-20'
+            }
         }
     ]},
 
