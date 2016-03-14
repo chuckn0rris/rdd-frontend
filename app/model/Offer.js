@@ -5,11 +5,19 @@ Ext.define('Rdd.model.Offer', {
     fields: [
         'id',
         'ownerId',
+        'firstName',
+        'lastName',
+        'company',
+        'district',
+        'mapCoordinates',
+        'type',
         'photo',
+        'brand',
         'model',
         'color',
         'year',
         'isAvailable',
-        'desc'
+        'desc',
+        'prices'
     ]
 });

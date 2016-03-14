@@ -10,11 +10,123 @@ Ext.define('Rdd.store.Offers', {
     model: 'Rdd.model.Offer',
 
     data: { items: [
-        {id: 1, color: 'Red', year: '2010', photo: 'http://autosearchmanila.com/auto-search/uploads/public/models/43/2015%5C01%20Toyota-Vios-2013-2.jpg', model: "Toyota Vios", isAvailable: true, desc: '', ownerId: 1 },
-        {id: 2, color: 'White', year: '2009', photo: 'https://upload.wikimedia.org/wikipedia/commons/4/46/Honda_Accord_(2008)_front.JPG', model: "Honda Accord", isAvailable: true, desc: '', ownerId: 1 },
-        {id: 3, color: 'White', year: '2010', photo: 'http://www.siaminside.com/wp-content/uploads/2014/11/Honda-Grace-Honda-City-Hybrid-01.jpg', model: "Honda City", isAvailable: true, desc: '', ownerId: 1 },
-        {id: 4, color: 'White', year: '2012', photo: 'http://www.carblogindia.com/wp-content/uploads/2015/01/toyota-fortuner-2.5-trd-sportivo-front.jpg', model: "Toyota Fortuner", isAvailable: true, desc: '', ownerId: 1 },
-        {id: 5, color: 'Yellow', year: '2014', photo: 'http://avto-survey.ru/wp-content/uploads/2015/09/ford-focus-08.jpg', model: "Ford Focus", isAvailable: true, desc: '', ownerId: 1 }
+        {
+            id: 1,
+            type: 'auto',
+            brand: 'Toyota',
+            model: "Vios",
+            ownerId: 1,
+            company: 'Andaman Cars',
+            firstName: 'Somchai',
+            lastName: 'Uluwatu',
+            color: 'Red',
+            year: '2010',
+            district: 'Chalong',
+            photo: 'http://autosearchmanila.com/auto-search/uploads/public/models/43/2015%5C01%20Toyota-Vios-2013-2.jpg',
+            isAvailable: true,
+            prices: {
+                perDay: 900,
+                perWeek: 5000,
+                perMonth: 17000,
+                perMonth3m: 16000,
+                perMonth6m: 15000,
+                perMonth1y: 14000
+            },
+            desc: ''
+        }, {
+            id: 2,
+            type: 'auto',
+            brand: 'Honda',
+            model: "Accord",
+            ownerId: 1,
+            company: 'Andaman Cars',
+            firstName: 'Somchai',
+            lastName: 'Uluwatu',
+            color: 'White',
+            year: '2009',
+            district: 'Chalong',
+            photo: 'https://upload.wikimedia.org/wikipedia/commons/4/46/Honda_Accord_(2008)_front.JPG',
+            isAvailable: true,
+            prices: {
+                perDay: 900,
+                perWeek: 5000,
+                perMonth: 17000,
+                perMonth3m: 16000,
+                perMonth6m: 15000,
+                perMonth1y: 14000
+            },
+            desc: ''
+        }, {
+            id: 3,
+            type: 'auto',
+            brand: 'Honda',
+            model: "City",
+            ownerId: 1,
+            company: 'Andaman Cars',
+            firstName: 'Somchai',
+            lastName: 'Uluwatu',
+            color: 'White',
+            year: '2010',
+            district: 'Chalong',
+            photo: 'http://www.siaminside.com/wp-content/uploads/2014/11/Honda-Grace-Honda-City-Hybrid-01.jpg',
+            isAvailable: true,
+            prices: {
+                perDay: 900,
+                perWeek: 5000,
+                perMonth: 17000,
+                perMonth3m: 16000,
+                perMonth6m: 15000,
+                perMonth1y: 14000
+            },
+            desc: ''
+        }, {
+            id: 4,
+            type: 'auto',
+            brand: 'Toyota',
+            model: "Fortuner",
+            ownerId: 1,
+            company: 'Andaman Cars',
+            firstName: 'Somchai',
+            lastName: 'Uluwatu',
+            color: 'White',
+            year: '2012',
+            district: 'Chalong',
+            photo: 'http://www.carblogindia.com/wp-content/uploads/2015/01/toyota-fortuner-2.5-trd-sportivo-front.jpg',
+            isAvailable: true,
+            prices: {
+                perDay: 900,
+                perWeek: 5000,
+                perMonth: 0,
+                perMonth3m: 0,
+                perMonth6m: 0,
+                perMonth1y: 0,
+                comment: 'Short terms only!'
+            },
+            desc: ''
+        }, {
+            id: 5,
+            type: 'auto',
+            brand: 'Ford',
+            model: "Focus",
+            ownerId: 1,
+            company: 'Andaman Cars',
+            firstName: 'Somchai',
+            lastName: 'Uluwatu',
+            color: 'Yellow',
+            year: '2014',
+            district: 'Chalong',
+            photo: 'http://avto-survey.ru/wp-content/uploads/2015/09/ford-focus-08.jpg',
+            isAvailable: true,
+            prices: {
+                perDay: 900,
+                perWeek: 5000,
+                perMonth: 17000,
+                perMonth3m: 16000,
+                perMonth6m: 15000,
+                perMonth1y: 14000
+            },
+            desc: ''
+        }
     ]},
 
     proxy: {

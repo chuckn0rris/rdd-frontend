@@ -1,6 +1,3 @@
-/**
- * This class is the view model for the Main view of the application.
- */
 Ext.define('Rdd.view.main.MainModel', {
     extend: 'Ext.app.ViewModel',
 
@@ -9,8 +6,8 @@ Ext.define('Rdd.view.main.MainModel', {
     data: {
         name: 'Rdd',
         i18n: {
-        	listTitle: 'Available transport',
-        	noAccount: 'I want to register an account'
+            listTitle: 'Available transport',
+            noAccount: 'I want to register an account'
         }
     }
 

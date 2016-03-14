@@ -24,7 +24,7 @@ Ext.define('Rdd.view.login.Login', {
         xtype: 'textfield',
         fieldLabel: 'Password',
         inputType: 'password',
-        width: '100%',
+        width: '100%'
     }, {
         xtype: 'button',
         text: 'Log in',

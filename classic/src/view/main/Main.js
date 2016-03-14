@@ -9,12 +9,16 @@ Ext.define('Rdd.view.main.Main', {
         'Rdd.view.main.MainController',
         'Rdd.view.main.MainModel',
         'Rdd.view.main.List',
-        'Rdd.view.main.TitlePanel'
+        'Rdd.view.main.TitlePanel',
+        'Rdd.view.main.OfferDetails'
     ],
 
     controller: 'main',
     viewModel: 'main',
-    layout: 'vbox',
+    layout: {
+        type: 'vbox',
+        pack: 'center'
+    },
 
     items: [{
         xtype: 'titlepanel',
