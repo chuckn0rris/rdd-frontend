@@ -25,6 +25,7 @@ Ext.define('Rdd.view.main.TitlePanel', {
         xtype: 'container',
         width: '100%',
         flex: 1,
-        html: '<div class="rdd-main-title-text"><center>ron don don.com</center></div>'
+        html:   '<div class="rdd-main-title-text-slogan"><center>Rent your bike or car with best price directly from owner on</center></div><br/>'+
+                '<div class="rdd-main-title-text"><center>ron don don.com</center></div>'
     }]
 });
