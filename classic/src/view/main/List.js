@@ -39,36 +39,41 @@ Ext.define('Rdd.view.main.List', {
             width: 300,
             renderer: function(val, meta, record) {
                 var htmlTpl = "<b>{0}:</b>&nbsp;{1}</br>",
-                    model = record.get('brand')+' '+record.get('model');
+                    model = record.get('brand')+' '+record.get('model'),
+                    owner = record.get('firstName')+' '+record.get('lastName');
 
-                var html = Ext.String.format(htmlTpl, 'Model', model);
-                html += Ext.String.format(htmlTpl, 'Color', record.get('color'));
-                html += Ext.String.format(htmlTpl, 'Year', record.get('year'));
-                html += Ext.String.format(htmlTpl, 'Mileage', record.get('mileage') || "(no info)");
-                return html;
-            }
-        }, {
-            text: 'Owner Details',
-            width: 300,
-            renderer: function(val, meta, record) {
-                var htmlTpl = "<b>{0}:</b>&nbsp;{1}</br>",
-                    owner = record.get('firstName')+' '+record.get('lastName'),
-                    company = record.get('company');
-
-                var html = Ext.String.format(htmlTpl, 'Owner', owner);
-                if (company) {
-                    html += Ext.String.format(htmlTpl, 'Company', company);
-                }
+                var html = Ext.String.format("<b>{0}, {1}</b><br/>", model, record.get('year'));
+                html += Ext.String.format('{0} color</br>', record.get('color'));
                 html += Ext.String.format(htmlTpl, 'District', record.get('district'));
+                html += Ext.String.format("<b>Owner:</b>&nbsp;{0}, {1}</br>", owner, record.get('company'));
+
+                if (record.get('isAvailable')) {
+                    html += "<span style='color: green'>Available right now!</span>";
+                }
                 return html;
             }
         }, {
-            text: 'Available?',
-            dataIndex: 'isAvailable',
-            width: 100,
-            renderer: function(val, meta) {
-                return val ? '<div style="color: green;">Available</div>' : '<div style="color: red;">Not available</div>';
-            }
+        //     text: 'Owner Details',
+        //     width: 300,
+        //     renderer: function(val, meta, record) {
+        //         var htmlTpl = "<b>{0}:</b>&nbsp;{1}</br>",
+        //             owner = record.get('firstName')+' '+record.get('lastName'),
+        //             company = record.get('company');
+
+        //         var html = Ext.String.format(htmlTpl, 'Owner', owner);
+        //         if (company) {
+        //             html += Ext.String.format(htmlTpl, 'Company', company);
+        //         }
+        //         html += Ext.String.format(htmlTpl, 'District', record.get('district'));
+        //         return html;
+        //     }
+        // }, {
+        //     text: 'Available?',
+        //     dataIndex: 'isAvailable',
+        //     width: 100,
+        //     renderer: function(val, meta) {
+        //         return val ? '<div style="color: green;">Available</div>' : '<div style="color: red;">Not available</div>';
+        //     }
         },{
             text: 'Prices',
             dataIndex: 'prices',
@@ -77,25 +82,26 @@ Ext.define('Rdd.view.main.List', {
                 var htmlTpl = "<b>{0}:</b>&nbsp;{1}</br>",
                     html = '';
 
-                html += Ext.String.format(htmlTpl, '1 day', val.perDay);
+                // html += Ext.String.format(htmlTpl, '1 day', val.perDay);
                 if (val.perWeek) {
-                    html += Ext.String.format(htmlTpl, '1 week', val.perWeek);
+                    html += Ext.String.format(htmlTpl, '1 week from', val.perWeek);
                 }
-                if (val.perMonth) {
-                    html += Ext.String.format(htmlTpl, '1 month', val.perMonth);
-                }
-                if (val.perMonth3m) {
-                    html += Ext.String.format(htmlTpl, '1 month (3 months cotract)', val.perMonth3m);
-                }
-                if (val.perMonth6m) {
-                    html += Ext.String.format(htmlTpl, '1 month (6 months cotract)', val.perMonth6m);
-                }
+                // if (val.perMonth) {
+                //     html += Ext.String.format(htmlTpl, '1 month', val.perMonth);
+                // }
+                // if (val.perMonth3m) {
+                //     html += Ext.String.format(htmlTpl, '1 month (3 months cotract)', val.perMonth3m);
+                // }
+                // if (val.perMonth6m) {
+                //     html += Ext.String.format(htmlTpl, '1 month (6 months cotract)', val.perMonth6m);
+                // }
                 if (val.perMonth1y) {
-                    html += Ext.String.format(htmlTpl, '1 month (1 year cotract)', val.perMonth1y);
+                    html += Ext.String.format(htmlTpl, '1 month from', val.perMonth1y);
                 }
                 if (val.comment) {
                     html += Ext.String.format(htmlTpl, 'Comments', val.comment);
                 }
+
 
                 return html;
 

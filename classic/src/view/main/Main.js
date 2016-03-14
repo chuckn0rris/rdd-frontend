@@ -17,16 +17,16 @@ Ext.define('Rdd.view.main.Main', {
     viewModel: 'main',
     layout: {
         type: 'vbox',
-        pack: 'center'
+        align: 'center'
     },
 
     items: [{
         xtype: 'titlepanel',
         flex: 2,
-        width: '100%'
+        width: 1000
     }, {
         xtype: 'mainlist',
-        width: '100%',
+        width: 1000,
         flex: 3
     }]
 });
