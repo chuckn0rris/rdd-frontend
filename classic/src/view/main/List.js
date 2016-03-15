@@ -14,6 +14,8 @@ Ext.define('Rdd.view.main.List', {
         type: 'offers'
     },
 
+    border: true,
+
     columns: {
         defaults: {
             resizable: false,
@@ -118,8 +120,8 @@ Ext.define('Rdd.view.main.List', {
             widget: {
                 xtype: 'button',
                 width: 130,
-                text: 'Show Contacts',
-                handler: 'openOfferDetails'
+                text: 'Show Details',
+                handler: 'openOffer'
             },
             renderer: function(val, meta) {
                 meta.tdCls = 'rdd-mainlist-column-contacts';

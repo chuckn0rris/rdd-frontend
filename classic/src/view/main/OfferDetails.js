@@ -1,69 +1,70 @@
 Ext.define('Rdd.view.main.OfferDetails', {
-    extend: 'Ext.window.Window',
+    extend: 'Ext.Panel',
     xtype: 'offerdetails',
 
-    title: 'Offer details',
-    modal: true,
-    width: 400,
-
-    defaults: {
-        padding: 5
-    },
-
     controller: 'main',
-    viewModel: {
-        type: 'main'
-    },
 
     config: {
         offer: null
     },
 
     bind: {
-        offer: '{currentOffer}'
+        offer: '{offer}'
+    },
+
+    modal: true,
+    border: true,
+    defaults: {
+        padding: 5
     },
 
     items: [{
-        xtype: 'fieldset',
+        xtype: 'container',
+        layout: 'vbox',
         margin: 10,
-        bind: {
-            title: '{offer.firstName} {offer.lastName}, {offer.company}'
+        defaults: {
+            xtype: 'infolabel',
+            width: '100%'
         },
         items: [{
-            xtype: 'displayfield',
-            fieldLabel: 'Phone',
-            width: '100%',
-            bind: '{offer.phone}'
+            xtype: 'label',
+            margin: 5,
+            bind: '<b>{offer.firstName} {offer.lastName}, {offer.company}</b>'
         }, {
-            xtype: 'displayfield',
-            fieldLabel: 'Mobile',
-            width: '100%',
-            bind: '{offer.mobilePhone}'
+            label: 'Phone',
+            bind: {
+                value: '{offer.phone}'
+            }
         }, {
-            xtype: 'displayfield',
-            fieldLabel: 'Email',
-            width: '100%',
-            bind: '{offer.publicEmail}'
+            label: 'Mobile',
+            bind: {
+                value: '{offer.mobilePhone}'
+            }
         }, {
-            xtype: 'displayfield',
-            fieldLabel: 'Whatsapp',
-            width: '100%',
-            bind: '{offer.socialContacts.whatsapp}'
+            label: 'Email',
+            bind: {
+                value: '{offer.publicEmail}'
+            }
         }, {
-            xtype: 'displayfield',
-            fieldLabel: 'Viber',
-            width: '100%',
-            bind: '{offer.socialContacts.viber}'
+            label: 'Whatsapp',
+            bind: {
+                value: '{offer.socialContacts.whatsapp}'
+            }
         }, {
-            xtype: 'displayfield',
-            fieldLabel: 'Facebook',
-            width: '100%',
-            bind: '{offer.socialContacts.facebook}'
+            label: 'Viber',
+            bind: {
+                value: '{offer.socialContacts.viber}'
+            }
         }, {
-            xtype: 'displayfield',
-            fieldLabel: 'Skype',
-            width: '100%',
-            bind: '{offer.socialContacts.skype}'
+            label: 'Facebook',
+            bind: {
+                value: '<a href="{offer.socialContacts.facebook}" target="_blank">{offer.socialContacts.facebook}</a>'
+            }
+        }, {
+            label: 'Skype',
+            bind: {
+                value: '{offer.socialContacts.skype}'
+            }
         }]
     }],
 

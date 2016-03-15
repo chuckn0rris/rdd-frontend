@@ -11,14 +11,25 @@ Ext.define('Rdd.view.main.MainController', {
         Ext.create('Rdd.view.login.Login').show();
     },
 
-    openOfferDetails: function(widget) {
-        this.getView();
+    openOffer: function(widget) {
+        var tabPanel = this.lookupReference('mainTabPanel');
 
-        // get current offer
-        var offer = widget.getWidgetRecord().data;
-        this.getViewModel().set('offer',offer);
-        Ext.create('Rdd.view.main.OfferDetails').show();
+        var offer = widget.getWidgetRecord().data,
+            title = Ext.String.format("{0} {1} {2}", offer.color, offer.brand, offer.model);
 
+        tabPanel.add({
+            xtype: 'offerdetails',
+            title: title,
+            closable: true,
+            viewModel: {
+                type: 'offer',
+                data: {
+                    offer: offer
+                }
+            }
+        });
+
+        tabPanel.setActiveTab(tabPanel.items.length-1);
     },
 
     closeOfferDetails: function() {

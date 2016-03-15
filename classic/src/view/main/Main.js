@@ -8,7 +8,9 @@ Ext.define('Rdd.view.main.Main', {
 
         'Rdd.view.main.MainController',
         'Rdd.view.main.MainModel',
+        'Rdd.view.main.OfferModel',
         'Rdd.view.main.List',
+        'Rdd.view.ux.InfoLabel',
         'Rdd.view.main.TitlePanel',
         'Rdd.view.main.OfferDetails'
     ],
@@ -22,11 +24,15 @@ Ext.define('Rdd.view.main.Main', {
 
     items: [{
         xtype: 'titlepanel',
-        flex: 2,
+        flex: 1,
         width: 1000
     }, {
-        xtype: 'mainlist',
+        xtype: 'tabpanel',
+        reference: 'mainTabPanel',
         width: 1000,
-        flex: 3
+        flex: 2,
+        items: [{
+            xtype: 'mainlist'
+        }]
     }]
 });

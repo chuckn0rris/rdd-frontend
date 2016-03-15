@@ -41,7 +41,7 @@ Ext.define('Rdd.store.Offers', {
                 viber: '(+66)9-17-10-16-20',
                 skype: 'somchay003322',
                 whatsapp: '(+66)9-17-10-16-20',
-                facebook: 'htttp://facebook.com/somchai_uluwatu',
+                facebook: 'http://facebook.com/somchai_uluwatu',
                 line: '(+66)9-17-10-16-20'
             }
         }, {
@@ -74,7 +74,7 @@ Ext.define('Rdd.store.Offers', {
                 viber: '(+66)9-17-10-16-20',
                 skype: 'somchay003322',
                 whatsapp: '(+66)9-17-10-16-20',
-                facebook: 'htttp://facebook.com/somchai_uluwatu',
+                facebook: 'http://facebook.com/somchai_uluwatu',
                 line: '(+66)9-17-10-16-20'
             }
         }, {
@@ -107,7 +107,7 @@ Ext.define('Rdd.store.Offers', {
                 viber: '(+66)9-17-10-16-20',
                 skype: 'somchay003322',
                 whatsapp: '(+66)9-17-10-16-20',
-                facebook: 'htttp://facebook.com/somchai_uluwatu',
+                facebook: 'http://facebook.com/somchai_uluwatu',
                 line: '(+66)9-17-10-16-20'
             }
         }, {
@@ -141,7 +141,7 @@ Ext.define('Rdd.store.Offers', {
                 viber: '(+66)9-17-10-16-20',
                 skype: 'somchay003322',
                 whatsapp: '(+66)9-17-10-16-20',
-                facebook: 'htttp://facebook.com/somchai_uluwatu',
+                facebook: 'http://facebook.com/somchai_uluwatu',
                 line: '(+66)9-17-10-16-20'
             }
         }, {
@@ -174,7 +174,7 @@ Ext.define('Rdd.store.Offers', {
                 viber: '(+66)9-17-10-16-20',
                 skype: 'somchay003322',
                 whatsapp: '(+66)9-17-10-16-20',
-                facebook: 'htttp://facebook.com/somchai_uluwatu',
+                facebook: 'http://facebook.com/somchai_uluwatu',
                 line: '(+66)9-17-10-16-20'
             }
         }
