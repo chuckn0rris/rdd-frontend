@@ -33,7 +33,7 @@ Ext.define('Rdd.store.Offers', {
                 perMonth6m: 15000,
                 perMonth1y: 14000
             },
-            desc: '',
+            desc: 'Leather saloon, very new',
             phone: '(+66)9-17-10-16-20',
             mobilePhone: '0917101620',
             publicEmail: 'getcar@andamancars.com',
