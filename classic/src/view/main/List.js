@@ -57,28 +57,6 @@ Ext.define('Rdd.view.main.List', {
                 }
                 return html;
             }
-        // }, {
-        //     text: 'Owner Details',
-        //     width: 300,
-        //     renderer: function(val, meta, record) {
-        //         var htmlTpl = "<b>{0}:</b>&nbsp;{1}</br>",
-        //             owner = record.get('firstName')+' '+record.get('lastName'),
-        //             company = record.get('company');
-
-        //         var html = Ext.String.format(htmlTpl, 'Owner', owner);
-                // if (company) {
-                //     html += Ext.String.format(htmlTpl, 'Company', company);
-                // }
-        //         html += Ext.String.format(htmlTpl, 'District', record.get('district'));
-        //         return html;
-        //     }
-        // }, {
-        //     text: 'Available?',
-        //     dataIndex: 'isAvailable',
-        //     width: 100,
-        //     renderer: function(val, meta) {
-        //         return val ? '<div style="color: green;">Available</div>' : '<div style="color: red;">Not available</div>';
-        //     }
         },{
             text: 'Prices',
             dataIndex: 'prices',

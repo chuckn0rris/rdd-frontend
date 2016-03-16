@@ -12,7 +12,7 @@ Ext.define('Rdd.view.main.OfferDetails', {
         offer: '{offer}'
     },
 
-    modal: true,
+    autoScroll: true,
     border: true,
     defaults: {
         padding: 5
@@ -42,7 +42,11 @@ Ext.define('Rdd.view.main.OfferDetails', {
                     width: '100%',
                     height: 200,
                     bind: {
-                        html: '<div align="center"><a href="{offer.photo}" data-lightbox="image-{offer.transportId}"><img style="max-height: 200px; max-width: 300px; padding: 5px;" src="{offer.photo}"/></a></div>'
+                        html:   '<div align="center">' +
+                                    '<a href="{offer.photo}" data-lightbox="image-{offer.transportId}">' +
+                                        '<img style="max-height: 200px; max-width: 300px; padding: 5px;" src="{offer.photo}"/>' +
+                                    '</a>' +
+                                '</div>'
                     }
                 }, {
                     xtype: 'container',
@@ -60,7 +64,11 @@ Ext.define('Rdd.view.main.OfferDetails', {
                         tpl: [
                             '<tpl for=".">',
                                 '<div class="thumb-wrap" id="{name:stripTags}">',
-                                    '<div class="thumb"><a href="{url}" data-lightbox="image-{transportId}"><img align="center" valign="center" src="{url}"></a></div>',
+                                    '<div class="thumb">',
+                                        '<a href="{url}" data-lightbox="image-{transportId}">',
+                                            '<img src="{url}">',
+                                        '</a>',
+                                    '</div>',
                                 '</div>',
                             '</tpl>',
                             '<div class="x-clear"></div>'
@@ -156,14 +164,22 @@ Ext.define('Rdd.view.main.OfferDetails', {
             }]
         }]
     }, {
-        xtype: 'container',
+        xtype: 'fieldset',
+        title: 'Availability',
+        margin: '0 10 10 10',
         width: '100%',
         layout: 'hbox',
         items: [{
-            xtype: 'fieldset',
-            title: 'Prices',
-            margin: '0 10 10 10',
-            flex: 2,
+            xtype: 'panel',
+            border: true,
+            html: '<center><div style="padding-top:20px"><h3>Here will be calendar soon...</h3></div></center>',
+            margin: 10,
+            height: '100%',
+            width: 350
+        }, {
+            xtype: 'container',
+            flex: 1,
+            margin: 10,
             defaults: {
                 xtype: 'infolabel',
                 width: '100%'
