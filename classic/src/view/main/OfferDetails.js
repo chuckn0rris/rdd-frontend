@@ -42,7 +42,7 @@ Ext.define('Rdd.view.main.OfferDetails', {
                     width: '100%',
                     height: 200,
                     bind: {
-                        html: '<div align="center"><img style="max-height: 200px; max-width: 300px;" src="{offer.photo}"/></div>'
+                        html: '<div align="center"><img style="max-height: 200px; max-width: 300px; padding: 5px;" src="{offer.photo}"/></div>'
                     }
                 }, {
                     xtype: 'container',
@@ -60,7 +60,7 @@ Ext.define('Rdd.view.main.OfferDetails', {
                         tpl: [
                             '<tpl for=".">',
                                 '<div class="thumb-wrap" id="{name:stripTags}">',
-                                    '<div class="thumb"><img src="{url}" title="{name:htmlEncode}"></div>',
+                                    '<div class="thumb"><img align="center" valign="center" src="{url}"></div>',
                                 '</div>',
                             '</tpl>',
                             '<div class="x-clear"></div>'

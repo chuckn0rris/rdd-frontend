@@ -1,25 +1,19 @@
-.rdd-main-offerdetails-images-view .x-panel-body {
-    background: white;
-    font: 11px Arial, Helvetica, sans-serif;
-}
-.rdd-main-offerdetails-images-view .thumb{
-    background: #dddddd;
-    padding: 3px;
-    padding-bottom: 0;
-}
-
-.x-quirks .rdd-main-offerdetails-images-view .thumb {
-    padding-bottom: 3px;
-}
-
 .rdd-main-offerdetails-images-view .thumb {
+    background: #dddddd;
     height: 70px;
     width: 90px;
+    position: absolute;
 }
 
 .rdd-main-offerdetails-images-view .thumb img {
     max-height: 60px;
     max-width: 80px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 .rdd-main-offerdetails-images-view .thumb-wrap {
@@ -27,15 +21,10 @@
     width: 90px;
     float: left;
     margin: 4px;
-    margin-right: 0;
     padding: 5px;
 }
 
 .ext-strict .ext-ie .x-tree .x-panel-bwrap {
     position: relative;
     overflow: hidden;
-}
-
-.x-editable {
-    color: #000;
 }
