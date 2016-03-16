@@ -5,6 +5,7 @@ Ext.define('Rdd.view.main.Main', {
     requires: [
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
+        'Ext.view.View',
 
         'Rdd.view.main.MainController',
         'Rdd.view.main.MainModel',

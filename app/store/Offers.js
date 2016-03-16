@@ -23,6 +23,22 @@ Ext.define('Rdd.store.Offers', {
             year: '2010',
             district: 'Chalong',
             mileage: 120000,
+            photos: [{
+                name: '',
+                url: 'http://autosearchmanila.com/auto-search/uploads/public/models/43/2015%5C01%20Toyota-Vios-2013-2.jpg'
+            }, {
+                name: '',
+                url: 'https://upload.wikimedia.org/wikipedia/commons/4/46/Honda_Accord_(2008)_front.JPG'
+            }, {
+                name: '',
+                url: 'http://www.carblogindia.com/wp-content/uploads/2015/01/toyota-fortuner-2.5-trd-sportivo-front.jpg'
+            }, {
+                name: '',
+                url: 'http://www.carblogindia.com/wp-content/uploads/2015/01/toyota-fortuner-2.5-trd-sportivo-front.jpg'
+            }, {
+                name: '',
+                url: 'http://www.carblogindia.com/wp-content/uploads/2015/01/toyota-fortuner-2.5-trd-sportivo-front.jpg'
+            }],
             photo: 'http://autosearchmanila.com/auto-search/uploads/public/models/43/2015%5C01%20Toyota-Vios-2013-2.jpg',
             isAvailable: true,
             prices: {
@@ -56,6 +72,10 @@ Ext.define('Rdd.store.Offers', {
             color: 'White',
             year: '2009',
             district: 'Chalong',
+            photos: [{
+                name: '',
+                url: 'https://upload.wikimedia.org/wikipedia/commons/4/46/Honda_Accord_(2008)_front.JPG'
+            }],
             photo: 'https://upload.wikimedia.org/wikipedia/commons/4/46/Honda_Accord_(2008)_front.JPG',
             isAvailable: true,
             prices: {
@@ -89,6 +109,10 @@ Ext.define('Rdd.store.Offers', {
             color: 'White',
             year: '2010',
             district: 'Chalong',
+            photos: [{
+                name: '',
+                url: 'http://www.siaminside.com/wp-content/uploads/2014/11/Honda-Grace-Honda-City-Hybrid-01.jpg'
+            }],
             photo: 'http://www.siaminside.com/wp-content/uploads/2014/11/Honda-Grace-Honda-City-Hybrid-01.jpg',
             isAvailable: true,
             prices: {
@@ -122,6 +146,10 @@ Ext.define('Rdd.store.Offers', {
             color: 'White',
             year: '2012',
             district: 'Chalong',
+            photos: [{
+                name: '',
+                url: 'http://www.carblogindia.com/wp-content/uploads/2015/01/toyota-fortuner-2.5-trd-sportivo-front.jpg'
+            }],
             photo: 'http://www.carblogindia.com/wp-content/uploads/2015/01/toyota-fortuner-2.5-trd-sportivo-front.jpg',
             isAvailable: true,
             prices: {
@@ -156,6 +184,10 @@ Ext.define('Rdd.store.Offers', {
             color: 'Yellow',
             year: '2014',
             district: 'Chalong',
+            photos: [{
+                name: '',
+                url: 'http://avto-survey.ru/wp-content/uploads/2015/09/ford-focus-08.jpg'
+            }],
             photo: 'http://avto-survey.ru/wp-content/uploads/2015/09/ford-focus-08.jpg',
             isAvailable: true,
             prices: {

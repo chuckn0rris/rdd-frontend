@@ -32,10 +32,43 @@ Ext.define('Rdd.view.main.OfferDetails', {
             flex: 2,
             items: [{
                 xtype: 'panel',
+                layout: 'vbox',
                 width: 300,
                 height: 300,
                 margin: '5 10 10 10',
-                border: true
+                border: true,
+                items: [{
+                    xtype: 'container',
+                    width: '100%',
+                    height: 200,
+                    bind: {
+                        html: '<div align="center"><img style="max-height: 200px; max-width: 300px;" src="{offer.photo}"/></div>'
+                    }
+                }, {
+                    xtype: 'container',
+                    width: '100%',
+                    flex: 1,
+                    layout: 'hbox',
+                    autoScroll: true,
+                    items: [{
+                        xtype: 'dataview',
+                        height: '100%',
+                        bind: {
+                            data: '{offer.photos}'
+                        },
+                        cls: 'rdd-main-offerdetails-images-view',
+                        tpl: [
+                            '<tpl for=".">',
+                                '<div class="thumb-wrap" id="{name:stripTags}">',
+                                    '<div class="thumb"><img src="{url}" title="{name:htmlEncode}"></div>',
+                                '</div>',
+                            '</tpl>',
+                            '<div class="x-clear"></div>'
+                        ],
+                        itemSelector: 'div.thumb-wrap',
+                        emptyText: 'No images to display'
+                    }]
+                }]
             }, {
                 xtype: 'container',
                 defaults: {
