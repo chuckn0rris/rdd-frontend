@@ -104,7 +104,7 @@ Ext.define('Rdd.view.main.OfferDetails', {
             height: '100%',
             margin: '0 10 10 0',
             defaults: {
-                xtype: 'infolabel',
+                xtype: 'infoiconlabel',
                 width: '100%'
             },
             items: [{
@@ -112,36 +112,43 @@ Ext.define('Rdd.view.main.OfferDetails', {
                 margin: 5,
                 bind: '<b>{offer.firstName} {offer.lastName}, {offer.company}</b>'
             }, {
+                icon: 'resources/images/phone.png',
                 label: 'Phone',
                 bind: {
                     value: '{offer.phone}'
                 }
             }, {
+                icon: 'resources/images/mobile.png',
                 label: 'Mobile',
                 bind: {
                     value: '{offer.mobilePhone}'
                 }
             }, {
+                icon: 'resources/images/email.png',
                 label: 'Email',
                 bind: {
                     value: '<a href="mailto:{offer.publicEmail}" target="_blank">{offer.publicEmail}</a>'
                 }
             }, {
+                icon: 'resources/images/whatsapp.png',
                 label: 'Whatsapp',
                 bind: {
                     value: '{offer.socialContacts.whatsapp}'
                 }
             }, {
+                icon: 'resources/images/viber.png',
                 label: 'Viber',
                 bind: {
                     value: '{offer.socialContacts.viber}'
                 }
             }, {
+                icon: 'resources/images/facebook.png',
                 label: 'Facebook',
                 bind: {
                     value: '<a href="{offer.socialContacts.facebook}" target="_blank">Open in Facebook</a>'
                 }
             }, {
+                icon: 'resources/images/skype.png',
                 label: 'Skype',
                 bind: {
                     value: '{offer.socialContacts.skype}'

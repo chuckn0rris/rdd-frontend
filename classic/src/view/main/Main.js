@@ -12,6 +12,7 @@ Ext.define('Rdd.view.main.Main', {
         'Rdd.view.main.OfferModel',
         'Rdd.view.main.List',
         'Rdd.view.ux.InfoLabel',
+        'Rdd.view.ux.InfoIconLabel',
         'Rdd.view.main.TitlePanel',
         'Rdd.view.main.OfferDetails'
     ],
