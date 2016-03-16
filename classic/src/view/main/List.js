@@ -29,7 +29,7 @@ Ext.define('Rdd.view.main.List', {
             renderer: function(val, meta, record) {
                 meta.style = 'height: 160px;'
                 if (val) {
-                    var html = Ext.String.format('<div align="center"> <img style="max-height: 160px; max-width: 160px;" src="{0}"/></div><a style="padding-left: 10px;" href="javascript:void(0)">More...</a>', val);
+                    var html = Ext.String.format('<div align="center"> <img style="max-height: 160px; max-width: 160px;" src="{0}"/></div><a style="padding-left: 10px;"', val);
                     return html;
                 } else {
                     return '';

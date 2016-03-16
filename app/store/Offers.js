@@ -15,6 +15,7 @@ Ext.define('Rdd.store.Offers', {
             type: 'auto',
             brand: 'Toyota',
             model: "Vios",
+            transportId: 1,
             ownerId: 1,
             company: 'Andaman Cars',
             firstName: 'Somchai',
@@ -24,19 +25,19 @@ Ext.define('Rdd.store.Offers', {
             district: 'Chalong',
             mileage: 120000,
             photos: [{
-                name: '',
+                transportId: '1',
                 url: 'http://autosearchmanila.com/auto-search/uploads/public/models/43/2015%5C01%20Toyota-Vios-2013-2.jpg'
             }, {
-                name: '',
+                transportId: '1',
                 url: 'https://upload.wikimedia.org/wikipedia/commons/4/46/Honda_Accord_(2008)_front.JPG'
             }, {
-                name: '',
+                transportId: '1',
                 url: 'http://www.carblogindia.com/wp-content/uploads/2015/01/toyota-fortuner-2.5-trd-sportivo-front.jpg'
             }, {
-                name: '',
+                transportId: '1',
                 url: 'http://www.carblogindia.com/wp-content/uploads/2015/01/toyota-fortuner-2.5-trd-sportivo-front.jpg'
             }, {
-                name: '',
+                transportId: '1',
                 url: 'http://www.carblogindia.com/wp-content/uploads/2015/01/toyota-fortuner-2.5-trd-sportivo-front.jpg'
             }],
             photo: 'http://autosearchmanila.com/auto-search/uploads/public/models/43/2015%5C01%20Toyota-Vios-2013-2.jpg',
@@ -65,6 +66,7 @@ Ext.define('Rdd.store.Offers', {
             type: 'auto',
             brand: 'Honda',
             model: "Accord",
+            transportId: 2,
             ownerId: 1,
             company: 'Andaman Cars',
             firstName: 'Somchai',
@@ -73,7 +75,7 @@ Ext.define('Rdd.store.Offers', {
             year: '2009',
             district: 'Chalong',
             photos: [{
-                name: '',
+                transportId: '2',
                 url: 'https://upload.wikimedia.org/wikipedia/commons/4/46/Honda_Accord_(2008)_front.JPG'
             }],
             photo: 'https://upload.wikimedia.org/wikipedia/commons/4/46/Honda_Accord_(2008)_front.JPG',
@@ -102,6 +104,7 @@ Ext.define('Rdd.store.Offers', {
             type: 'auto',
             brand: 'Honda',
             model: "City",
+            transportId: 3,
             ownerId: 1,
             company: 'Andaman Cars',
             firstName: 'Somchai',
@@ -110,7 +113,7 @@ Ext.define('Rdd.store.Offers', {
             year: '2010',
             district: 'Chalong',
             photos: [{
-                name: '',
+                transportId: '3',
                 url: 'http://www.siaminside.com/wp-content/uploads/2014/11/Honda-Grace-Honda-City-Hybrid-01.jpg'
             }],
             photo: 'http://www.siaminside.com/wp-content/uploads/2014/11/Honda-Grace-Honda-City-Hybrid-01.jpg',
@@ -139,6 +142,7 @@ Ext.define('Rdd.store.Offers', {
             type: 'auto',
             brand: 'Toyota',
             model: "Fortuner",
+            transportId: 4,
             ownerId: 1,
             company: 'Andaman Cars',
             firstName: 'Somchai',
@@ -147,7 +151,7 @@ Ext.define('Rdd.store.Offers', {
             year: '2012',
             district: 'Chalong',
             photos: [{
-                name: '',
+                transportId: '4',
                 url: 'http://www.carblogindia.com/wp-content/uploads/2015/01/toyota-fortuner-2.5-trd-sportivo-front.jpg'
             }],
             photo: 'http://www.carblogindia.com/wp-content/uploads/2015/01/toyota-fortuner-2.5-trd-sportivo-front.jpg',
@@ -177,6 +181,7 @@ Ext.define('Rdd.store.Offers', {
             type: 'auto',
             brand: 'Ford',
             model: "Focus",
+            transportId: 5,
             ownerId: 1,
             company: 'Andaman Cars',
             firstName: 'Somchai',
@@ -185,7 +190,7 @@ Ext.define('Rdd.store.Offers', {
             year: '2014',
             district: 'Chalong',
             photos: [{
-                name: '',
+                transportId: '5',
                 url: 'http://avto-survey.ru/wp-content/uploads/2015/09/ford-focus-08.jpg'
             }],
             photo: 'http://avto-survey.ru/wp-content/uploads/2015/09/ford-focus-08.jpg',
