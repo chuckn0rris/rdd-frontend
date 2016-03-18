@@ -7,6 +7,7 @@ Ext.define('Rdd.view.main.Main', {
         'Ext.window.MessageBox',
         'Ext.view.View',
 
+        'Rdd.view.main.Filters',
         'Rdd.view.main.MainController',
         'Rdd.view.main.MainModel',
         'Rdd.view.main.OfferModel',
@@ -32,9 +33,13 @@ Ext.define('Rdd.view.main.Main', {
         xtype: 'tabpanel',
         reference: 'mainTabPanel',
         width: 1000,
-        flex: 2,
+        flex: 3,
         items: [{
-            xtype: 'mainlist'
+            xtype: 'mainlist',
+            reference: 'mainList',
+            tbar: [{
+                xtype: 'filterspanel'
+            }]
         }]
     }]
 });

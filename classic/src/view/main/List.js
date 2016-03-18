@@ -40,8 +40,7 @@ Ext.define('Rdd.view.main.List', {
             dataIndex: 'desc',
             width: 300,
             renderer: function(val, meta, record) {
-                var htmlTpl = "<b>{0}:</b>&nbsp;{1}</br>",
-                    model = record.get('brand')+' '+record.get('model'),
+                var model = record.get('brand')+' '+record.get('model'),
                     owner = record.get('firstName')+' '+record.get('lastName');
 
                 var html = Ext.String.format("<b>{0}, {1}</b>&nbsp;&nbsp;", model, record.get('year'));
@@ -49,7 +48,7 @@ Ext.define('Rdd.view.main.List', {
                 if (record.get('mileage')) {
                     html += Ext.String.format("<b>{0}:</b>&nbsp;{1}</br>", 'Mileage', Ext.util.Format.distance(record.get('mileage')));
                 }
-                html += Ext.String.format(htmlTpl, 'District', record.get('district'));
+                html += Ext.String.format("<b>{0}:</b>&nbsp;{1}</br>", 'District', record.get('district'));
                 html += Ext.String.format("<b>Owner:</b>&nbsp;{0}, {1}</br>", owner, record.get('company'));
 
                 html += "</br>";
@@ -65,9 +64,9 @@ Ext.define('Rdd.view.main.List', {
             dataIndex: 'prices',
             flex: 1,
             renderer: function(val, meta, record) {
-                var htmlTpl = "<b>{0}:</b>&nbsp;{1}</br>",
-                    getString = function(title, val) {
-                        return Ext.String.format("<b>{0}:</b>&nbsp;{1}</br>", title, Ext.util.Format.currentCurrency(val));
+                var getString = function(title, val) {
+                        var htmlTpl = "<b>{0}:</b>&nbsp;{1}</br>";
+                        return Ext.String.format(htmlTpl, title, Ext.util.Format.currentCurrency(val));
                     }
                     html = '';
 

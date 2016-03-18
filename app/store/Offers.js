@@ -223,7 +223,9 @@ Ext.define('Rdd.store.Offers', {
     ]},
 
     proxy: {
+        // type: 'ajax',
         type: 'memory',
+        url: 'offers',
         reader: {
             type: 'json',
             rootProperty: 'items'

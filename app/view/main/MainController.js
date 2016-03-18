@@ -40,5 +40,18 @@ Ext.define('Rdd.view.main.MainController', {
 
     closeOfferDetails: function() {
         this.getView().close();
+    },
+
+    applyFilters: function() {
+        var filters = this.getView().getValues();
+            grid = this.getView().up('mainlist'),
+            proxy = grid.getStore().getProxy();
+
+        // proxy.setExtraParams(filters);
+    },
+
+    resetFilters: function() {
+        this.getView().reset();
+        // this.getView().up('mainlist').getStore().getProxy().setExtraParams({});
     }
 });
