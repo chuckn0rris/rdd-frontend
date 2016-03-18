@@ -42,6 +42,7 @@ Ext.define('Rdd.store.Offers', {
             }],
             photo: 'http://autosearchmanila.com/auto-search/uploads/public/models/43/2015%5C01%20Toyota-Vios-2013-2.jpg',
             isAvailable: true,
+            availableFrom: null,
             prices: {
                 perDay: 900,
                 perWeek: 5000,
@@ -79,7 +80,8 @@ Ext.define('Rdd.store.Offers', {
                 url: 'https://upload.wikimedia.org/wikipedia/commons/4/46/Honda_Accord_(2008)_front.JPG'
             }],
             photo: 'https://upload.wikimedia.org/wikipedia/commons/4/46/Honda_Accord_(2008)_front.JPG',
-            isAvailable: true,
+            isAvailable: false,
+            availableFrom: '23/03/2016',
             prices: {
                 perDay: 900,
                 perWeek: 5000,
@@ -118,6 +120,7 @@ Ext.define('Rdd.store.Offers', {
             }],
             photo: 'http://www.siaminside.com/wp-content/uploads/2014/11/Honda-Grace-Honda-City-Hybrid-01.jpg',
             isAvailable: true,
+            availableFrom: null,
             prices: {
                 perDay: 900,
                 perWeek: 5000,
@@ -156,6 +159,7 @@ Ext.define('Rdd.store.Offers', {
             }],
             photo: 'http://www.carblogindia.com/wp-content/uploads/2015/01/toyota-fortuner-2.5-trd-sportivo-front.jpg',
             isAvailable: true,
+            availableFrom: null,
             prices: {
                 perDay: 900,
                 perWeek: 5000,
@@ -195,6 +199,7 @@ Ext.define('Rdd.store.Offers', {
             }],
             photo: 'http://avto-survey.ru/wp-content/uploads/2015/09/ford-focus-08.jpg',
             isAvailable: true,
+            availableFrom: null,
             prices: {
                 perDay: 900,
                 perWeek: 5000,

@@ -79,18 +79,21 @@ Ext.define('Rdd.view.main.OfferDetails', {
                 }]
             }, {
                 xtype: 'container',
+                layout: 'form',
+                flex: 1,
                 defaults: {
                     xtype: 'infolabel',
                     width: '100%'
                 },
                 items: [{
                     xtype: 'label',
-                    margin: 5,
-                    bind: '<b>{offer.brand} {offer.model}</b>, {offer.year}, {offer.color} color'
+                    bind: {
+                        html: '<div><b>{offer.brand} {offer.model}</b>, {offer.year}, {offer.color} color</div>'
+                    }
                 }, {
                     label: 'Mileage',
                     bind: {
-                        value: '{offer.mileage}'
+                        value: '{offer.mileage:distance}'
                     }
                 }, {
                     label: 'District',
@@ -101,6 +104,18 @@ Ext.define('Rdd.view.main.OfferDetails', {
                     label: 'Description',
                     bind: {
                         value: '{offer.desc}'
+                    }
+                }, {
+                    xtype: 'label',
+                    bind: {
+                        hidden: '{!offer.isAvailable}'
+                    },
+                    html: '<div style="color: green;">Available right now!</div>'
+                }, {
+                    label: 'Available From',
+                    bind: {
+                        hidden: '{!offer.availableFrom}',
+                        value: '{offer.availableFrom}'
                     }
                 }]
             }]
@@ -185,41 +200,34 @@ Ext.define('Rdd.view.main.OfferDetails', {
                 width: '100%'
             },
             items: [{
-                xtype: 'label',
-                margin: 5,
-                bind: {
-                    hidden: '{!offer.isAvailable}'
-                },
-                html: '<span style="color: green;">Available right now!</b></span>'
-            }, {
                 label: '1 day',
                 bind: {
-                    value: '{offer.prices.perDay}'
+                    value: '{offer.prices.perDay:currentCurrency}'
                 }
             }, {
                 label: '1 week',
                 bind: {
-                    value: '{offer.prices.perWeek}'
+                    value: '{offer.prices.perWeek:currentCurrency}'
                 }
             }, {
                 label: '1 month',
                 bind: {
-                    value: '{offer.prices.perMonth}'
+                    value: '{offer.prices.perMonth:currentCurrency}'
                 }
             }, {
                 label: '1 month (3 months cotract)',
                 bind: {
-                    value: '{offer.prices.perMonth3m}'
+                    value: '{offer.prices.perMonth3m:currentCurrency}'
                 }
             }, {
                 label: '1 month (6 months contract)',
                 bind: {
-                    value: '{offer.prices.perMonth6m}'
+                    value: '{offer.prices.perMonth6m:currentCurrency}'
                 }
             }, {
                 label: '1 month (1 year contract)',
                 bind: {
-                    value: '{offer.prices.perMonth1y}'
+                    value: '{offer.prices.perMonth1y:currentCurrency}'
                 }
             }]
         }]

@@ -9,7 +9,8 @@ Ext.application({
     extend: 'Rdd.Application',
 
     requires: [
-        'Rdd.view.main.Main'
+        'Rdd.view.main.Main',
+        'Rdd.view.ux.overrides.Format'
     ],
 
     // The name of the initial view to create. With the classic toolkit this class
@@ -17,7 +18,7 @@ Ext.application({
     // modern toolkit, the main view will be added to the Viewport.
     //
     mainView: 'Rdd.view.main.Main'
-	
+
     //-------------------------------------------------------------------------
     // Most customizations should be made to Rdd.Application. If you need to
     // customize this file, doing so below this section reduces the likelihood

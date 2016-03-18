@@ -47,13 +47,16 @@ Ext.define('Rdd.view.main.List', {
                 var html = Ext.String.format("<b>{0}, {1}</b>&nbsp;&nbsp;", model, record.get('year'));
                 html += Ext.String.format('{0} color</br>', record.get('color'));
                 if (record.get('mileage')) {
-                    html += Ext.String.format("<b>{0}:</b>&nbsp;{1}km</br>", 'Mileage', Ext.util.Format.number(record.get('mileage'), '0,000'));
+                    html += Ext.String.format("<b>{0}:</b>&nbsp;{1}</br>", 'Mileage', Ext.util.Format.distance(record.get('mileage')));
                 }
                 html += Ext.String.format(htmlTpl, 'District', record.get('district'));
                 html += Ext.String.format("<b>Owner:</b>&nbsp;{0}, {1}</br>", owner, record.get('company'));
 
+                html += "</br>";
                 if (record.get('isAvailable')) {
                     html += "<span style='color: green'>Available right now!</span>";
+                } else if (record.get('availableFrom')) {
+                    html += Ext.String.format("<b>Available from:</b>&nbsp;{0}</br>", record.get('availableFrom'));
                 }
                 return html;
             }
@@ -64,7 +67,7 @@ Ext.define('Rdd.view.main.List', {
             renderer: function(val, meta, record) {
                 var htmlTpl = "<b>{0}:</b>&nbsp;{1}</br>",
                     getString = function(title, val) {
-                        return Ext.String.format("<b>{0}:</b>&nbsp;{1} bath</br>", title, Ext.util.Format.number(val, '0,000'));
+                        return Ext.String.format("<b>{0}:</b>&nbsp;{1}</br>", title, Ext.util.Format.currentCurrency(val));
                     }
                     html = '';
 
