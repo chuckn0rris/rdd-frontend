@@ -5,15 +5,42 @@
  */
 Ext.define('Rdd.Application', {
     extend: 'Ext.app.Application',
-    
+
     name: 'Rdd',
 
     stores: [
         // TODO: add global / shared stores here
     ],
-    
+
     launch: function () {
-        // TODO - Launch the application
+        // for debugging
+        this.createMainOwnerView();
+        return;
+
+        Ext.Ajax.request({
+            url: '/rest-auth/user/',
+            method: 'GET',
+            success: function(xhr) {
+                // remember owner
+                // open owner console
+                this.createMainOwnerView();
+            },
+            failure: this.createMainView,
+            scope: this
+        });
+
+    },
+
+    createMainView: function() {
+        Ext.create({
+            xtype: 'mainview'
+        });
+    },
+
+    createMainOwnerView: function() {
+        Ext.create({
+            xtype: 'mainownerview'
+        });
     },
 
     onAppUpdate: function () {

@@ -219,8 +219,125 @@ Ext.define('Rdd.store.Offers', {
                 facebook: 'http://facebook.com/somchai_uluwatu',
                 line: '(+66)9-17-10-16-20'
             }
-        }
-    ]},
+        }, {
+            id: 6,
+            type: 'auto',
+            brand: 'Ford',
+            model: "Focus",
+            transportId: 5,
+            ownerId: 1,
+            company: 'Andaman Cars',
+            firstName: 'Somchai',
+            lastName: 'Uluwatu',
+            color: 'Yellow',
+            year: '2014',
+            district: 'Chalong',
+            photos: [{
+                transportId: '5',
+                url: 'http://avto-survey.ru/wp-content/uploads/2015/09/ford-focus-08.jpg'
+            }],
+            photo: 'http://avto-survey.ru/wp-content/uploads/2015/09/ford-focus-08.jpg',
+            isAvailable: true,
+            availableFrom: null,
+            prices: {
+                perDay: 900,
+                perWeek: 5000,
+                perMonth: 17000,
+                perMonth3m: 16000,
+                perMonth6m: 15000,
+                perMonth1y: 14000
+            },
+            desc: '',
+            phone: '(+66)9-17-10-16-20',
+            mobilePhone: '0917101620',
+            publicEmail: 'getcar@andamancars.com',
+            socialContacts: {
+                viber: '(+66)9-17-10-16-20',
+                skype: 'somchay003322',
+                whatsapp: '(+66)9-17-10-16-20',
+                facebook: 'http://facebook.com/somchai_uluwatu',
+                line: '(+66)9-17-10-16-20'
+            }
+        }, {
+            id: 7,
+            type: 'auto',
+            brand: 'Ford',
+            model: "Focus",
+            transportId: 5,
+            ownerId: 1,
+            company: 'Andaman Cars',
+            firstName: 'Somchai',
+            lastName: 'Uluwatu',
+            color: 'Yellow',
+            year: '2014',
+            district: 'Chalong',
+            photos: [{
+                transportId: '5',
+                url: 'http://avto-survey.ru/wp-content/uploads/2015/09/ford-focus-08.jpg'
+            }],
+            photo: 'http://avto-survey.ru/wp-content/uploads/2015/09/ford-focus-08.jpg',
+            isAvailable: true,
+            availableFrom: null,
+            prices: {
+                perDay: 900,
+                perWeek: 5000,
+                perMonth: 17000,
+                perMonth3m: 16000,
+                perMonth6m: 15000,
+                perMonth1y: 14000
+            },
+            desc: '',
+            phone: '(+66)9-17-10-16-20',
+            mobilePhone: '0917101620',
+            publicEmail: 'getcar@andamancars.com',
+            socialContacts: {
+                viber: '(+66)9-17-10-16-20',
+                skype: 'somchay003322',
+                whatsapp: '(+66)9-17-10-16-20',
+                facebook: 'http://facebook.com/somchai_uluwatu',
+                line: '(+66)9-17-10-16-20'
+            }
+        }, {
+            id: 8,
+            type: 'auto',
+            brand: 'Ford',
+            model: "Focus",
+            transportId: 5,
+            ownerId: 1,
+            company: 'Andaman Cars',
+            firstName: 'Somchai',
+            lastName: 'Uluwatu',
+            color: 'Yellow',
+            year: '2014',
+            district: 'Chalong',
+            photos: [{
+                transportId: '5',
+                url: 'http://avto-survey.ru/wp-content/uploads/2015/09/ford-focus-08.jpg'
+            }],
+            photo: 'http://avto-survey.ru/wp-content/uploads/2015/09/ford-focus-08.jpg',
+            isAvailable: true,
+            availableFrom: null,
+            prices: {
+                perDay: 900,
+                perWeek: 5000,
+                perMonth: 17000,
+                perMonth3m: 16000,
+                perMonth6m: 15000,
+                perMonth1y: 14000
+            },
+            desc: '',
+            phone: '(+66)9-17-10-16-20',
+            mobilePhone: '0917101620',
+            publicEmail: 'getcar@andamancars.com',
+            socialContacts: {
+                viber: '(+66)9-17-10-16-20',
+                skype: 'somchay003322',
+                whatsapp: '(+66)9-17-10-16-20',
+                facebook: 'http://facebook.com/somchai_uluwatu',
+                line: '(+66)9-17-10-16-20'
+            }
+        }]
+    },
 
     proxy: {
         // type: 'ajax',

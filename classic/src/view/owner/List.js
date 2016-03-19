@@ -1,6 +1,6 @@
-Ext.define('Rdd.view.main.List', {
+Ext.define('Rdd.view.owner.List', {
     extend: 'Ext.grid.Panel',
-    xtype: 'mainlist',
+    xtype: 'transportlist',
 
     requires: [
         'Rdd.store.Offers',

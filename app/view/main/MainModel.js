@@ -8,6 +8,14 @@ Ext.define('Rdd.view.main.MainModel', {
         i18n: {
             listTitle: 'Available transport',
             noAccount: 'I want to register an account'
+        },
+
+        owner: {
+            firstName: 'Somchai',
+            lastName: 'Uluwatu',
+            company: 'Andaman Cars',
+            district: 'Chalong',
+            phone: '(+66) 917 101 620'
         }
     }
 

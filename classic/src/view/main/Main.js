@@ -1,6 +1,6 @@
 Ext.define('Rdd.view.main.Main', {
-    extend: 'Ext.Panel',
-    xtype: 'app-main',
+    extend: 'Ext.Viewport',
+    xtype: 'mainview',
 
     requires: [
         'Ext.plugin.Viewport',
@@ -19,7 +19,10 @@ Ext.define('Rdd.view.main.Main', {
     ],
 
     controller: 'main',
-    viewModel: 'main',
+    viewModel: {
+        type: 'main'
+    },
+    reference: 'mainView',
     layout: {
         type: 'vbox',
         align: 'center'
@@ -27,15 +30,18 @@ Ext.define('Rdd.view.main.Main', {
 
     items: [{
         xtype: 'titlepanel',
+        width: 1000,
         flex: 1,
-        width: 1000
     }, {
         xtype: 'tabpanel',
-        reference: 'mainTabPanel',
         width: 1000,
+        reference: 'mainTabPanel',
         flex: 3,
         items: [{
             xtype: 'mainlist',
+            bind: {
+                title: '{i18n.listTitle}'
+            },
             reference: 'mainList',
             tbar: [{
                 xtype: 'filterspanel'
