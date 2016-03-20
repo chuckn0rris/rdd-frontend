@@ -107,19 +107,22 @@ Ext.define('Rdd.view.owner.List', {
 
             }
         }, {
-            xtype: 'widgetcolumn',
-            text: '',
-            width: 150,
-            widget: {
-                xtype: 'button',
-                width: 130,
-                text: 'Show Details',
-                handler: 'openOffer'
-            },
-            renderer: function(val, meta) {
-                meta.tdCls = 'rdd-mainlist-column-contacts';
-                return val;
-            }
+            xtype: 'actioncolumn',
+            text: '#',
+            width: 80,
+            cls: 'rdd-owner-list-actioncolumn',
+            align: 'center',
+            items: [{
+                icon: 'resources/images/edit.png',
+                tooltip: 'Edit',
+                iconCls: 'rdd-owner-list-actionicon',
+                handler: 'editTransport'
+            }, {
+                icon: 'resources/images/delete.png',
+                iconCls: 'rdd-owner-list-actionicon',
+                tooltip: 'Remove',
+                handler: 'removeTransport'
+            }]
         }]
     },
 

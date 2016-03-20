@@ -9,9 +9,7 @@ Ext.application({
     extend: 'Rdd.Application',
 
     requires: [
-        'Rdd.view.main.Main',
-        'Rdd.view.owner.Panel',
-        'Rdd.view.ux.overrides.Format'
+        'Rdd.view.main.Main'
     ]
 
     // The name of the initial view to create. With the classic toolkit this class

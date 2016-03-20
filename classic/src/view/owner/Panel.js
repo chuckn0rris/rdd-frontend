@@ -2,11 +2,15 @@ Ext.define('Rdd.view.owner.Panel', {
     extend: 'Ext.Viewport',
     xtype: 'mainownerview',
 
-    controller: 'main',
+    requires: [
+        'Rdd.view.owner.OwnerController'
+    ],
+
+    controller: 'owner',
+
     viewModel: {
         type: 'main'
     },
-    reference: 'mainView',
     layout: {
         type: 'vbox',
         align: 'center'
@@ -15,58 +19,62 @@ Ext.define('Rdd.view.owner.Panel', {
     items: [{
         xtype: 'panel',
         width: 1000,
-        style: 'padding-bottom: 5px;',
         layout: 'hbox',
         items: [{
             xtype: 'container',
             height: 100,
             flex: 1,
+            margin: '10 0 10 0',
             layout: 'vbox',
             items: [{
                 xtype: 'label',
+                cls: 'rdd-owner-title-label-top',
                 flex: 1,
                 width: '100%',
-                cls: 'rdd-owner-title-label-top',
                 bind: '{owner.firstName:uppercase} {owner.lastName:uppercase}'
             }, {
                 xtype: 'component',
+                cls: 'rdd-owner-title-line',
                 width: '100%',
-                height: 2,
-                cls: 'rdd-owner-title-line'
+                height: 2
             }, {
                 xtype: 'label',
+                cls: 'rdd-owner-title-label-bottom',
                 flex: 1,
                 width: '100%',
-                cls: 'rdd-owner-title-label-bottom',
                 bind: '{owner.district}'
             }]
         }, {
             xtype: 'image',
+            cls: 'rdd-owner-avatar-img',
+            margin: '10 0 10 0',
             height: 100,
             width: 100,
-            src: 'http://f.otzyv.ru/f/13/07/129249/19502/0907131750373.jpg',
-            cls: 'rdd-owner-avatar-img'
+            bind: {
+                src: '{owner.avatar}'
+            }
         }, {
             xtype: 'container',
             height: 100,
             flex: 1,
+            margin: '10 0 10 0',
             layout: 'vbox',
             items: [{
                 xtype: 'label',
+                cls: 'rdd-owner-title-label-top',
                 flex: 1,
                 width: '100%',
-                cls: 'rdd-owner-title-label-top',
                 bind: '{owner.company:uppercase}'
             }, {
                 xtype: 'component',
+                cls: 'rdd-owner-title-line',
                 width: '100%',
-                height: 2,
-                cls: 'rdd-owner-title-line'
+                height: 2
             }, {
                 xtype: 'label',
+                cls: 'rdd-owner-title-label-bottom',
                 flex: 1,
                 width: '100%',
-                cls: 'rdd-owner-title-label-bottom',
                 bind: '{owner.phone}'
             }]
         }]

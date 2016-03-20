@@ -7,11 +7,13 @@ Ext.define('Rdd.view.main.Main', {
         'Ext.window.MessageBox',
         'Ext.view.View',
 
+        'Rdd.view.owner.Panel',
         'Rdd.view.main.Filters',
         'Rdd.view.main.MainController',
         'Rdd.view.main.MainModel',
         'Rdd.view.main.OfferModel',
         'Rdd.view.main.List',
+        'Rdd.view.ux.overrides.Format',
         'Rdd.view.ux.InfoLabel',
         'Rdd.view.ux.InfoIconLabel',
         'Rdd.view.main.TitlePanel',
