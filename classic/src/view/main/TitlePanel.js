@@ -9,18 +9,14 @@ Ext.define('Rdd.view.main.TitlePanel', {
     controller: 'main',
     viewModel: 'main',
     layout: {
-        type: 'vbox',
-        align: 'end'
+        type: 'vbox'
     },
 
     bodyCls: 'rdd-main-title-panel',
     items: [{
-        xtype: 'button',
-        width: 200,
-        margin: 20,
-        text: 'I am Owner',
-        style: 'padding-right: 10px;',
-        handler: 'openLoginOwnerForm'
+        xtype: 'userbar',
+        width: '100%',
+        height: 60
     }, {
         xtype: 'container',
         width: '100%',

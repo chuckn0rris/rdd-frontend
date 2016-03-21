@@ -91,7 +91,7 @@ Ext.define('Rdd.view.main.Filters', {
             xtype: 'fieldcontainer',
             layout: 'hbox',
             defaults: {
-                hideLabel: 'true',
+                hideLabel: 'true'
             },
             items: [{
                 xtype: 'checkbox',
@@ -169,7 +169,7 @@ Ext.define('Rdd.view.main.Filters', {
         xtype: 'fieldcontainer',
         layout: 'hbox',
         defaults: {
-            hideLabel: 'true',
+            hideLabel: 'true'
         },
         items: [{
             xtype: 'checkbox',

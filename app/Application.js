@@ -12,6 +12,8 @@ Ext.define('Rdd.Application', {
         // TODO: add global / shared stores here
     ],
 
+    defaultToken: 'home',
+
     launch: function () {
         // for debugging
         // this.createMainOwnerView();
@@ -21,9 +23,10 @@ Ext.define('Rdd.Application', {
             url: '/rest-auth/user/',
             method: 'GET',
             success: function(xhr) {
-                // remember owner
+                // remember user
+                var currentUser = Ext.decode(xhr.responseText).currentUser;
                 // open owner console
-                this.createMainOwnerView();
+                this.createMainView(currentUser);
             },
             failure: this.createMainView,
             scope: this
@@ -31,9 +34,24 @@ Ext.define('Rdd.Application', {
 
     },
 
-    createMainView: function() {
+    createMainView: function(currentUser) {
+        // for debugging
+        currentUser = {
+            id: 1,
+            company_id: 'andaman_cars',
+            firstName: 'Somchai',
+            lastName: 'Uluwatu',
+            type: 'owner',
+            avatar: 'http://f.otzyv.ru/f/13/07/129249/19502/0907131750373.jpg'
+        }
+
         Ext.create({
-            xtype: 'mainview'
+            xtype: 'mainview',
+            viewModel: {
+                data: {
+                    currentUser: currentUser
+                }
+            }
         });
     },
 

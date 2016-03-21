@@ -9,6 +9,7 @@ Ext.define('Rdd.view.main.Main', {
 
         'Rdd.view.owner.Panel',
         'Rdd.view.main.Filters',
+        'Rdd.view.main.UserBar',
         'Rdd.view.main.MainController',
         'Rdd.view.main.MainModel',
         'Rdd.view.main.OfferModel',
@@ -33,7 +34,7 @@ Ext.define('Rdd.view.main.Main', {
     items: [{
         xtype: 'titlepanel',
         width: 1000,
-        flex: 1,
+        flex: 1
     }, {
         xtype: 'tabpanel',
         width: 1000,

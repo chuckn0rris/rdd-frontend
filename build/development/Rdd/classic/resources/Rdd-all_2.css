@@ -7492,33 +7492,6 @@
     -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 2px;
     box-shadow: rgba(0, 0, 0, 0.5) 0 2px 2px;
 }
-/* http://localhost:1841/sass/src/view/main/Main.scss:1 */
-.rdd-main-title-text {
-    padding-top: 5px;
-    font-size: 40pt;
-    font-weight: 600;
-    font-family: monospace;
-}
-/* http://localhost:1841/sass/src/view/main/Main.scss:8 */
-.rdd-main-title-text-slogan {
-    padding-top: 40px;
-    font-size: 14pt;
-    font-weight: 400;
-    font-family: monospace;
-}
-/* http://localhost:1841/sass/src/view/main/Main.scss:15 */
-.rdd-main-title-panel {
-    background-image: url(images/titlebg1.jpg);
-    background-size: cover;
-}
-/* http://localhost:1841/sass/src/view/main/Main.scss:20 */
-.rdd-mainlist-column-contacts {
-    vertical-align: middle;
-}
-/* http://localhost:1841/sass/src/view/main/Main.scss:24 */
-.rdd-offerdetails-field {
-    padding: 3px;
-}
 /* http://localhost:1841/classic/sass/src/view/owner/Panel.scss:1 */
 .rdd-owner-avatar-img {
     border: 3px solid #35baf6;
@@ -7556,14 +7529,70 @@
 .rdd-owner-list-actioncolumn {
     vertical-align: center;
 }
+/* http://localhost:1841/classic/sass/src/view/main/UserBar.scss:1 */
+.rdd-main-userbar {
+    background: transparent;
+}
+/* http://localhost:1841/classic/sass/src/view/main/UserBar.scss:5 */
+.rdd-main-userbar-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    text-align: right;
+    padding-top: 3px;
+}
+/* http://localhost:1841/classic/sass/src/view/main/UserBar.scss:13 */
+.rdd-main-userbar-label a {
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    text-align: right;
+    padding-top: 3px;
+}
+/* http://localhost:1841/classic/sass/src/view/main/UserBar.scss:21 */
+.rdd-main-userbar-img {
+    border: 3px solid #35baf6;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    margin: 5px;
+    margin-right: 20px;
+}
 /* http://localhost:1841/classic/sass/src/view/main/Main.scss:1 */
+.rdd-main-title-text {
+    padding-top: 5px;
+    font-size: 40pt;
+    font-weight: 600;
+    font-family: monospace;
+}
+/* http://localhost:1841/classic/sass/src/view/main/Main.scss:8 */
+.rdd-main-title-text-slogan {
+    font-size: 14pt;
+    font-weight: 400;
+    font-family: monospace;
+}
+/* http://localhost:1841/classic/sass/src/view/main/Main.scss:15 */
+.rdd-main-title-panel {
+    background-image: url(images/titlebg1.jpg);
+    background-size: cover;
+}
+/* http://localhost:1841/classic/sass/src/view/main/Main.scss:20 */
+.rdd-mainlist-column-contacts {
+    vertical-align: middle;
+}
+/* http://localhost:1841/classic/sass/src/view/main/Main.scss:24 */
+.rdd-offerdetails-field {
+    padding: 3px;
+}
+/* http://localhost:1841/classic/sass/src/view/main/Main.scss:28 */
 .rdd-main-offerdetails-images-view .thumb {
     background: #ddd;
     height: 70px;
     width: 90px;
     position: absolute;
 }
-/* http://localhost:1841/classic/sass/src/view/main/Main.scss:8 */
+/* http://localhost:1841/classic/sass/src/view/main/Main.scss:35 */
 .rdd-main-offerdetails-images-view .thumb img {
     max-height: 60px;
     max-width: 80px;
@@ -7574,7 +7603,7 @@
     right: 0;
     margin: auto;
 }
-/* http://localhost:1841/classic/sass/src/view/main/Main.scss:19 */
+/* http://localhost:1841/classic/sass/src/view/main/Main.scss:46 */
 .rdd-main-offerdetails-images-view .thumb-wrap {
     height: 70px;
     width: 90px;
@@ -7582,7 +7611,7 @@
     margin: 4px;
     padding: 5px;
 }
-/* http://localhost:1841/classic/sass/src/view/main/Main.scss:27 */
+/* http://localhost:1841/classic/sass/src/view/main/Main.scss:54 */
 .ext-strict .ext-ie .x-tree .x-panel-bwrap {
     position: relative;
     overflow: hidden;
