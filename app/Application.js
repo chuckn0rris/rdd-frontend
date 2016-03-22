@@ -16,8 +16,8 @@ Ext.define('Rdd.Application', {
 
     launch: function () {
         // for debugging
-        // this.createMainOwnerView();
-        // return;
+        this.createMainOwnerView();
+        return;
 
         Ext.Ajax.request({
             url: '/rest-auth/user/',
@@ -36,14 +36,7 @@ Ext.define('Rdd.Application', {
 
     createMainView: function(currentUser) {
         // for debugging
-        currentUser = {
-            id: 1,
-            company_id: 'andaman_cars',
-            firstName: 'Somchai',
-            lastName: 'Uluwatu',
-            type: 'owner',
-            avatar: 'http://f.otzyv.ru/f/13/07/129249/19502/0907131750373.jpg'
-        }
+        currentUser = null;
 
         Ext.create({
             xtype: 'mainview',
@@ -56,8 +49,24 @@ Ext.define('Rdd.Application', {
     },
 
     createMainOwnerView: function() {
+        // for debugging
+        currentUser = {
+            id: 1,
+            company_id: 'andaman_cars',
+            firstName: 'Somchai',
+            lastName: 'Uluwatu',
+            type: 'owner',
+            isUserPage: true,
+            avatar: 'http://f.otzyv.ru/f/13/07/129249/19502/0907131750373.jpg'
+        }
+
         Ext.create({
-            xtype: 'mainownerview'
+            xtype: 'mainownerview',
+            viewModel: {
+                data: {
+                    currentUser: currentUser
+                }
+            }
         });
     },
 

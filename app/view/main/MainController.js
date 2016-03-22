@@ -11,6 +11,14 @@ Ext.define('Rdd.view.main.MainController', {
         Ext.create('Rdd.view.login.Login').show();
     },
 
+    openCurrentUserPage: function() {
+
+    },
+
+    signOut: function() {
+
+    },
+
     openOffer: function(widget) {
         var tabPanel = this.lookupReference('mainTabPanel');
 

@@ -7501,6 +7501,13 @@
     border-radius: 50%;
 }
 /* http://localhost:1841/classic/sass/src/view/owner/Panel.scss:9 */
+.rdd-owner-editform-avatar {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+}
+/* http://localhost:1841/classic/sass/src/view/owner/Panel.scss:16 */
 .rdd-owner-title-label-top {
     font-size: 16px;
     font-weight: bold;
@@ -7509,7 +7516,7 @@
     text-align: center;
     padding-top: 17px;
 }
-/* http://localhost:1841/classic/sass/src/view/owner/Panel.scss:18 */
+/* http://localhost:1841/classic/sass/src/view/owner/Panel.scss:25 */
 .rdd-owner-title-label-bottom {
     font-size: 16px;
     line-height: 30px;
@@ -7517,15 +7524,23 @@
     text-align: center;
     padding-top: 3px;
 }
-/* http://localhost:1841/classic/sass/src/view/owner/Panel.scss:26 */
+/* http://localhost:1841/classic/sass/src/view/owner/Panel.scss:33 */
+.rdd-owner-title-label-bottom-more {
+    font-size: 12px;
+    line-height: 30px;
+    color: #404040;
+    text-align: center;
+    padding-top: 12px;
+}
+/* http://localhost:1841/classic/sass/src/view/owner/Panel.scss:41 */
 .rdd-owner-title-line {
     background: #35baf6;
 }
-/* http://localhost:1841/classic/sass/src/view/owner/Panel.scss:30 */
+/* http://localhost:1841/classic/sass/src/view/owner/Panel.scss:45 */
 .rdd-owner-list-actionicon {
     margin: 5px;
 }
-/* http://localhost:1841/classic/sass/src/view/owner/Panel.scss:34 */
+/* http://localhost:1841/classic/sass/src/view/owner/Panel.scss:49 */
 .rdd-owner-list-actioncolumn {
     vertical-align: center;
 }

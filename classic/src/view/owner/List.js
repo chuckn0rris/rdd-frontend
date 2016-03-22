@@ -5,6 +5,7 @@ Ext.define('Rdd.view.owner.List', {
     requires: [
         'Rdd.store.Offers',
         'Ext.toolbar.Paging',
+        'Rdd.view.owner.ListController',
         'Ext.grid.column.RowNumberer'
     ],
 
@@ -12,7 +13,10 @@ Ext.define('Rdd.view.owner.List', {
         type: 'offers'
     },
 
-    border: true,
+    controller: 'transportlist',
+    viewModel: {
+        type: 'owner'
+    },
 
     dockedItems: [{
         xtype: 'pagingtoolbar',
@@ -107,9 +111,31 @@ Ext.define('Rdd.view.owner.List', {
 
             }
         }, {
+            xtype: 'widgetcolumn',
+            text: '',
+            width: 150,
+            widget: {
+                xtype: 'button',
+                width: 130,
+                text: 'Show Details',
+                handler: 'openOffer'
+            },
+            hidden: true,
+            bind: {
+                hidden: '{currentUser.isUserPage}'
+            },
+            renderer: function(val, meta) {
+                meta.tdCls = 'rdd-mainlist-column-contacts';
+                return val;
+            }
+        }, {
             xtype: 'actioncolumn',
             text: '#',
             width: 80,
+            hidden: true,
+            bind: {
+                hidden: '{!currentUser.isUserPage}'
+            },
             cls: 'rdd-owner-list-actioncolumn',
             align: 'center',
             items: [{
@@ -124,9 +150,5 @@ Ext.define('Rdd.view.owner.List', {
                 handler: 'removeTransport'
             }]
         }]
-    },
-
-    listeners: {
-        select: 'onItemSelected'
     }
 });

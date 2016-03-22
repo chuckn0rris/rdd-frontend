@@ -3,23 +3,55 @@ Ext.define('Rdd.view.owner.Panel', {
     xtype: 'mainownerview',
 
     requires: [
-        'Rdd.view.owner.OwnerController'
+        'Rdd.view.owner.OwnerController',
+        'Rdd.view.owner.OwnerModel',
+        'Rdd.view.owner.EditProfile'
     ],
 
     controller: 'owner',
 
     viewModel: {
-        type: 'main'
+        type: 'owner'
     },
     layout: {
         type: 'vbox',
         align: 'center'
     },
-
     items: [{
         xtype: 'panel',
         width: 1000,
         layout: 'hbox',
+        tbar: [{
+            text: 'Show all offers',
+            width: 150,
+            handler: 'redirectHome'
+        }, '->', {
+            text: 'Logout',
+            width: 150,
+            hidden: true,
+            bind: {
+                hidden: '{!currentUser}'
+            },
+            handler: 'logout'
+        }],
+
+        bbar: [{
+            width: 150,
+            text: 'Add Record',
+            hidden: true,
+            bind: {
+                hidden: '{!currentUser.isUserPage}'
+            },
+            handler: 'addRecord'
+        }, '->', {
+            text: 'Edit profile',
+            width: 150,
+            hidden: true,
+            bind: {
+                hidden: '{!currentUser.isUserPage}'
+            },
+            handler: 'editProfile'
+        }],
         items: [{
             xtype: 'container',
             height: 100,
@@ -79,8 +111,13 @@ Ext.define('Rdd.view.owner.Panel', {
             }]
         }]
     }, {
-        xtype: 'transportlist',
+        xtype: 'tabpanel',
+        reference: 'mainTabPanel',
         width: 1000,
-        flex: 1
+        flex: 1,
+        items: [{
+            xtype: 'transportlist',
+            title: 'Offers'
+        }]
     }]
 });
