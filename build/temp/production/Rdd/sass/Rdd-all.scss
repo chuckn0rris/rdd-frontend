@@ -553,7 +553,9 @@ $include-rdd-view-main-main: dynamic(true);;
 $include-rdd-view-main-maincontroller: dynamic(true);;
 $include-rdd-view-main-mainmodel: dynamic(true);;
 $include-rdd-view-main-offermodel: dynamic(false);;
+$include-rdd-view-owner-listcontroller: dynamic(false);;
 $include-rdd-view-owner-ownercontroller: dynamic(false);;
+$include-rdd-view-owner-ownermodel: dynamic(false);;
 $output-paths: ("path": "../../modern/resources", "shared": "../../resources");
 
 /* ======================== ETC ======================== */
