@@ -124,7 +124,6 @@ Ext.define('Rdd.view.main.OfferDetails', {
             title: 'Contacts',
             flex: 1,
             layout: 'vbox',
-            height: '100%',
             margin: '0 10 10 0',
             defaults: {
                 xtype: 'infoiconlabel',
@@ -153,6 +152,7 @@ Ext.define('Rdd.view.main.OfferDetails', {
                     value: '<a href="mailto:{offer.publicEmail}" target="_blank">{offer.publicEmail}</a>'
                 }
             }, {
+                style: 'margin-top: 15px',
                 icon: 'resources/images/whatsapp.png',
                 label: 'Whatsapp',
                 bind: {
@@ -168,7 +168,7 @@ Ext.define('Rdd.view.main.OfferDetails', {
                 icon: 'resources/images/facebook.png',
                 label: 'Facebook',
                 bind: {
-                    value: '<a href="{offer.socialContacts.facebook}" target="_blank">Open in Facebook</a>'
+                    value: '<a href="{offer.socialContacts.facebook}" target="_blank">{offer.socialContacts.facebook}</a>'
                 }
             }, {
                 icon: 'resources/images/skype.png',
@@ -176,6 +176,12 @@ Ext.define('Rdd.view.main.OfferDetails', {
                 bind: {
                     value: '{offer.socialContacts.skype}'
                 }
+            }, {
+                xtype: 'button',
+                style: 'margin-top: 15px',
+                text: 'Show Owner Card',
+                width: 200,
+                handler: 'showOwnerProfile'
             }]
         }]
     }, {

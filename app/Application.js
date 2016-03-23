@@ -16,8 +16,8 @@ Ext.define('Rdd.Application', {
 
     launch: function () {
         // for debugging
-        this.createMainOwnerView();
-        return;
+        // this.createMainOwnerView();
+        // return;
 
         Ext.Ajax.request({
             url: '/rest-auth/user/',
@@ -56,7 +56,7 @@ Ext.define('Rdd.Application', {
             firstName: 'Somchai',
             lastName: 'Uluwatu',
             type: 'owner',
-            isUserPage: true,
+            isUserPage: false,
             avatar: 'http://f.otzyv.ru/f/13/07/129249/19502/0907131750373.jpg'
         }
 

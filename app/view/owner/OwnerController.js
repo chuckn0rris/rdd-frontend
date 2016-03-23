@@ -21,5 +21,9 @@ Ext.define('Rdd.view.owner.OwnerController', {
 
     checkLinkAvailable: function() {
 
+    },
+
+    closeProfileWindow: function() {
+        this.getView().close();
     }
 });

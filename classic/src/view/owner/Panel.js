@@ -5,7 +5,8 @@ Ext.define('Rdd.view.owner.Panel', {
     requires: [
         'Rdd.view.owner.OwnerController',
         'Rdd.view.owner.OwnerModel',
-        'Rdd.view.owner.EditProfile'
+        'Rdd.view.owner.EditProfile',
+        'Rdd.view.owner.ViewProfile'
     ],
 
     controller: 'owner',

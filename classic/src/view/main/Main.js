@@ -7,6 +7,7 @@ Ext.define('Rdd.view.main.Main', {
         'Ext.window.MessageBox',
         'Ext.view.View',
 
+        'Rdd.model.Owner',
         'Rdd.view.owner.Panel',
         'Rdd.view.main.Filters',
         'Rdd.view.main.UserBar',
