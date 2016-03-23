@@ -47,10 +47,7 @@ Ext.define('Rdd.view.owner.transport.EditForm', {
                         type: '{type}'
                     }
                 },
-                // value: {
-                //     type: 'auto'
-                // },
-                fieldLabel: 'Type',
+                fieldLabel: '',
                 items: [{
                     xtype: 'radio',
                     boxLabel: 'Auto',
@@ -66,6 +63,7 @@ Ext.define('Rdd.view.owner.transport.EditForm', {
             }, {
                 xtype: 'combobox',
                 fieldLabel: 'Brand',
+                emptyText: 'Required',
                 store: {
                     type: 'brands'
                 },
@@ -75,20 +73,59 @@ Ext.define('Rdd.view.owner.transport.EditForm', {
             }, {
                 fieldLabel: 'Model',
                 name: 'model',
+                emptyText: 'Required',
                 bind: '{model}'
             }, {
                 fieldLabel: 'Color',
+                emptyText: '(ex. Yellow)',
                 name: 'color',
                 bind: '{color}'
             }, {
                 xtype: 'numberfield',
+                fieldLabel: 'Year',
+                emptyText: 'European format (ex. 2016)',
+                name: 'year',
+                bind: '{year}',
+                minValue: 1901,
+                maxValue: parseInt(Ext.Date.format(new Date(), 'Y')),
+                allowDecimals: false
+            }]
+        }, {
+            xtype: 'container',
+            layout: 'form',
+            flex: 1,
+            style: 'padding-top: 40px;',
+            defaults: {
+                xtype: 'textfield',
+                width: '100%',
+                allowBlank: false
+            },
+            items: [{
+                xtype: 'numberfield',
+                fieldLabel: 'Mileage',
                 minValue: 100,
                 step: 1000,
+                emptyText: 'approx. allowed',
                 maxValue: 1000000,
                 allowDecimals: false,
-                fieldLabel: 'Mileage',
                 name: 'mileage',
                 bind: '{mileage}'
+            }, {
+                fieldLabel: 'Seats material',
+                emptyText: '(ex. Leather)',
+                name: 'material',
+                bind: '{material}'
+            }, {
+                fieldLabel: 'Complectation',
+                name: 'complectation',
+                bind: '{complectation}',
+                emptyText: 'Code of complectation'
+            }, {
+                xtype: 'checkbox',
+                fieldLabel: 'Diesel',
+                value: false,
+                name: 'diesel',
+                bind: '{diesel}'
             }]
         }]
     }],
