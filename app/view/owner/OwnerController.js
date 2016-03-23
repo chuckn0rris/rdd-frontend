@@ -4,7 +4,9 @@ Ext.define('Rdd.view.owner.OwnerController', {
     alias: 'controller.owner',
 
     addRecord: function() {
-        alert('add record');
+        Ext.create('Rdd.view.owner.transport.CreateWindow', {
+            mainTabPanel: this.getView().lookupReference('mainTabPanel')
+        }).show();
     },
 
     redirectHome: function() {
@@ -24,6 +26,29 @@ Ext.define('Rdd.view.owner.OwnerController', {
     },
 
     closeProfileWindow: function() {
+        this.getView().close();
+    },
+
+    addTransportRecord: function() {
+        var values = this.getView().down('form').getValues(),
+            mainTabPanel = this.getView().mainTabPanel;
+            title = Ext.String.format("{0} {1} {2}", values.color, values.brand, values.model);
+
+        values.photos = [];
+        mainTabPanel.add({
+            xtype: 'edittransport',
+            title: title,
+            closable: true,
+            viewModel: {
+                data: values
+            }
+        });
+
+        mainTabPanel.setActiveTab(mainTabPanel.items.length-1);
+        this.closeWindow();
+    },
+
+    closeWindow: function() {
         this.getView().close();
     }
 });

@@ -217,6 +217,6 @@ Ext.define('Rdd.view.owner.EditProfile', {
     }, {
         text: 'Close',
         width: 100,
-        handler: 'closeProfileWindow'
+        handler: 'closeWindow'
     }]
 });

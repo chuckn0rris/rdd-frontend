@@ -546,6 +546,7 @@ $include-ext-viewport-windowsphone: dynamic(true);;
 $include-rdd-application: dynamic(true);;
 $include-rdd-model-offer: dynamic(false);;
 $include-rdd-model-owner: dynamic(false);;
+$include-rdd-store-brands: dynamic(false);;
 $include-rdd-store-offers: dynamic(false);;
 $include-rdd-store-personnel: dynamic(true);;
 $include-rdd-view-login-logincontroller: dynamic(false);;
@@ -557,6 +558,7 @@ $include-rdd-view-main-offermodel: dynamic(false);;
 $include-rdd-view-owner-listcontroller: dynamic(false);;
 $include-rdd-view-owner-ownercontroller: dynamic(false);;
 $include-rdd-view-owner-ownermodel: dynamic(false);;
+$include-rdd-view-owner-transport-transportmodel: dynamic(false);;
 $output-paths: ("path": "../../modern/resources", "shared": "../../resources");
 
 /* ======================== ETC ======================== */
