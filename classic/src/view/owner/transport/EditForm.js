@@ -24,8 +24,33 @@ Ext.define('Rdd.view.owner.transport.EditForm', {
         width: '100%',
         layout: 'hbox',
         items: [{
+            tbar: [{
+                xtype: 'form',
+                width: '100%',
+                layout: {
+                    type: 'hbox',
+                    pack: 'end'
+                },
+                height: 33,
+                items: [{
+                    xtype: 'filefield',
+                    name: 'photo',
+                    width: 100,
+                    hideLabel: true,
+                    buttonOnly: true,
+                    msgTarget: 'side',
+                    buttonText: 'Add Photo',
+                    listeners: {
+                        change: 'onLoadPhotoFormChange'
+                    }
+                }]
+            }],
             xtype: 'photosgrid',
-            bind: '{photos}',
+            bind: {
+                store: {
+                    data: '{photos}'
+                }
+            },
             height: 400,
             width: 400,
             border: true,
@@ -267,7 +292,7 @@ Ext.define('Rdd.view.owner.transport.EditForm', {
             title: 'Prices',
             layout: 'vbox',
             flex: 1,
-            margin: '0 10 10 0',
+            margin: '0 10 10 10',
             items: [{
                 xtype: 'container',
                 layout: 'column',

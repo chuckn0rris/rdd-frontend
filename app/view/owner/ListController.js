@@ -3,8 +3,21 @@ Ext.define('Rdd.view.owner.ListController', {
 
     alias: 'controller.transportlist',
 
-    editTransport: function() {
+    editTransport: function(view, rowIdx, colIdx, item, evnt, record) {
+        var data = Ext.clone(record.data),
+            mainTabPanel = this.getView().up('tabpanel'),
+            title = Ext.String.format("{0} {1} {2}", data.color, data.brand, data.model);
 
+        mainTabPanel.add({
+            xtype: 'edittransport',
+            title: title,
+            closable: true,
+            viewModel: {
+                data: data
+            }
+        });
+
+        mainTabPanel.setActiveTab(mainTabPanel.items.length-1);
     },
 
     removeTransport: function() {

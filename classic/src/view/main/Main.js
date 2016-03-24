@@ -9,6 +9,7 @@ Ext.define('Rdd.view.main.Main', {
 
         'Rdd.store.Brands',
         'Rdd.model.Owner',
+        'Rdd.model.Transport',
         'Rdd.view.owner.Panel',
         'Rdd.view.main.Filters',
         'Rdd.view.main.UserBar',

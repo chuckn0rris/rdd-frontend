@@ -8,14 +8,8 @@ Ext.define('Rdd.view.owner.transport.PhotosList', {
     },
 
     store: {
-        fields: ['id', 'src']
+        fields: ['id', 'url', 'transportId']
     },
-
-    tbar: [{
-        xtype: 'button',
-        text: 'Add Photo',
-        handler: 'loadPhoto'
-    }],
 
     hideHeaders: true,
     emptyText: '<div style="padding: 20px;"><center>No photos attached</center></div>',
@@ -26,12 +20,12 @@ Ext.define('Rdd.view.owner.transport.PhotosList', {
             menuDisabled: true
         },
         items: [{
-            dataIndex: 'photo',
-            width: 200,
+            dataIndex: 'url',
+            width: 340,
             renderer: function(val, meta, record) {
-                meta.style = 'height: 160px;';
+                meta.style = 'height: 250px;';
                 if (val) {
-                    var html = Ext.String.format('<div align="center"> <img style="max-height: 160px; max-width: 160px;" src="{0}"/></div><a style="padding-left: 10px;"', val);
+                    var html = Ext.String.format('<div align="center"> <img style="max-height: 255px; max-width: 330px;" src="{0}"/></div><a style="padding-left: 10px;"', val);
                     return html;
                 } else {
                     return '';
