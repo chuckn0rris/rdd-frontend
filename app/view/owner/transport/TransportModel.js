@@ -4,7 +4,7 @@ Ext.define('Rdd.view.owner.transport.TransportModel', {
     alias: 'viewmodel.transport',
 
     data: {
-
+        isAvailable: true,
         photos: []
     }
 });

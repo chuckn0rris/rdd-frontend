@@ -20,7 +20,9 @@ Ext.define('Rdd.view.main.Main', {
         'Rdd.view.ux.InfoLabel',
         'Rdd.view.ux.InfoIconLabel',
         'Rdd.view.main.TitlePanel',
-        'Rdd.view.main.OfferDetails'
+        'Rdd.view.main.OfferDetails',
+
+        'Rdd.ux.overrides.RequiredFieldLabelPatch'
     ],
 
     controller: 'main',
