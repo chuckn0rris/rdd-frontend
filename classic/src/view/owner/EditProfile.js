@@ -33,15 +33,33 @@ Ext.define('Rdd.view.owner.EditProfile', {
                     src: '{owner.avatar}'
                 }
             }, {
-                xtype: 'button',
-                margin: 10,
-                text: 'Load image',
+                xtype: 'form',
                 width: 120,
-                handler: 'loadAvatarImage'
+                margin: 10,
+                layout: {
+                    type: 'hbox',
+                    align: 'stretch'
+                },
+                height: 33,
+                items: [{
+                    xtype: 'filefield',
+                    name: 'photo',
+                    flex: 1,
+                    buttonConfig: {
+                        width: 120
+                    },
+                    hideLabel: true,
+                    buttonOnly: true,
+                    msgTarget: 'side',
+                    buttonText: 'Load Photo',
+                    listeners: {
+                        change: 'onLoadPhotoFormChange'
+                    }
+                }]
             }, {
                 xtype: 'button',
                 margin: '0 10',
-                text: 'Remove image',
+                text: 'Remove Photo',
                 width: 120,
                 handler: 'removeAvatarImage'
             }]
