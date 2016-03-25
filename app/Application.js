@@ -16,8 +16,8 @@ Ext.define('Rdd.Application', {
 
     launch: function () {
         // for debugging
-        this.createMainOwnerView();
-        return;
+        // this.createMainOwnerView();
+        // return;
 
         Ext.Ajax.request({
             url: '/rest-auth/user/',

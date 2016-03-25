@@ -1,5 +1,5 @@
 $app-name:  dynamic( 'Rdd' );
-$image-search-path: '/Users/alexeylazarev/Documents/repos/rondondon.com/rdd-frontend/build/production/Rdd/modern/resources';
+$image-search-path: '/Users/alexeylazarev/Documents/repos/rondondon.com/rdd-frontend/build/production/modern/resources';
 $theme-name:  dynamic( 'theme-triton' );
 $include-ext-abstractcomponent: dynamic(false);;
 $include-ext-abstractmanager: dynamic(false);;
@@ -560,7 +560,7 @@ $include-rdd-view-owner-listcontroller: dynamic(false);;
 $include-rdd-view-owner-ownercontroller: dynamic(false);;
 $include-rdd-view-owner-ownermodel: dynamic(false);;
 $include-rdd-view-owner-transport-transportmodel: dynamic(false);;
-$output-paths: ("path": "../../modern/resources", "shared": "../../resources");
+$output-paths: ("path": "../../modern/resources", "shared": "../../modern/resources");
 
 /* ======================== ETC ======================== */
 

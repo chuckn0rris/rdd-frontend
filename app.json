@@ -228,7 +228,7 @@
                 "path": "${framework.dir}/build/ext-all-rtl-debug.js"
             },
             {
-                "path": "resources/libs/lightbox/js/lightbox-plus-jquery.js"
+                "path": "classic/resources/libs/lightbox/js/lightbox-plus-jquery.js"
             }
         ]
     },
@@ -280,7 +280,7 @@
             "exclude": ["fashion"]
         },
         {
-            "path": "resources/libs/lightbox/css/lightbox.min.css"
+            "path": "classic/resources/libs/lightbox/css/lightbox.min.css"
         }
     ],
 
@@ -423,7 +423,7 @@
      */
 
     "output": {
-        "base": "${workspace.build.dir}/${build.environment}/${app.name}",
+        "base": "${workspace.build.dir}/${build.environment}",
         "page": "index.html",
         "manifest": "${build.id}.json",
         "js": "${build.id}/app.js",
@@ -432,7 +432,7 @@
         },
         "resources": {
             "path": "${build.id}/resources",
-            "shared": "resources"
+            "shared": "${build.id}/resources"
         }
     },
 

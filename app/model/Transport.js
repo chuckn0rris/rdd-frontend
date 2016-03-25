@@ -12,21 +12,12 @@ Ext.define('Rdd.model.Transport', {
         'color',
         'year',
         'isAvailable',
+        'mileage',
         {
             name: 'availableFrom',
             type: 'date'
         },
-        'material',
-        'complectation',
-        'horsePower',
-        'mileage',
-        'mp3',
-        'dvd',
-        'usb',
-        'airCond',
-        'signalisation',
-        'diesel',
-        'babySeats',
+        'meta',
         'desc',
         'prices'
     ]

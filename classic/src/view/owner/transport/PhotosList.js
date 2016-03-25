@@ -37,7 +37,7 @@ Ext.define('Rdd.view.owner.transport.PhotosList', {
             cls: 'rdd-owner-list-actioncolumn',
             align: 'center',
             items: [{
-                icon: 'resources/images/delete.png',
+                icon: 'classic/resources/images/delete.png',
                 iconCls: 'rdd-owner-list-actionicon',
                 tooltip: 'Remove',
                 handler: 'removePhoto'

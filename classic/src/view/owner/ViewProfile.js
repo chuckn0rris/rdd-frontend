@@ -111,19 +111,19 @@ Ext.define('Rdd.view.owner.ViewProfile', {
                 labelSeparator: ''
             },
             items: [{
-                fieldLabel: "<img width='24px' height='24px' src='resources/images/phone.png' />",
+                fieldLabel: "<img width='24px' height='24px' src='classic/resources/images/phone.png' />",
                 name: 'phone',
                 bind: {
                     value: '{owner.phone}'
                 }
             }, {
-                fieldLabel: "<img width='24px' height='24px' src='resources/images/mobile.png' />",
+                fieldLabel: "<img width='24px' height='24px' src='classic/resources/images/mobile.png' />",
                 name: 'mobilePhone',
                 bind: {
                     value: '{owner.mobilePhone}'
                 }
             }, {
-                fieldLabel: "<img width='24px' height='24px' src='resources/images/email.png' />",
+                fieldLabel: "<img width='24px' height='24px' src='classic/resources/images/email.png' />",
                 name: 'publicEmail',
                 vtype: 'email',
                 bind: {
@@ -134,31 +134,31 @@ Ext.define('Rdd.view.owner.ViewProfile', {
                 html: '<br/>',
                 width: '100%'
             }, {
-                fieldLabel: "<img width='24px' height='24px' src='resources/images/whatsapp.png' />",
+                fieldLabel: "<img width='24px' height='24px' src='classic/resources/images/whatsapp.png' />",
                 name: 'whatsapp',
                 bind: {
                     value: '{owner.socialContacts.whatsapp}'
                 }
             }, {
-                fieldLabel: "<img width='24px' height='24px' src='resources/images/viber.png' />",
+                fieldLabel: "<img width='24px' height='24px' src='classic/resources/images/viber.png' />",
                 name: 'viber',
                 bind: {
                     value: '{owner.socialContacts.viber}'
                 }
             }, {
-                fieldLabel: "<img width='24px' height='24px' src='resources/images/facebook.png' />",
+                fieldLabel: "<img width='24px' height='24px' src='classic/resources/images/facebook.png' />",
                 name: 'facebook',
                 bind: {
                     value: '{owner.socialContacts.facebook}'
                 }
             }, {
-                fieldLabel: "<img width='24px' height='24px' src='resources/images/skype.png' />",
+                fieldLabel: "<img width='24px' height='24px' src='classic/resources/images/skype.png' />",
                 name: 'skype',
                 bind: {
                     value: '{owner.socialContacts.skype}'
                 }
             }, {
-                fieldLabel: "<img width='24px' height='24px' src='resources/images/instagram.png' />",
+                fieldLabel: "<img width='24px' height='24px' src='classic/resources/images/instagram.png' />",
                 name: 'instagram',
                 bind: {
                     value: '{owner.socialContacts.instagram}'

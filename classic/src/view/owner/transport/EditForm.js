@@ -78,27 +78,6 @@ Ext.define('Rdd.view.owner.transport.EditForm', {
                         allowBlank: false
                     },
                     items: [{
-                        xtype: 'radiogroup',
-                        layout: 'hbox',
-                        bind: {
-                            value: {
-                                type: '{type}'
-                            }
-                        },
-                        fieldLabel: '',
-                        items: [{
-                            xtype: 'radio',
-                            boxLabel: 'Auto',
-                            name: 'type',
-                            style: 'padding-right: 10px;',
-                            inputValue: 'auto'
-                        }, {
-                            xtype: 'radio',
-                            boxLabel: 'Moto',
-                            name: 'type',
-                            inputValue: 'moto'
-                        }]
-                    }, {
                         xtype: 'combobox',
                         fieldLabel: 'Brand',
                         emptyText: 'Required',
@@ -133,7 +112,6 @@ Ext.define('Rdd.view.owner.transport.EditForm', {
                     layout: 'form',
                     flex: 1,
                     margin: '0 10 0 0',
-                    style: 'padding-top: 40px;',
                     defaults: {
                         xtype: 'textfield',
                         width: '100%',
@@ -153,24 +131,39 @@ Ext.define('Rdd.view.owner.transport.EditForm', {
                         fieldLabel: 'Seats material',
                         emptyText: '(ex. Leather)',
                         name: 'material',
-                        bind: '{material}'
+                        bind: {
+                            disabled: '{!isAuto}',
+                            value: '{material}'
+                        }
                     }, {
                         fieldLabel: 'Complectation',
-                        allowBlank: true,
                         name: 'complectation',
-                        bind: '{complectation}',
-                        emptyText: 'Code of complectation'
+                        emptyText: 'Code of complectation',
+                        disabled: '{!isAuto}',
+                        allowBlank: true,
+                        bind: {
+                            disabled: '{!isAuto}',
+                            value: '{complectation}'
+                        }
                     }, {
                         fieldLabel: 'Horsepower',
-                        emptyText: 'Not required',
-                        allowBlank: true,
                         name: 'horsePower',
-                        bind: '{horsePower}'
+                        emptyText: 'Not required',
+                        disabled: '{!isAuto}',
+                        allowBlank: true,
+                        bind: {
+                            disabled: '{!isAuto}',
+                            value: '{horsePower}'
+                        }
                     }]
                 }]
             }, {
                 xtype: 'fieldset',
                 title: 'Features',
+                disabled: true,
+                bind: {
+                    disabled: '{!isAuto}'
+                },
                 layout: 'column',
                 width: '100%',
                 margin: '0 10 0 10',

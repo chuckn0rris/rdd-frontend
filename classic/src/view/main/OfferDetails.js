@@ -79,7 +79,7 @@ Ext.define('Rdd.view.main.OfferDetails', {
                 }]
             }, {
                 xtype: 'container',
-                layout: 'form',
+                layout: 'vbox',
                 flex: 1,
                 defaults: {
                     xtype: 'infolabel',
@@ -96,15 +96,27 @@ Ext.define('Rdd.view.main.OfferDetails', {
                         value: '{offer.mileage:distance}'
                     }
                 }, {
-                    label: 'District',
+                    label: 'Saloon',
+                    hidden: true,
                     bind: {
-                        value: '{offer.district}'
+                        hidden: '{!offer.material}',
+                        value: '{offer.material}'
                     }
                 }, {
-                    label: 'Description',
+                    label: 'Complectation',
+                    hidden: true,
                     bind: {
-                        value: '{offer.desc}'
+                        hidden: '{!offer.complectation}',
+                        value: '{offer.complectation}'
                     }
+                }, {
+                    label: 'Horsepower',
+                    hidden: true,
+                    bind: {
+                        hidden: '{!offer.horsepower}',
+                        value: '{offer.horsepower}'
+                    }
+
                 }, {
                     xtype: 'label',
                     bind: {
@@ -117,6 +129,60 @@ Ext.define('Rdd.view.main.OfferDetails', {
                         hidden: '{!offer.availableFrom}',
                         value: '{offer.availableFrom}'
                     }
+                }, {
+                    xtype: 'fieldset',
+                    title: 'Features',
+                    // disabled: true,
+                    // bind: {
+                    //     disabled: '{!isAuto}'
+                    // },
+                    defaults: {
+                        xtype: 'container',
+                        layout: 'vbox',
+                        defaults: {
+                            xtype: 'checkbox'
+                        }
+                    },
+                    layout: 'column',
+                    width: '100%',
+                    margin: '0 10 0 10',
+                    items: [{
+                        columnWidth: 0.6,
+                        items: [{
+                            boxLabel: 'MP3',
+                            bind: '{mp3}'
+                        }, {
+                            boxLabel: 'DVD',
+                            bind: '{dvd}'
+                        }, {
+                            boxLabel: 'USB',
+                            bind: '{usb}'
+                        }, {
+                            boxLabel: 'Air condition',
+                            bind: '{airCond}'
+                        }, {
+                            boxLabel: 'Auto transmissoin',
+                            bind: '{airCond}'
+                        }, {
+                            boxLabel: 'Signalisation',
+                            bind: '{signalisation}'
+                        }]
+                    }, {
+                        xtype: 'container',
+                        columnWidth: 0.4,
+                        layout: 'vbox',
+                        items: [{
+                            xtype: 'checkbox',
+                            boxLabel: 'Diesel',
+                            name: 'diesel',
+                            bind: '{diesel}'
+                        }, {
+                            xtype: 'checkbox',
+                            boxLabel: 'Baby seat',
+                            name: 'babySeats',
+                            bind: '{babySeats}'
+                        }]
+                    }]
                 }]
             }]
         }, {
@@ -134,44 +200,48 @@ Ext.define('Rdd.view.main.OfferDetails', {
                 margin: 5,
                 bind: '<b>{offer.firstName} {offer.lastName}, {offer.company}</b>'
             }, {
-                icon: 'resources/images/phone.png',
+                xtype: 'label',
+                margin: 5,
+                bind: '<b>District:</b> {offer.district}'
+            }, {
+                icon: 'classic/resources/images/phone.png',
                 label: 'Phone',
                 bind: {
                     value: '{offer.phone}'
                 }
             }, {
-                icon: 'resources/images/mobile.png',
+                icon: 'classic/resources/images/mobile.png',
                 label: 'Mobile',
                 bind: {
                     value: '{offer.mobilePhone}'
                 }
             }, {
-                icon: 'resources/images/email.png',
+                icon: 'classic/resources/images/email.png',
                 label: 'Email',
                 bind: {
                     value: '<a href="mailto:{offer.publicEmail}" target="_blank">{offer.publicEmail}</a>'
                 }
             }, {
                 style: 'margin-top: 15px',
-                icon: 'resources/images/whatsapp.png',
+                icon: 'classic/resources/images/whatsapp.png',
                 label: 'Whatsapp',
                 bind: {
                     value: '{offer.socialContacts.whatsapp}'
                 }
             }, {
-                icon: 'resources/images/viber.png',
+                icon: 'classic/resources/images/viber.png',
                 label: 'Viber',
                 bind: {
                     value: '{offer.socialContacts.viber}'
                 }
             }, {
-                icon: 'resources/images/facebook.png',
+                icon: 'classic/resources/images/facebook.png',
                 label: 'Facebook',
                 bind: {
                     value: '<a href="{offer.socialContacts.facebook}" target="_blank">{offer.socialContacts.facebook}</a>'
                 }
             }, {
-                icon: 'resources/images/skype.png',
+                icon: 'classic/resources/images/skype.png',
                 label: 'Skype',
                 bind: {
                     value: '{offer.socialContacts.skype}'

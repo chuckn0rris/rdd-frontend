@@ -5,5 +5,11 @@ Ext.define('Rdd.view.owner.transport.TransportModel', {
 
     data: {
         isAvailable: true
+    },
+
+    formulas: {
+    	isAuto: function(get) {
+    		return get('type') == 'auto';
+    	}
     }
 });
