@@ -425,7 +425,7 @@
     "output": {
         "base": "${workspace.build.dir}/${build.environment}",
         "page": "index.html",
-        "manifest": "${build.id}.json",
+        "manifest": "${build.id}/${build.id}.json",
         "js": "${build.id}/app.js",
         "appCache": {
             "enable": false
