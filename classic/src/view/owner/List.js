@@ -81,10 +81,10 @@ Ext.define('Rdd.view.owner.List', {
             dataIndex: 'prices',
             flex: 1,
             renderer: function(val, meta, record) {
-                var getString = function(title, val) {
-                        var htmlTpl = "<b>{0}:</b>&nbsp;{1}</br>";
+                var htmlTpl = "<b>{0}:</b>&nbsp;{1}</br>",
+                    getString = function(title, val) {
                         return Ext.String.format(htmlTpl, title, Ext.util.Format.currentCurrency(val));
-                    }
+                    },
                     html = '';
 
                 html += getString('1 day', val.perDay);
@@ -104,7 +104,7 @@ Ext.define('Rdd.view.owner.List', {
                     html += getString('1 month (1 year contract)', val.perMonth1y);
                 }
                 if (val.comment) {
-                    html += getString('Comments', val.comment);
+                    html += Ext.String.format(htmlTpl, 'Comments', val.comment);
                 }
 
                 return html;

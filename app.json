@@ -312,7 +312,7 @@
         "output": {
             "appCache": {
                 "enable": true,
-                "path": "cache.appcache"
+                "path": "classic/cache.appcache"
             }
         },
         "loader": {

@@ -133,7 +133,7 @@ Ext.define('Rdd.view.owner.transport.EditForm', {
                         name: 'material',
                         bind: {
                             disabled: '{!isAuto}',
-                            value: '{material}'
+                            value: '{meta.material}'
                         }
                     }, {
                         fieldLabel: 'Complectation',
@@ -143,7 +143,7 @@ Ext.define('Rdd.view.owner.transport.EditForm', {
                         allowBlank: true,
                         bind: {
                             disabled: '{!isAuto}',
-                            value: '{complectation}'
+                            value: '{meta.complectation}'
                         }
                     }, {
                         fieldLabel: 'Horsepower',
@@ -153,7 +153,7 @@ Ext.define('Rdd.view.owner.transport.EditForm', {
                         allowBlank: true,
                         bind: {
                             disabled: '{!isAuto}',
-                            value: '{horsePower}'
+                            value: '{meta.horsePower}'
                         }
                     }]
                 }]
@@ -175,17 +175,17 @@ Ext.define('Rdd.view.owner.transport.EditForm', {
                         xtype: 'checkbox',
                         boxLabel: 'MP3',
                         name: 'mp3',
-                        bind: '{mp3}'
+                        bind: '{meta.mp3}'
                     }, {
                         xtype: 'checkbox',
                         boxLabel: 'DVD',
                         name: 'dvd',
-                        bind: '{dvd}'
+                        bind: '{meta.dvd}'
                     }, {
                         xtype: 'checkbox',
                         boxLabel: 'USB',
                         name: 'usb',
-                        bind: '{usb}'
+                        bind: '{meta.usb}'
                     }]
                 }, {
                     xtype: 'container',
@@ -195,17 +195,17 @@ Ext.define('Rdd.view.owner.transport.EditForm', {
                         xtype: 'checkbox',
                         boxLabel: 'Air condition',
                         name: 'airCond',
-                        bind: '{airCond}'
+                        bind: '{meta.airCond}'
                     }, {
                         xtype: 'checkbox',
                         boxLabel: 'Auto transmissoin',
                         name: 'airCond',
-                        bind: '{airCond}'
+                        bind: '{meta.airCond}'
                     }, {
                         xtype: 'checkbox',
                         boxLabel: 'Signalisation',
                         name: 'signalisation',
-                        bind: '{signalisation}'
+                        bind: '{meta.signalisation}'
                     }]
                 }, {
                     xtype: 'container',
@@ -215,17 +215,12 @@ Ext.define('Rdd.view.owner.transport.EditForm', {
                         xtype: 'checkbox',
                         boxLabel: 'Diesel',
                         name: 'diesel',
-                        bind: '{diesel}'
+                        bind: '{meta.diesel}'
                     }, {
                         xtype: 'checkbox',
                         boxLabel: 'Baby seat',
                         name: 'babySeats',
-                        bind: '{babySeats}'
-                    // }, {
-                    //     xtype: 'checkbox',
-                    //     boxLabel: 'Signalisation',
-                    //     name: 'signalisation',
-                    //     bind: '{signalisation}'
+                        bind: '{meta.babySeats}'
                     }]
                 }]
             }]
