@@ -20,7 +20,7 @@ Ext.define('Rdd.Application', {
         // return;
 
         Ext.Ajax.request({
-            url: '/rest-auth/user/',
+            url: Urls.get('currentuser'),
             method: 'GET',
             success: function(xhr) {
                 // remember user
@@ -28,16 +28,15 @@ Ext.define('Rdd.Application', {
                 // open owner console
                 this.createMainView(currentUser);
             },
-            failure: this.createMainView,
+            failure: function() {
+                this.createMainView(null);
+            },
             scope: this
         });
 
     },
 
     createMainView: function(currentUser) {
-        // for debugging
-        currentUser = null;
-
         Ext.create({
             xtype: 'mainview',
             viewModel: {

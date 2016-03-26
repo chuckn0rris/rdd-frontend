@@ -7,6 +7,7 @@ Ext.define('Rdd.view.main.Main', {
         'Ext.window.MessageBox',
         'Ext.view.View',
 
+        'Rdd.view.ux.Urls',
         'Rdd.store.Brands',
         'Rdd.model.Owner',
         'Rdd.model.Transport',

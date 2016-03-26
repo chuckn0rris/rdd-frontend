@@ -907,7 +907,9 @@ $include-rdd-view-owner-transport-photoslist: dynamic(true);;
 $include-rdd-view-owner-transport-transportmodel: dynamic(true);;
 $include-rdd-view-ux-infoiconlabel: dynamic(true);;
 $include-rdd-view-ux-infolabel: dynamic(true);;
+$include-rdd-view-ux-urls: dynamic(true);;
 $include-rdd-view-ux-overrides-format: dynamic(true);;
+$include-urls: dynamic(true);;
 
 
 /* ======================== ETC ======================== */

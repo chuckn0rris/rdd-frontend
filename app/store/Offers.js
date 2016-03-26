@@ -8,7 +8,20 @@ Ext.define('Rdd.store.Offers', {
     ],
 
     model: 'Rdd.model.Offer',
+    autoLoad: true,
 
+    proxy: {
+        // extraParams: {
+        //     format: 'json'
+        // },
+        // type: 'ajax',
+        type: 'memory',
+        url: Urls.get('offers'),
+        reader: {
+            type: 'json',
+            rootProperty: 'items'
+        }
+    },
     data: { items: [
         {
             id: 1,
@@ -346,15 +359,5 @@ Ext.define('Rdd.store.Offers', {
                 line: '(+66)9-17-10-16-20'
             }
         }]
-    },
-
-    proxy: {
-        // type: 'ajax',
-        type: 'memory',
-        url: 'offers',
-        reader: {
-            type: 'json',
-            rootProperty: 'items'
-        }
     }
 });
