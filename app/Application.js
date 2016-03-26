@@ -15,6 +15,9 @@ Ext.define('Rdd.Application', {
     defaultToken: 'home',
 
     launch: function () {
+        // delete loading animation
+        Ext.query('#load-site-img')[0].remove();
+
         // for debugging
         // this.createMainOwnerView();
         // return;
