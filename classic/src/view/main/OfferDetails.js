@@ -78,6 +78,7 @@ Ext.define('Rdd.view.main.OfferDetails', {
             flex: 1,
             defaults: {
                 xtype: 'infolabel',
+                margin: '0 5',
                 width: '100%'
             },
             items: [{
@@ -108,7 +109,19 @@ Ext.define('Rdd.view.main.OfferDetails', {
                 }
 
             }, {
-                xtype: 'container',
+                xtype: 'fieldset',
+                title: 'Description',
+                layout: 'fit',
+                margin: '0 10 0 10',
+                items: [{
+                    xtype: 'container',
+                    bind: {
+                        html: '{offer.desc}'
+                    }
+                }]
+            }, {
+                xtype: 'fieldset',
+                title: 'Features',
                 // disabled: true,
                 // bind: {
                 //     disabled: '{!isAuto}'
@@ -125,40 +138,51 @@ Ext.define('Rdd.view.main.OfferDetails', {
                 width: '100%',
                 margin: '0 10 0 10',
                 items: [{
-                    columnWidth: 0.6,
+                    defaults: {
+                        xtype: 'checkbox',
+                        readOnly: true,
+                        labelWidth: 60
+                    },
+                    columnWidth: 0.20,
                     items: [{
-                        fieldLabel: 'MP3',
-                        bind: '{meta.mp3}'
+                        boxLabel: 'MP3',
+                        bind: '{offer.meta.mp3}'
                     }, {
-                        fieldLabel: 'DVD',
-                        bind: '{meta.dvd}'
+                        boxLabel: 'DVD',
+                        bind: '{offer.meta.dvd}'
                     }, {
-                        fieldLabel: 'USB',
-                        bind: '{meta.usb}'
+                        boxLabel: 'USB',
+                        bind: '{offer.meta.usb}'
+                    }]
+                }, {
+                    xtype: 'container',
+                    columnWidth: 0.25,
+                    layout: 'vbox',
+                    items: [{
+                        boxLabel: 'Diesel',
+                        bind: '{offer.meta.diesel}'
                     }, {
-                        fieldLabel: 'Air condition',
-                        bind: '{meta.airCond}'
-                    }, {
-                        fieldLabel: 'Auto transmissoin',
-                        bind: '{meta.autoTransmission}'
-                    }, {
-                        fieldLabel: 'Signalisation',
-                        bind: '{meta.signalisation}'
+                        boxLabel: 'Baby seat',
+                        bind: '{offer.meta.babySeats}'
                     }]
                 }, {
                     xtype: 'container',
                     columnWidth: 0.4,
                     layout: 'vbox',
+                    defaults: {
+                        xtype: 'checkbox',
+                        readOnly: true,
+                        labelWidth: 130
+                    },
                     items: [{
-                        xtype: 'checkbox',
-                        fieldLabel: 'Diesel',
-                        name: 'diesel',
-                        bind: '{meta.diesel}'
+                        boxLabel: 'Air condition',
+                        bind: '{offer.meta.airCond}'
                     }, {
-                        xtype: 'checkbox',
-                        fieldLabel: 'Baby seat',
-                        name: 'babySeats',
-                        bind: '{meta.babySeats}'
+                        boxLabel: 'Auto transmissoin',
+                        bind: '{offer.meta.autoTransmission}'
+                    }, {
+                        boxLabel: 'Signalisation',
+                        bind: '{offer.meta.signalisation}'
                     }]
                 }]
             }]

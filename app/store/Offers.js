@@ -51,7 +51,16 @@ Ext.define('Rdd.store.Offers', {
                 perMonth6m: 15000,
                 perMonth1y: 14000
             },
-            desc: 'Leather saloon, very new',
+            meta: {
+                mp3: true,
+                usb: true,
+                airCond: true,
+                autoTransmission: true
+            },
+            material: 'Leather',
+            complectation: 'J',
+            horsepower: '120',
+            desc: 'Leather saloon, very new, Leather saloon, very newLeather saloon, very newLeather saloon, very newLeather saloon, very newLeather saloon, very newLeather saloon, very newLeather saloon, very newLeather saloon, very newLeather saloon, very newLeather saloon, very newLeather saloon, very newLeather saloon, very newLeather saloon, very newLeather saloon, very newLeather saloon, very newLeather saloon, very newLeather saloon, very new',
             phone: '(+66)9-17-10-16-20',
             mobilePhone: '0917101620',
             publicEmail: 'getcar@andamancars.com',
