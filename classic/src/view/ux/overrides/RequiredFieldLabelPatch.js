@@ -1,4 +1,4 @@
-Ext.define('Rdd.ux.overrides.RequiredFieldLabelPatch', {
+Ext.define('Rdd.view.ux.overrides.RequiredFieldLabelPatch', {
     override: 'Ext.form.field.Text',
 
     afterRender: function() {

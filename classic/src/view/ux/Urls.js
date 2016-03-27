@@ -17,7 +17,7 @@ Ext.define('Rdd.view.ux.Urls', {
 	getHost: function() {
 		var host;
 		if (location.hostname == 'localhost') {
-			host = 'http://localhost:1337/http://rondondon.com';
+			host = 'http://localhost:1337/rondondon.com';
 		} else {
 			host = '';
 		}

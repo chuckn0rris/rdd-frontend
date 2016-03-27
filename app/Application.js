@@ -15,6 +15,7 @@ Ext.define('Rdd.Application', {
     defaultToken: 'home',
 
     launch: function () {
+        this.initAjaxListeners();
         // delete loading animation
         Ext.query('#load-site-img')[0].remove();
 
@@ -37,6 +38,27 @@ Ext.define('Rdd.Application', {
             scope: this
         });
 
+    },
+
+    initAjaxListeners: function() {
+        Ext.Ajax.on('beforerequest', function(connection, options) {
+            options.params = options.params || {};
+            options.params.format = 'json';
+        });
+
+        Ext.Ajax.on('requestexception', function(conn, response, options, eOpts) {
+            if (response.status == 403) {
+            } else {
+                var msg = Ext.decode(response.responseText);
+                Ext.Msg.show({
+                    title: 'Server returned an error.',
+                    message: msg.error || 'Server returned an error.',
+                    width: 400,
+                    icon: Ext.Msg.ERROR,
+                    buttons: Ext.Msg.OK
+                });
+            }
+        }, this);
     },
 
     createMainView: function(currentUser) {

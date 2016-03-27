@@ -5,26 +5,21 @@ Ext.define('Rdd.view.login.LoginController', {
 
     loginOwner: function() {
         var values = this.getView().down('form').getValues();
-
-        this.renderOwnerUI();
-
-        // waiting for registration api
-        return;
+        this.getView().setLoading(true);
 
         Ext.Ajax.request({
-            url: '/login',
+            url: Urls.get('login'),
             method: 'POST',
             params: values,
             success: function(xhr) {
+                this.getView().setLoading(false);
+                wondow.location.reload();
+                this.getView().close();
             },
             failure: function(xhr) {
+                this.getView().setLoading(false);
             },
             scope: this
         })
-    },
-
-    renderOwnerUI: function() {
-        this.getViewModel().set('ownerMode', true);
-        this.getView().close();
     }
 });

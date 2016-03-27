@@ -11,9 +11,6 @@ Ext.define('Rdd.store.Offers', {
     autoLoad: true,
 
     proxy: {
-        extraParams: {
-            format: 'json'
-        },
         type: 'ajax',
         url: Urls.get('offers'),
         reader: {

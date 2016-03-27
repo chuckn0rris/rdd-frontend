@@ -113,6 +113,10 @@ Ext.define('Rdd.view.main.OfferDetails', {
                 title: 'Description',
                 layout: 'fit',
                 margin: '0 10 0 10',
+                hidden: true,
+                bind: {
+                    hidden: '{!offer.desc}'
+                },
                 items: [{
                     xtype: 'container',
                     bind: {

@@ -26,8 +26,8 @@ Ext.define('Rdd.view.login.Login', {
         layout: 'vbox',
         items: [{
             xtype: 'textfield',
-            fieldLabel: 'Login',
-            name: 'login',
+            fieldLabel: 'Email',
+            name: 'email',
             width: '100%'
         }, {
             xtype: 'textfield',

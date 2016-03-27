@@ -18,13 +18,13 @@ Ext.define('Rdd.view.main.Main', {
         'Rdd.view.main.MainModel',
         'Rdd.view.main.OfferModel',
         'Rdd.view.main.List',
-        'Rdd.view.ux.overrides.Format',
         'Rdd.view.ux.InfoLabel',
         'Rdd.view.ux.InfoIconLabel',
         'Rdd.view.main.TitlePanel',
         'Rdd.view.main.OfferDetails',
 
-        'Rdd.ux.overrides.RequiredFieldLabelPatch'
+        'Rdd.view.ux.overrides.RequiredFieldLabelPatch',
+        'Rdd.view.ux.overrides.Format'
     ],
 
     controller: 'main',
