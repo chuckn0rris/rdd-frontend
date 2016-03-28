@@ -19,14 +19,6 @@ Ext.define('Rdd.Application', {
         'myprofile': 'setOwnerView'
     },
 
-    setOwnerView: function() {
-        this.mainPageXtype = 'mainownerview';
-    },
-
-    setHomeView: function() {
-        this.mainPageXtype = 'mainview';
-    },
-
     launch: function () {
         this.removeLoadingAnimation();
         this.initAjaxListeners();
@@ -121,8 +113,19 @@ Ext.define('Rdd.Application', {
         );
     },
 
+    setOwnerView: function() {
+        this.mainPageXtype = 'mainownerview';
+    },
+
+    setHomeView: function() {
+        this.mainPageXtype = 'mainview';
+    },
+
     removeLoadingAnimation: function() {
-        Ext.query('#load-site-img')[0].remove();
+        var maskEl = Ext.query('#load-site-img')[0];
+        if (maskEl) {
+            maskEl.remove();
+        }
     },
 
     getFakeOwner: function() {
