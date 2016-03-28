@@ -39,7 +39,7 @@ Ext.define('Rdd.Application', {
             method: 'GET',
             success: function(xhr) {
                 // remember user
-                var currentUser = Ext.decode(xhr.responseText).currentUser;
+                var currentUser = Ext.decode(xhr.responseText);
                 // open owner console
                 this.createMainView(currentUser);
             },
