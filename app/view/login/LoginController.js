@@ -22,6 +22,6 @@ Ext.define('Rdd.view.login.LoginController', {
                 this.getView().setLoading(false);
             },
             scope: this
-        })
+        });
     }
 });
