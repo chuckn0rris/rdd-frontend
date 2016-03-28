@@ -14,15 +14,26 @@ Ext.define('Rdd.Application', {
 
     defaultToken: 'home',
 
+    routes: {
+        'home': 'setHomeView',
+        'myprofile': 'setOwnerView'
+    },
+
+    setOwnerView: function() {
+        this.mainPageXtype = 'mainownerview';
+    },
+
+    setHomeView: function() {
+        this.mainPageXtype = 'mainview';
+    },
+
     launch: function () {
+        this.removeLoadingAnimation();
         this.initAjaxListeners();
-        // delete loading animation
-        Ext.query('#load-site-img')[0].remove();
+        this.checkCurrentUser();
+    },
 
-        // for debugging
-        // this.createMainOwnerView();
-        // return;
-
+    checkCurrentUser: function() {
         Ext.Ajax.request({
             url: Urls.get('currentuser'),
             method: 'GET',
@@ -33,17 +44,22 @@ Ext.define('Rdd.Application', {
                 this.createMainView(currentUser);
             },
             failure: function() {
-                this.createMainView(null);
+                var fakeOwner = null//this.getFakeOwner();
+                this.createMainView(fakeOwner);
             },
             scope: this
         });
-
     },
 
     initAjaxListeners: function() {
         Ext.Ajax.on('beforerequest', function(connection, options) {
             options.params = options.params || {};
             options.params.format = 'json';
+            var key = localStorage.getItem('user-key');
+            if (key) {
+                options.headers = options.headers || {};
+                options.headers["Authorization"] = Ext.String.format("Token {0}", key);
+            }
         });
 
         Ext.Ajax.on('requestexception', function(conn, response, options, eOpts) {
@@ -63,7 +79,8 @@ Ext.define('Rdd.Application', {
 
     createMainView: function(currentUser) {
         Ext.create({
-            xtype: 'mainview',
+            xtype: this.mainPageXtype,
+            renderTo: Ext.getBody(),
             viewModel: {
                 data: {
                     currentUser: currentUser
@@ -102,5 +119,13 @@ Ext.define('Rdd.Application', {
                 }
             }
         );
+    },
+
+    removeLoadingAnimation: function() {
+        Ext.query('#load-site-img')[0].remove();
+    },
+
+    getFakeOwner: function() {
+        return {"date_joined":"2016-03-26T16:26:05Z","email":"mixxx_a@mail.ru","last_login":"2016-03-28T09:18:29.044477Z","firstName":"РњРёС…Р°РёР»","lastName":"Р”СѓРґРєРёРЅ","company":"none","country":"Thailand","zipCode":"10000","city":"РќРѕРІРѕСЃРёР±РёСЂСЃРє","district":"","address1":"none","address2":"none","timezone":"None/None","organisation":"","mapCoordinates":"1000, 2000","phone":"","mobilePhone":"","publicEmail":"","socialContacts":"","avatar":"https://rdd-storage-s3.s3.amazonaws.com/photos/avatars/BPwqMo9mKZA.jpg?Signature=%2BrRvcuJ21tE325Ib80lRTeoU8OA%3D&Expires=1459160393&AWSAccessKeyId=AKIAISFWTG4ZXV5SHZEQ","meta":""};
     }
 });

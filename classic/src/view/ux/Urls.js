@@ -27,6 +27,6 @@ Ext.define('Rdd.view.ux.Urls', {
 	urls: {
 		offers: 'offers',
 		login: 'rest-auth/login',
-		currentuser: 'rest-auth/user'
+		currentuser: 'user'
 	}
 });

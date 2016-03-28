@@ -81,6 +81,10 @@ Ext.define('Rdd.view.owner.List', {
             dataIndex: 'prices',
             flex: 1,
             renderer: function(val, meta, record) {
+                if (!val) {
+                    return 'No information';
+                }
+
                 var htmlTpl = "<b>{0}:</b>&nbsp;{1}</br>",
                     getString = function(title, val) {
                         return Ext.String.format(htmlTpl, title, Ext.util.Format.currentCurrency(val));

@@ -11,8 +11,9 @@ Ext.define('Rdd.view.main.MainController', {
         Ext.create('Rdd.view.login.Login').show();
     },
 
-    openCurrentUserPage: function() {
-
+    openMyProfile: function() {
+        window.location.hash = '#myprofile';
+        window.location.reload();
     },
 
     signOut: function() {

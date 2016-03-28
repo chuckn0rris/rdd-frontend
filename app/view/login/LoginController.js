@@ -12,8 +12,10 @@ Ext.define('Rdd.view.login.LoginController', {
             method: 'POST',
             params: values,
             success: function(xhr) {
+                var key = Ext.decode(xhr.responseText).key;
+                localStorage.setItem('user-key', key);
                 this.getView().setLoading(false);
-                wondow.location.reload();
+                window.location.reload();
                 this.getView().close();
             },
             failure: function(xhr) {

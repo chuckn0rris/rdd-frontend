@@ -44,7 +44,7 @@ Ext.define('Rdd.view.main.UserBar', {
                         items: [{
                             text: 'Show My Profile Page',
                             margin: 2,
-                            handler: 'openCurrentUserPage'
+                            handler: 'openMyProfile'
                         }, {
                             text: 'Sign Out',
                             margin: 2,
