@@ -3,6 +3,7 @@ Ext.define('Rdd.view.owner.Panel', {
     xtype: 'mainownerview',
 
     requires: [
+        'Ext.tab.Panel',
         'Rdd.view.owner.OwnerController',
         'Rdd.view.owner.OwnerModel',
         'Rdd.view.owner.EditProfile',
