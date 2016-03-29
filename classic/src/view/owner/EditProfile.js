@@ -8,7 +8,7 @@ Ext.define('Rdd.view.owner.EditProfile', {
     },
 
     bind: {
-        title: 'Edit profile {owner.firstName} {owner.lastName}'
+        title: 'Edit profile {firstName} {lastName}'
     },
 
     modal: true,
@@ -30,7 +30,7 @@ Ext.define('Rdd.view.owner.EditProfile', {
                 height: 120,
                 width: 120,
                 bind: {
-                    src: '{owner.avatar}'
+                    src: '{avatar}'
                 }
             }, {
                 xtype: 'form',
@@ -77,15 +77,15 @@ Ext.define('Rdd.view.owner.EditProfile', {
             items: [{
                 fieldLabel: 'First Name',
                 name: 'firstName',
-                bind: '{owner.firstName}'
+                bind: '{firstName}'
             }, {
                 fieldLabel: 'Last Name',
                 name: 'lastName',
-                bind: '{owner.lastName}'
+                bind: '{lastName}'
             }, {
                 fieldLabel: 'Company',
                 name: 'company',
-                bind: '{owner.company}',
+                bind: '{company}',
                 allowBlank: true
             }, {
                 xtype: 'fieldcontainer',
@@ -96,7 +96,7 @@ Ext.define('Rdd.view.owner.EditProfile', {
                     width: '85%',
                     fieldLabel: 'Web Link',
                     name: 'link',
-                    bind: '{owner.link}'
+                    bind: '{link}'
                 }, {
                     xtype: 'button',
                     text: 'Check',
@@ -129,7 +129,7 @@ Ext.define('Rdd.view.owner.EditProfile', {
                 xtype: 'combobox',
                 fieldLabel: 'City',
                 name: 'city',
-                bind: '{owner.city}',
+                bind: '{city}',
                 valueField: 'id',
                 displayField: 'name',
                 store: {
@@ -151,7 +151,7 @@ Ext.define('Rdd.view.owner.EditProfile', {
             }, {
                 fieldLabel: 'District',
                 name: 'district',
-                bind: '{owner.district}'
+                bind: '{district}'
             }, {
                 xtype: 'panel',
                 height: 250,

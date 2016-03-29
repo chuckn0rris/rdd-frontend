@@ -32,7 +32,7 @@ Ext.define('Rdd.view.owner.Panel', {
             width: 150,
             hidden: true,
             bind: {
-                hidden: '{!currentUser}'
+                hidden: '{!firstName}'
             },
             handler: 'logout'
         }],
@@ -42,7 +42,7 @@ Ext.define('Rdd.view.owner.Panel', {
             text: 'Add Record',
             hidden: true,
             bind: {
-                hidden: '{!currentUser.isUserPage}'
+                hidden: '{!isOwnPage}'
             },
             handler: 'addRecord'
         }, '->', {
@@ -50,7 +50,7 @@ Ext.define('Rdd.view.owner.Panel', {
             width: 150,
             hidden: true,
             bind: {
-                hidden: '{!currentUser.isUserPage}'
+                hidden: '{!isOwnPage}'
             },
             handler: 'editProfile'
         }],
@@ -65,7 +65,7 @@ Ext.define('Rdd.view.owner.Panel', {
                 cls: 'rdd-owner-title-label-top',
                 flex: 1,
                 width: '100%',
-                bind: '{owner.firstName:uppercase} {owner.lastName:uppercase}'
+                bind: '{firstName:uppercase} {lastName:uppercase}'
             }, {
                 xtype: 'component',
                 cls: 'rdd-owner-title-line',
@@ -76,7 +76,7 @@ Ext.define('Rdd.view.owner.Panel', {
                 cls: 'rdd-owner-title-label-bottom',
                 flex: 1,
                 width: '100%',
-                bind: '{owner.district}'
+                bind: '{district}'
             }]
         }, {
             xtype: 'image',
@@ -85,7 +85,7 @@ Ext.define('Rdd.view.owner.Panel', {
             height: 100,
             width: 100,
             bind: {
-                src: '{owner.avatar}'
+                src: '{avatar}'
             }
         }, {
             xtype: 'container',
@@ -98,7 +98,7 @@ Ext.define('Rdd.view.owner.Panel', {
                 cls: 'rdd-owner-title-label-top',
                 flex: 1,
                 width: '100%',
-                bind: '{owner.company:uppercase}'
+                bind: '{company:uppercase}'
             }, {
                 xtype: 'component',
                 cls: 'rdd-owner-title-line',
@@ -109,7 +109,7 @@ Ext.define('Rdd.view.owner.Panel', {
                 cls: 'rdd-owner-title-label-bottom',
                 flex: 1,
                 width: '100%',
-                bind: '{owner.phone}'
+                bind: '{phone}'
             }]
         }]
     }, {

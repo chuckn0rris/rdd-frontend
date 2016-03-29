@@ -12,8 +12,7 @@ Ext.define('Rdd.view.main.MainController', {
     },
 
     openMyProfile: function() {
-        window.location.hash = '#myprofile';
-        window.location.reload();
+        this.redirectTo('#myprofile');
     },
 
     signOut: function() {

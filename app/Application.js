@@ -16,7 +16,8 @@ Ext.define('Rdd.Application', {
 
     routes: {
         'home': 'setHomeView',
-        'myprofile': 'setOwnerView'
+        'myprofile': 'setOwnerView',
+        ':id': 'checkHash'
     },
 
     launch: function () {
@@ -32,11 +33,11 @@ Ext.define('Rdd.Application', {
                 // remember user
                 var currentUser = Ext.decode(xhr.responseText);
                 // open owner console
+                currentUser.isOwnPage = (window.location.hash == '#myprofile');
                 this.createMainView(currentUser);
             },
             failure: function() {
-                var fakeOwner = null//this.getFakeOwner();
-                this.createMainView(fakeOwner);
+                this.createMainView(null);
             },
             scope: this
         });
@@ -78,31 +79,7 @@ Ext.define('Rdd.Application', {
             id: 'main-view',
             renderTo: Ext.getBody(),
             viewModel: {
-                data: {
-                    currentUser: currentUser
-                }
-            }
-        });
-    },
-
-    createMainOwnerView: function() {
-        // for debugging
-        var currentUser = {
-            id: 1,
-            company_id: 'andaman_cars',
-            firstName: 'Somchai',
-            lastName: 'Uluwatu',
-            type: 'owner',
-            isUserPage: true,
-            avatar: 'http://f.otzyv.ru/f/13/07/129249/19502/0907131750373.jpg'
-        }
-
-        Ext.create({
-            xtype: 'mainownerview',
-            viewModel: {
-                data: {
-                    currentUser: currentUser
-                }
+                data: currentUser
             }
         });
     },
@@ -129,6 +106,28 @@ Ext.define('Rdd.Application', {
         this.checkCurrentUser();
     },
 
+    checkHash: function(hash) {
+        var ALLOWED_HASHES = ['home', 'myprofile'];
+        if (ALLOWED_HASHES.indexOf(hash) > -1)
+            return;
+
+        Ext.Ajax.request({
+            url: Urls.get('getownerid'),
+            params: {
+                link: hash
+            },
+            success: function(xhr) {
+                var ownerId = Ext.decode(xhr.responseText);
+                this.mainPageXtype = 'mainownerview';
+                this.loadOwner(ownerId);
+            },
+            failure: function() {
+                this.redirectTo('#home');
+            },
+            scope: this
+        });
+    },
+
     showMask: function() {
         var mainView = Ext.getCmp('main-view');
         if (mainView) {
@@ -141,9 +140,5 @@ Ext.define('Rdd.Application', {
         if (maskEl) {
             maskEl.remove();
         }
-    },
-
-    getFakeOwner: function() {
-        return {"date_joined":"2016-03-26T16:26:05Z","email":"mixxx_a@mail.ru","last_login":"2016-03-28T09:18:29.044477Z","firstName":"РњРёС…Р°РёР»","lastName":"Р”СѓРґРєРёРЅ","company":"none","country":"Thailand","zipCode":"10000","city":"РќРѕРІРѕСЃРёР±РёСЂСЃРє","district":"","address1":"none","address2":"none","timezone":"None/None","organisation":"","mapCoordinates":"1000, 2000","phone":"","mobilePhone":"","publicEmail":"","socialContacts":"","avatar":"https://rdd-storage-s3.s3.amazonaws.com/photos/avatars/BPwqMo9mKZA.jpg?Signature=%2BrRvcuJ21tE325Ib80lRTeoU8OA%3D&Expires=1459160393&AWSAccessKeyId=AKIAISFWTG4ZXV5SHZEQ","meta":""};
     }
 });

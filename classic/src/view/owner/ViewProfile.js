@@ -8,7 +8,7 @@ Ext.define('Rdd.view.owner.ViewProfile', {
     },
 
     bind: {
-        title: 'View profile {owner.firstName} {owner.lastName}'
+        title: 'View profile {firstName} {lastName}'
     },
 
     modal: true,
@@ -30,7 +30,7 @@ Ext.define('Rdd.view.owner.ViewProfile', {
                 height: 120,
                 width: 120,
                 bind: {
-                    src: '{owner.avatar}'
+                    src: '{avatar}'
                 }
             }]
         }, {
@@ -47,20 +47,20 @@ Ext.define('Rdd.view.owner.ViewProfile', {
             items: [{
                 fieldLabel: 'First Name',
                 name: 'firstName',
-                bind: '{owner.firstName}'
+                bind: '{firstName}'
             }, {
                 fieldLabel: 'Last Name',
                 name: 'lastName',
-                bind: '{owner.lastName}'
+                bind: '{lastName}'
             }, {
                 fieldLabel: 'Company',
                 name: 'company',
-                bind: '{owner.company}',
+                bind: '{company}',
                 allowBlank: true
             }, {
                 fieldLabel: 'Owner Page',
                 name: 'link',
-                bind: '<a href="#{owner.link}" target="_blank">rondondon.com/{owner.link}</a>'
+                bind: '<a href="#{link}" target="_blank">rondondon.com/{link}</a>'
             }]
         }]
     }, {
@@ -86,11 +86,11 @@ Ext.define('Rdd.view.owner.ViewProfile', {
             }, {
                 fieldLabel: 'City',
                 name: 'city',
-                bind: '{owner.city}'
+                bind: '{city}'
             }, {
                 fieldLabel: 'District',
                 name: 'district',
-                bind: '{owner.district}'
+                bind: '{district}'
             }, {
                 xtype: 'panel',
                 height: 250,
@@ -114,20 +114,20 @@ Ext.define('Rdd.view.owner.ViewProfile', {
                 fieldLabel: "<img width='24px' height='24px' src='classic/resources/images/phone.png' />",
                 name: 'phone',
                 bind: {
-                    value: '{owner.phone}'
+                    value: '{phone}'
                 }
             }, {
                 fieldLabel: "<img width='24px' height='24px' src='classic/resources/images/mobile.png' />",
                 name: 'mobilePhone',
                 bind: {
-                    value: '{owner.mobilePhone}'
+                    value: '{mobilePhone}'
                 }
             }, {
                 fieldLabel: "<img width='24px' height='24px' src='classic/resources/images/email.png' />",
                 name: 'publicEmail',
                 vtype: 'email',
                 bind: {
-                    value: '{owner.publicEmail}'
+                    value: '{publicEmail}'
                 }
             }, {
                 xtype: 'container',
@@ -137,31 +137,31 @@ Ext.define('Rdd.view.owner.ViewProfile', {
                 fieldLabel: "<img width='24px' height='24px' src='classic/resources/images/whatsapp.png' />",
                 name: 'whatsapp',
                 bind: {
-                    value: '{owner.socialContacts.whatsapp}'
+                    value: '{socialContacts.whatsapp}'
                 }
             }, {
                 fieldLabel: "<img width='24px' height='24px' src='classic/resources/images/viber.png' />",
                 name: 'viber',
                 bind: {
-                    value: '{owner.socialContacts.viber}'
+                    value: '{socialContacts.viber}'
                 }
             }, {
                 fieldLabel: "<img width='24px' height='24px' src='classic/resources/images/facebook.png' />",
                 name: 'facebook',
                 bind: {
-                    value: '{owner.socialContacts.facebook}'
+                    value: '{socialContacts.facebook}'
                 }
             }, {
                 fieldLabel: "<img width='24px' height='24px' src='classic/resources/images/skype.png' />",
                 name: 'skype',
                 bind: {
-                    value: '{owner.socialContacts.skype}'
+                    value: '{socialContacts.skype}'
                 }
             }, {
                 fieldLabel: "<img width='24px' height='24px' src='classic/resources/images/instagram.png' />",
                 name: 'instagram',
                 bind: {
-                    value: '{owner.socialContacts.instagram}'
+                    value: '{socialContacts.instagram}'
                 }
             }]
         }]

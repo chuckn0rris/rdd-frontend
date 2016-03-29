@@ -28,6 +28,7 @@ Ext.define('Rdd.view.ux.Urls', {
         offers: 'offers',
         login: 'rest-auth/login',
         currentuser: 'user',
-        logout: 'rest-auth/logout'
+        logout: 'rest-auth/logout',
+        getownerid: 'owners/getid'
     }
 });

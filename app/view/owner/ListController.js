@@ -42,7 +42,7 @@ Ext.define('Rdd.view.owner.ListController', {
                     type: 'offer',
                     data: {
                         offer: offer,
-                        isUserPage: this.getViewModel().get('isUserPage')
+                        isOwnPage: this.getViewModel().get('isOwnPage')
                     }
                 }
             });

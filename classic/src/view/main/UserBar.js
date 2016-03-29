@@ -19,7 +19,7 @@ Ext.define('Rdd.view.main.UserBar', {
         margin: 20,
         hidden: true,
         bind: {
-            hidden: '{currentUser}'
+            hidden: '{!!firstName}'
         },
         text: 'I am Owner',
         style: 'padding-right: 10px;',
@@ -32,8 +32,8 @@ Ext.define('Rdd.view.main.UserBar', {
         cls: 'rdd-main-userbar-label',
         hidden: true,
         bind: {
-            html: 'Hi, <a href="javascript:void(0);">{currentUser.firstName}</a>',
-            hidden: '{!currentUser}'
+            html: 'Hi, <a href="javascript:void(0);">{firstName}</a>',
+            hidden: '{!firstName}'
         },
         clickable: true,
         listeners: {
@@ -63,8 +63,8 @@ Ext.define('Rdd.view.main.UserBar', {
         cls: 'rdd-main-userbar-img',
         hidden: true,
         bind: {
-            src: '{currentUser.avatar}',
-            hidden: '{!currentUser}'
+            src: '{avatar}',
+            hidden: '{!firstName}'
         }
     }]
 });

@@ -126,7 +126,7 @@ Ext.define('Rdd.view.owner.List', {
             },
             hidden: true,
             bind: {
-                hidden: '{currentUser.isUserPage}'
+                hidden: '{isOwnPage}'
             },
             renderer: function(val, meta) {
                 meta.tdCls = 'rdd-mainlist-column-contacts';
@@ -138,7 +138,7 @@ Ext.define('Rdd.view.owner.List', {
             width: 80,
             hidden: true,
             bind: {
-                hidden: '{!currentUser.isUserPage}'
+                hidden: '{!isOwnPage}'
             },
             cls: 'rdd-owner-list-actioncolumn',
             align: 'center',
