@@ -22,7 +22,6 @@ Ext.define('Rdd.Application', {
     launch: function () {
         this.removeLoadingAnimation();
         this.initAjaxListeners();
-        this.checkCurrentUser();
     },
 
     checkCurrentUser: function() {
@@ -70,8 +69,13 @@ Ext.define('Rdd.Application', {
     },
 
     createMainView: function(currentUser) {
+        var oldView = Ext.getCmp('main-view');
+        if (oldView) {
+            oldView.destroy();
+        }
         Ext.create({
             xtype: this.mainPageXtype,
+            id: 'main-view',
             renderTo: Ext.getBody(),
             viewModel: {
                 data: {
@@ -114,11 +118,22 @@ Ext.define('Rdd.Application', {
     },
 
     setOwnerView: function() {
+        this.showMask();
         this.mainPageXtype = 'mainownerview';
+        this.checkCurrentUser();
     },
 
     setHomeView: function() {
+        this.showMask();
         this.mainPageXtype = 'mainview';
+        this.checkCurrentUser();
+    },
+
+    showMask: function() {
+        var mainView = Ext.getCmp('main-view');
+        if (mainView) {
+            mainView.setLoading('Please, wailt...');
+        }
     },
 
     removeLoadingAnimation: function() {
