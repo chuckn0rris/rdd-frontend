@@ -15,7 +15,8 @@ Ext.define('Rdd.store.Offers', {
         url: Urls.get('offers'),
         reader: {
             type: 'json',
-            rootProperty: 'items'
+            rootProperty: 'results',
+            totalProperty: 'count'
         }
     }
 });
