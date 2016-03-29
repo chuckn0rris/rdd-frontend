@@ -30,9 +30,7 @@ Ext.define('Rdd.Application', {
             url: Urls.get('currentuser'),
             method: 'GET',
             success: function(xhr) {
-                // remember user
                 var currentUser = Ext.decode(xhr.responseText);
-                // open owner console
                 currentUser.isOwnPage = (window.location.hash == '#myprofile');
                 this.createMainView(currentUser);
             },
@@ -71,7 +69,7 @@ Ext.define('Rdd.Application', {
 
     createMainView: function(currentUser) {
         var oldView = Ext.getCmp('main-view');
-        if (oldView) {
+        if (oldView && oldView.destroy) {
             oldView.destroy();
         }
         Ext.create({

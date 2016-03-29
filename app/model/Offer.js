@@ -19,5 +19,14 @@ Ext.define('Rdd.model.Offer', {
         'isAvailable',
         'desc',
         'prices'
-    ]
+    ],
+
+    proxy: {
+        type: 'rest',
+        url: Urls.get('offer'),
+        reader: {
+            type: 'json',
+            rootProperty: ''
+        }
+    }
 });
