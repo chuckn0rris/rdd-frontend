@@ -7,7 +7,7 @@ Ext.define('Rdd.view.main.TitlePanel', {
     ],
 
     controller: 'main',
-    viewModel: 'main',
+
     layout: {
         type: 'vbox'
     },

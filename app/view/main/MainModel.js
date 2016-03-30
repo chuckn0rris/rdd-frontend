@@ -8,7 +8,8 @@ Ext.define('Rdd.view.main.MainModel', {
         i18n: {
             listTitle: 'Available transport',
             noAccount: 'I want to register an account'
-        }
+        },
+        firstName: false
     }
 
     //TODO - add data, formulas and/or methods to support your view

@@ -31,7 +31,10 @@ Ext.define('Rdd.Application', {
             method: 'GET',
             success: function(xhr) {
                 var currentUser = Ext.decode(xhr.responseText);
-                currentUser.isOwnPage = (window.location.hash == '#myprofile');
+                if (currentUser.firstName) {
+                    currentUser.isOwnPage = (window.location.hash == '#myprofile');
+                }
+
                 this.createMainView(currentUser);
             },
             failure: function() {
@@ -72,12 +75,13 @@ Ext.define('Rdd.Application', {
         if (oldView && oldView.destroy) {
             oldView.destroy();
         }
+
         Ext.create({
             xtype: this.mainPageXtype,
             id: 'main-view',
             renderTo: Ext.getBody(),
             viewModel: {
-                data: currentUser
+                data: currentUser || {firstName: false}
             }
         });
     },

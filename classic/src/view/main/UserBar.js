@@ -3,7 +3,7 @@ Ext.define('Rdd.view.main.UserBar', {
     xtype: 'userbar',
 
     controller: 'main',
-    viewModel: 'main',
+
     layout: {
         type: 'hbox'
     },
@@ -19,7 +19,7 @@ Ext.define('Rdd.view.main.UserBar', {
         margin: 20,
         hidden: true,
         bind: {
-            hidden: '{!!firstName}'
+            hidden: '{firstName}'
         },
         text: 'I am Owner',
         style: 'padding-right: 10px;',

@@ -98,11 +98,11 @@ Ext.define('Rdd.view.main.MainController', {
             grid = this.getView().up('mainlist'),
             proxy = grid.getStore().getProxy();
 
-        // proxy.setExtraParams(filters);
+        proxy.setExtraParams(filters);
     },
 
     resetFilters: function() {
         this.getView().reset();
-        // this.getView().up('mainlist').getStore().getProxy().setExtraParams({});
+        this.getView().up('mainlist').getStore().getProxy().setExtraParams({});
     }
 });
