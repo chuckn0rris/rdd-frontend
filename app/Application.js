@@ -40,7 +40,10 @@ Ext.define('Rdd.Application', {
                 }
                 this.createMainView(currentUser);
             },
-            failure: function() {
+            failure: function(xhr) {
+                if (xhr.status < 500) {
+                    localStorage.removeItem('user-key');
+                }
                 this.createMainView(null);
             },
             scope: this
