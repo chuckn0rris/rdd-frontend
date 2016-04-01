@@ -1,18 +1,17 @@
-Ext.define('Rdd.store.Offers', {
+Ext.define('Rdd.store.Transports', {
     extend: 'Ext.data.Store',
 
-    alias: 'store.offers',
+    alias: 'store.transports',
 
     requires: [
-        'Rdd.model.Offer'
+        'Rdd.model.Transport'
     ],
 
-    model: 'Rdd.model.Offer',
-    autoLoad: true,
+    model: 'Rdd.model.Transport',
 
     proxy: {
         type: 'ajax',
-        url: Urls.get('offers'),
+        url: Urls.get('transports'),
         reader: {
             type: 'json',
             rootProperty: 'results',

@@ -883,7 +883,7 @@ $include-rdd-model-transport: dynamic(true);;
 $include-rdd-store-brands: dynamic(true);;
 $include-rdd-store-locations: dynamic(true);;
 $include-rdd-store-offers: dynamic(true);;
-$include-rdd-store-personnel: dynamic(true);;
+$include-rdd-store-transports: dynamic(true);;
 $include-rdd-view-login-login: dynamic(true);;
 $include-rdd-view-login-logincontroller: dynamic(true);;
 $include-rdd-view-main-filters: dynamic(true);;

@@ -5,15 +5,9 @@ Ext.define('Rdd.view.main.List', {
     extend: 'Ext.grid.Grid',
     xtype: 'mainlist',
 
-    requires: [
-        'Rdd.store.Personnel'
-    ],
 
     title: 'Personnel',
 
-    store: {
-        type: 'personnel'
-    },
 
     columns: [
         { text: 'Name',  dataIndex: 'name', width: 100 },
