@@ -27,13 +27,25 @@ Ext.define('Rdd.view.main.MainController', {
         });
     },
 
-    showOwnerProfile: function() {
-        var ownerId = this.getView().offer.ownerId;
+    showOwnerProfile: function(btn) {
+        btn.setDisabled(true);
+        var ownerId = this.getView().offer.owner;
 
-        //var owner = Owner.load(ownerId);
+        var owner = Rdd.model.Owner.load(ownerId, {
+            failure: function() {
+                btn.setDisabled(false);
+            },
+            success: function(owner) {
+                btn.setDisabled(false);
+                Ext.create('Rdd.view.owner.ViewProfile', {
+                    viewModel: {
+                        data: owner.getData()
+                    }
+                }).show();
+            },
+            scope: this
+        });
 
-        Ext.create('Rdd.view.owner.ViewProfile', {
-        }).show();
     },
 
     openOffer: function(widget) {

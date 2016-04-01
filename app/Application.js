@@ -61,7 +61,7 @@ Ext.define('Rdd.Application', {
         Ext.Ajax.on('requestexception', function(conn, response, options, eOpts) {
             if (response.status == 403) {
             } else {
-                var msg = Ext.decode(response.responseText);
+                var msg = response.responseText ? Ext.decode(response.responseText) : {error: 'Empty server response.'};
                 Ext.Msg.show({
                     title: 'Server returned an error.',
                     message: msg.error || 'Server returned an error.',

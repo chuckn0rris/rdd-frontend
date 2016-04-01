@@ -2,10 +2,13 @@ Ext.define('Rdd.model.Owner', {
     extend: 'Ext.data.Model',
     alias: 'model.owner',
 
-    // TODO: setup proxy to load owner data from the server
-    // proxy: {
-
-    // },
+    proxy: {
+        type: 'rest',
+        url: Urls.get('getowner'),
+        reader: {
+            rootProperty: ''
+        }
+    },
 
     fields: [
         'id',
