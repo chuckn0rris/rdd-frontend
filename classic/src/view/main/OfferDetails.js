@@ -215,7 +215,7 @@ Ext.define('Rdd.view.main.OfferDetails', {
                 label: 'Available From',
                 bind: {
                     hidden: '{!offer.availableFrom}',
-                    value: '{offer.availableFrom}'
+                    value: '{offer.availableFrom:date}'
                 }
             }, {
                 label: '1 day',
