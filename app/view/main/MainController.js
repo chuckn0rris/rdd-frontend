@@ -71,6 +71,10 @@ Ext.define('Rdd.view.main.MainController', {
 
 
         // prepare title photo for viewer
+        // Rdd.model.Offer.load(offer.id, function(a,b,c) {
+        //     debugger
+        // });
+
         if (offer.photos.length) {
             offer.photo = offer.photos.shift();
         } else {
@@ -102,15 +106,19 @@ Ext.define('Rdd.view.main.MainController', {
     },
 
     applyFilters: function() {
-        var filters = this.getView().getValues();
+        var filters = this.getView().getValues(),
             grid = this.getView().up('mainlist'),
-            proxy = grid.getStore().getProxy();
+            store = grid.getStore();
 
-        proxy.setExtraParams(filters);
+        store.getProxy().setExtraParams(filters);
+        store.load();
     },
 
     resetFilters: function() {
         this.getView().reset();
-        this.getView().up('mainlist').getStore().getProxy().setExtraParams({});
+        var store = this.getView().up('mainlist').getStore();
+
+        store.getProxy().setExtraParams({});
+        store.load();
     }
 });
