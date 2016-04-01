@@ -3,27 +3,26 @@ Ext.define('Rdd.store.Brands', {
 
     alias: 'store.brands',
 
-
     fields: ['id', 'name', 'type'],
 
     // TODO: get the list from the server!
     data: [{
-        id: 'toyota',
-        name: 'Toyota'
+        name: 'Audi'
     }, {
-        id: 'honda',
+        name: 'BMW'
+    }, {
+        name: 'Mercedes'
+    }, {
+        name: 'Yamaha'
+    }, {
         name: 'Honda'
     }, {
-        id: 'mazda',
         name: 'Mazda'
     }, {
-        id: 'subaru',
         name: 'Subaru'
     }, {
-        id: 'lexus',
         name: 'Lexus'
     }, {
-        id: 'isuzu',
         name: 'Isuzu'
     }],
 

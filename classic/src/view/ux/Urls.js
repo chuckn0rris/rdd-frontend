@@ -30,6 +30,7 @@ Ext.define('Rdd.view.ux.Urls', {
         login: 'rest-auth/login',
         currentuser: 'user',
         logout: 'rest-auth/logout',
-        getownerid: 'owners/getid'
+        getownerid: 'owners/getid',
+        'saveowner': 'user'
     }
 });

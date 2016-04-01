@@ -18,7 +18,13 @@ Ext.define('Rdd.view.owner.OwnerController', {
     },
 
     editProfile: function() {
-        Ext.create('Rdd.view.owner.EditProfile').show();
+        var vm = this.getView().getViewModel(),
+            ownerData = vm.getData();
+
+        var wnd = Ext.create('Rdd.view.owner.EditProfile');
+        wnd.setParentViewModel(vm);
+        wnd.getViewModel().setData(ownerData);
+        wnd.show();
     },
 
     checkLinkAvailable: function() {
@@ -34,19 +40,6 @@ Ext.define('Rdd.view.owner.OwnerController', {
             mainTabPanel = this.getView().mainTabPanel,
             title = Ext.String.format("{0} {1} {2}", values.color, values.brand, values.model);
 
-        values.photos = [{
-            id: 1,
-            transportId: '1',
-            url: 'http://autosearchmanila.com/auto-search/uploads/public/models/43/2015%5C01%20Toyota-Vios-2013-2.jpg'
-        }, {
-            id: 2,
-            transportId: '1',
-            url: 'https://upload.wikimedia.org/wikipedia/commons/4/46/Honda_Accord_(2008)_front.JPG'
-        }, {
-            id: 3,
-            transportId: '1',
-            url: 'http://www.carblogindia.com/wp-content/uploads/2015/01/toyota-fortuner-2.5-trd-sportivo-front.jpg'
-        }];
         mainTabPanel.add({
             xtype: 'edittransport',
             title: title,
@@ -58,6 +51,31 @@ Ext.define('Rdd.view.owner.OwnerController', {
 
         mainTabPanel.setActiveTab(mainTabPanel.items.length-1);
         this.closeWindow();
+    },
+
+    saveProfileChanges: function() {
+        var currentOwner = this.getView().getViewModel(),
+            params = currentOwner.data;
+
+        this.getView().setLoading('Saving...');
+
+        // TEMP FIX for encoded sub-object
+        params.socialContacts = Ext.encode(params.socialContacts);
+        Ext.Ajax.request({
+            url: Urls.get('saveowner'),
+            method: 'PUT',
+            jsonData: params,
+            success: function() {
+                var vm = this.getView().getParentViewModel();
+                vm.setData(currentOwner.data);
+                this.getView().setLoading(false);
+                this.getView().close();
+            },
+            failure: function() {
+                this.getView().setLoading(false);
+            },
+            scope: this
+        })
     },
 
     closeWindow: function() {

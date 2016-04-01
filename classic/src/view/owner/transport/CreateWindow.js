@@ -48,7 +48,7 @@ Ext.define('Rdd.view.owner.transport.CreateWindow', {
             store: {
                 type: 'brands'
             },
-            valueField: 'id',
+            valueField: 'name',
             displayField: 'name'
         }, {
             fieldLabel: 'Model',

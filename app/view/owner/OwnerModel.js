@@ -4,14 +4,19 @@ Ext.define('Rdd.view.owner.OwnerModel', {
     alias: 'viewmodel.owner',
 
     data: {
-        owner: {
-            firstName: 'Somchai',
-            lastName: 'Uluwatu',
-            company: 'Andaman Cars',
-            district: 'Chalong',
-            phone: '(+66) 917 101 620',
-            avatar: 'http://f.otzyv.ru/f/13/07/129249/19502/0907131750373.jpg'
-        }
+        'id': null,
+        'firstName': null,
+        'lastName': null,
+        'company': null,
+        'city': null,
+        'link': null,
+        'avatar': null,
+        'district': null,
+        'mapCoordinates': null,
+        'publicEmail': null,
+        'mobilePhone': null,
+        'phone': null,
+        'socialContacts': null
     }
 
     //TODO - add data, formulas and/or methods to support your view

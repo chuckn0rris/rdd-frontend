@@ -14,6 +14,7 @@ Ext.define('Rdd.view.main.Main', {
         'Rdd.view.ux.overrides.Format',
         'Rdd.view.ux.Utils',
         'Rdd.store.Brands',
+        'Rdd.store.Locations',
         'Rdd.model.Owner',
         'Rdd.model.Transport',
         'Rdd.view.main.Filters',

@@ -34,7 +34,10 @@ Ext.define('Rdd.Application', {
                 if (currentUser.firstName) {
                     currentUser.isOwnPage = (window.location.hash == '#myprofile');
                 }
-
+                // TEMP FIX for encoded sub-object
+                if (currentUser.socialContacts) {
+                    currentUser.socialContacts = Ext.decode(currentUser.socialContacts);
+                }
                 this.createMainView(currentUser);
             },
             failure: function() {

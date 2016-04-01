@@ -11,6 +11,10 @@ Ext.define('Rdd.view.owner.EditProfile', {
         title: 'Edit profile {firstName} {lastName}'
     },
 
+    config: {
+        parentViewModel: null
+    },
+
     modal: true,
     width: 800,
     resizable: false,
@@ -175,20 +179,20 @@ Ext.define('Rdd.view.owner.EditProfile', {
                 fieldLabel: "<img width='24px' height='24px' src='classic/resources/images/phone.png' />",
                 name: 'phone',
                 bind: {
-                    value: '{offer.phone}'
+                    value: '{phone}'
                 }
             }, {
                 fieldLabel: "<img width='24px' height='24px' src='classic/resources/images/mobile.png' />",
                 name: 'mobilePhone',
                 bind: {
-                    value: '{offer.mobilePhone}'
+                    value: '{mobilePhone}'
                 }
             }, {
                 fieldLabel: "<img width='24px' height='24px' src='classic/resources/images/email.png' />",
                 name: 'publicEmail',
                 vtype: 'email',
                 bind: {
-                    value: '{offer.publicEmail}'
+                    value: '{publicEmail}'
                 }
             }, {
                 xtype: 'container',
@@ -198,31 +202,31 @@ Ext.define('Rdd.view.owner.EditProfile', {
                 fieldLabel: "<img width='24px' height='24px' src='classic/resources/images/whatsapp.png' />",
                 name: 'whatsapp',
                 bind: {
-                    value: '{offer.socialContacts.whatsapp}'
+                    value: '{socialContacts.whatsapp}'
                 }
             }, {
                 fieldLabel: "<img width='24px' height='24px' src='classic/resources/images/viber.png' />",
                 name: 'viber',
                 bind: {
-                    value: '{offer.socialContacts.viber}'
+                    value: '{socialContacts.viber}'
                 }
             }, {
                 fieldLabel: "<img width='24px' height='24px' src='classic/resources/images/facebook.png' />",
                 name: 'facebook',
                 bind: {
-                    value: '{offer.socialContacts.facebook}'
+                    value: '{socialContacts.facebook}'
                 }
             }, {
                 fieldLabel: "<img width='24px' height='24px' src='classic/resources/images/skype.png' />",
                 name: 'skype',
                 bind: {
-                    value: '{offer.socialContacts.skype}'
+                    value: '{socialContacts.skype}'
                 }
             }, {
                 fieldLabel: "<img width='24px' height='24px' src='classic/resources/images/instagram.png' />",
                 name: 'instagram',
                 bind: {
-                    value: '{offer.socialContacts.instagram}'
+                    value: '{socialContacts.instagram}'
                 }
             }]
         }]

@@ -261,53 +261,53 @@ Ext.define('Rdd.view.main.OfferDetails', {
             items: [{
                 xtype: 'label',
                 margin: 5,
-                bind: '<b>{offer.firstName} {offer.lastName}, {offer.company}</b>'
+                bind: '<b>{offer.ownerUser.firstName} {offer.ownerUser.lastName}, {offer.ownerUser.company}</b>'
             }, {
                 xtype: 'label',
                 margin: 5,
-                bind: '<b>District:</b> {offer.district}'
+                bind: '<b>District:</b> {offer.ownerUser.district}'
             }, {
                 icon: 'classic/resources/images/phone.png',
                 label: 'Phone',
                 bind: {
-                    value: '{offer.phone}'
+                    value: '{offer.ownerUser.phone}'
                 }
             }, {
                 icon: 'classic/resources/images/mobile.png',
                 label: 'Mobile',
                 bind: {
-                    value: '{offer.mobilePhone}'
+                    value: '{offer.ownerUser.mobilePhone}'
                 }
             }, {
                 icon: 'classic/resources/images/email.png',
                 label: 'Email',
                 bind: {
-                    value: '<a href="mailto:{offer.publicEmail}" target="_blank">{offer.publicEmail}</a>'
+                    value: '<a href="mailto:{offer.ownerUser.publicEmail}" target="_blank">{offer.ownerUser.publicEmail}</a>'
                 }
             }, {
                 style: 'margin-top: 15px',
                 icon: 'classic/resources/images/whatsapp.png',
                 label: 'Whatsapp',
                 bind: {
-                    value: '{offer.socialContacts.whatsapp}'
+                    value: '{offer.ownerUser.socialContacts.whatsapp}'
                 }
             }, {
                 icon: 'classic/resources/images/viber.png',
                 label: 'Viber',
                 bind: {
-                    value: '{offer.socialContacts.viber}'
+                    value: '{offer.ownerUser.socialContacts.viber}'
                 }
             }, {
                 icon: 'classic/resources/images/facebook.png',
                 label: 'Facebook',
                 bind: {
-                    value: '<a href="{offer.socialContacts.facebook}" target="_blank">{offer.socialContacts.facebook}</a>'
+                    value: '<a href="{offer.ownerUser.socialContacts.facebook}" target="_blank">{offer.ownerUser.socialContacts.facebook}</a>'
                 }
             }, {
                 icon: 'classic/resources/images/skype.png',
                 label: 'Skype',
                 bind: {
-                    value: '{offer.socialContacts.skype}'
+                    value: '{offer.ownerUser.socialContacts.skype}'
                 }
             }, {
                 xtype: 'button',

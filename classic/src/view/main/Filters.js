@@ -42,16 +42,9 @@ Ext.define('Rdd.view.main.Filters', {
             emptyText: 'Brand',
             name: 'brand',
             store: {
-                fields: ['id', 'name'],
-                data: [{
-                    id: 'toyota',
-                    name: 'Toyota'
-                }, {
-                    id: 'honda',
-                    name: 'Honda'
-                }]
+                type: 'brands'
             },
-            valueField: 'id',
+            valueField: 'name',
             displayField: 'name'
         }, {
             xtype: 'textfield',
@@ -144,20 +137,10 @@ Ext.define('Rdd.view.main.Filters', {
             emptyText: 'City',
             name: 'city',
             store: {
-                fields: ['id', 'name'],
-                data: [{
-                    id: 'bangkok',
-                    name: 'Bangkok'
-                }, {
-                    id: 'pattaya',
-                    name: 'Pattaya'
-                }, {
-                    id: 'phuket',
-                    name: 'Phuket'
-                }]
+                type: 'locations'
             },
-            value: 'phuket',
-            valueField: 'id',
+            value: 'Phuket',
+            valueField: 'name',
             displayField: 'name'
         }, {
             xtype: 'textfield',

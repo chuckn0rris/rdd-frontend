@@ -33,32 +33,6 @@ Ext.define('Rdd.view.main.MainController', {
         //var owner = Owner.load(ownerId);
 
         Ext.create('Rdd.view.owner.ViewProfile', {
-            viewModel: {
-                data: {
-                    owner: {
-                        'id': 1,
-                        'firstName': 'Somchai',
-                        'lastName': 'Uluwatu',
-                        'company': 'Andaman Cars',
-                        'district': 'Chalong',
-                        'city': 'Phuket',
-                        'country': 'Thailand',
-                        'socialContacts': {
-                            viber: '0917101620',
-                            facebook: 'www.facebook.com/1237600334',
-                            whatsapp: '0917101620',
-                            skype: 'somchai00112',
-                            instagram: '@somchaika'
-                        },
-                        'avatar': 'http://f.otzyv.ru/f/13/07/129249/19502/0907131750373.jpg',
-                        'type': 'owner',
-                        'publicEmail': 'som_thai@gmail.com',
-                        'mobilePhone': '0917101620',
-                        'phone': '0917101620',
-                        'link': 'andaman_cars'
-                    }
-                }
-            }
         }).show();
     },
 
@@ -79,6 +53,11 @@ Ext.define('Rdd.view.main.MainController', {
             offer.photo = offer.photos.shift();
         } else {
             offer.photo = {};
+        }
+
+        // TEMP FIX for encoded sub-object
+        if (!(offer.ownerUser.socialContacts instanceof Object)) {
+            offer.ownerUser.socialContacts = Ext.decode(offer.ownerUser.socialContacts);
         }
 
         if (offerTab) {
