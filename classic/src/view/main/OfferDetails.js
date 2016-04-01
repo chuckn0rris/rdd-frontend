@@ -38,8 +38,8 @@ Ext.define('Rdd.view.main.OfferDetails', {
                 height: 200,
                 bind: {
                     html:   '<div align="center">' +
-                                '<a href="{offer.photo}" data-lightbox="image-{offer.transportId}">' +
-                                    '<img style="max-height: 200px; max-width: 300px; padding: 5px;" src="{offer.photo}"/>' +
+                                '<a href="{offer.photo.src}" data-lightbox="image-{offer.transportId}">' +
+                                    '<img style="max-height: 200px; max-width: 300px; padding: 5px;" src="{offer.photo.src}"/>' +
                                 '</a>' +
                             '</div>'
                 }

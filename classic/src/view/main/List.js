@@ -37,15 +37,16 @@ Ext.define('Rdd.view.main.List', {
             }
         }, {
             text: 'Photo',
-            dataIndex: 'photo',
+            dataIndex: 'photos',
             width: 200,
             renderer: function(val, meta, record) {
                 meta.style = 'height: 160px;'
-                if (val) {
-                    var html = Ext.String.format('<div align="center"> <img style="max-height: 160px; max-width: 160px;" src="{0}"/></div><a style="padding-left: 10px;"', val);
+                var photo = val[0];
+                if (photo) {
+                    var html = Ext.String.format('<div align="center"> <img style="max-height: 160px; max-width: 160px;" src="{0}"/></div><a style="padding-left: 10px;"', photo.src);
                     return html;
                 } else {
-                    return '';
+                    return '<center style="padding-top: 15px;">No photo</center>';
                 }
             }
         }, {

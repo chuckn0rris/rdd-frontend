@@ -17,10 +17,12 @@ Ext.define('Rdd.view.owner.Panel', {
     viewModel: {
         type: 'owner'
     },
+
     layout: {
         type: 'vbox',
         align: 'center'
     },
+
     items: [{
         xtype: 'panel',
         width: 1000,
