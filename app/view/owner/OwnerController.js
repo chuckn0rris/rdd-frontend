@@ -85,7 +85,7 @@ Ext.define('Rdd.view.owner.OwnerController', {
     },
 
     saveTransport: function() {
-        debugger
+
         // get owner id
         var transport = this.getView().getViewModel().data;
 
