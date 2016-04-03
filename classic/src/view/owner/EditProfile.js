@@ -59,7 +59,7 @@ Ext.define('Rdd.view.owner.EditProfile', {
                         msgTarget: 'side',
                         buttonText: 'Load Photo',
                         listeners: {
-                            change: 'onLoadPhotoFormChange'
+                            change: 'loadAvatarPhoto'
                         }
                     }]
                 }, {

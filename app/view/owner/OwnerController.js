@@ -80,14 +80,29 @@ Ext.define('Rdd.view.owner.OwnerController', {
         this.getView().close();
     },
 
-    onLoadPhotoFormChange: function(f, v) {
-        // TODO: use real URL
-        f.up('form').submit({
-            url: 'photo-upload.php',
+    loadAvatarPhoto: function(btn, val) {
+        var ownerData = this.getView().getViewModel().data;
+
+        btn.up('form').submit({
+            url: Urls.get('setowneravatar', ownerData.id),
             waitMsg: 'Uploading Photo',
             success: function(fp, o) {
                 Ext.Msg.alert('Success', 'Your photo "' + o.result.file + '" has been uploaded.');
             }
+        })
+    },
+
+    removeAvatarImage: function() {
+        var ownerData = this.getView().getViewModel().data;
+
+        Ext.Ajax.request({
+            url: Urls.get('setowneravatar', ownerData.id),
+            method: 'DELETE',
+            success: function() {
+                this.getView().getViewModel().set('avatar', null);
+            },
+            scope: this
+
         })
     }
 });
