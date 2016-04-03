@@ -14,7 +14,15 @@ Ext.define('Rdd.view.owner.OwnerController', {
     },
 
     logout: function() {
-
+       Ext.Ajax.request({
+            url: Urls.get('logout'),
+            method: 'POST',
+            success: function(xhr) {
+                localStorage.removeItem('user-key');
+                window.location.reload();
+            },
+            scope: this
+        });
     },
 
     loadTransportsStore: function() {
