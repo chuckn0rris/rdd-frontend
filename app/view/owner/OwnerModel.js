@@ -17,11 +17,5 @@ Ext.define('Rdd.view.owner.OwnerModel', {
         'mobilePhone': null,
         'phone': null,
         'socialContacts': null
-    },
-
-    stores: {
-        transports: {
-            type: 'transports'
-        }
     }
 });
