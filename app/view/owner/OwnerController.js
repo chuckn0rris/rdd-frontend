@@ -21,7 +21,6 @@ Ext.define('Rdd.view.owner.OwnerController', {
         var model = this.getView().getViewModel(),
             store = this.getView().down('transportlist').getStore();
 
-        debugger
         store.getProxy().url = Urls.get('transportlist', model.get('id'));
         store.load();
     },
