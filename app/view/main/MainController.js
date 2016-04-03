@@ -67,11 +67,6 @@ Ext.define('Rdd.view.main.MainController', {
             offer.photo = {};
         }
 
-        // TEMP FIX for encoded sub-object
-        if (!(offer.ownerUser.socialContacts instanceof Object)) {
-            offer.ownerUser.socialContacts = Ext.decode(offer.ownerUser.socialContacts);
-        }
-
         if (offerTab) {
             tabPanel.setActiveTab(offerTab);
         } else {

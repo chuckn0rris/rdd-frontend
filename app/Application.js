@@ -26,6 +26,11 @@ Ext.define('Rdd.Application', {
     },
 
     checkCurrentUser: function() {
+        if (!localStorage.getItem('user-key')) {
+            this.createMainView({firstName: null});
+            return;
+        }
+
         Ext.Ajax.request({
             url: Urls.get('currentuser'),
             method: 'GET',
@@ -34,10 +39,7 @@ Ext.define('Rdd.Application', {
                 if (currentUser.firstName) {
                     currentUser.isOwnPage = (window.location.hash == '#myprofile');
                 }
-                // TEMP FIX for encoded sub-object
-                if (currentUser.socialContacts) {
-                    currentUser.socialContacts = Ext.decode(currentUser.socialContacts);
-                }
+
                 this.createMainView(currentUser);
             },
             failure: function(xhr) {

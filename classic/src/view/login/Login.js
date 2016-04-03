@@ -24,24 +24,32 @@ Ext.define('Rdd.view.login.Login', {
     items: [{
         xtype: 'form',
         layout: 'vbox',
+        defaults: {
+            xtype: 'textfield',
+            allowBlank: false,
+            hideLabel: true,
+            width: '100%',
+            enableKeyEvents: true,
+            listeners: {
+                specialkey: 'onSpecialKeyPress'
+            }
+        },
         items: [{
-            xtype: 'textfield',
-            fieldLabel: 'Email',
-            name: 'email',
-            width: '100%'
+            emptyText: 'Email',
+            name: 'email'
         }, {
-            xtype: 'textfield',
-            fieldLabel: 'Password',
+            emptyText: 'Password',
             inputType: 'password',
-            name: 'password',
-            width: '100%'
+            name: 'password'
         }, {
             xtype: 'button',
             text: 'Log in',
+            formBind: true,
             width: '100%',
             handler: 'loginOwner'
         }, {
             xtype: 'container',
+            style: 'padding-top: 5px;',
             bind: {
                 html: '<a href="javascript:void(0);">{i18n.noAccount}</a>'
             }

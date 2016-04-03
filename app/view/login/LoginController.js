@@ -4,7 +4,13 @@ Ext.define('Rdd.view.login.LoginController', {
     alias: 'controller.login',
 
     loginOwner: function() {
-        var values = this.getView().down('form').getValues();
+        var form = this.getView().down('form');
+
+        if (!form.isValid()) {
+            return;
+        }
+
+        var values = form.getValues();
         this.getView().setLoading(true);
 
         Ext.Ajax.request({
@@ -23,5 +29,11 @@ Ext.define('Rdd.view.login.LoginController', {
             },
             scope: this
         });
+    },
+
+    onSpecialKeyPress: function(field, e) {
+        if (e.event.keyCode == e.ENTER) {
+            this.loginOwner();
+        }
     }
 });

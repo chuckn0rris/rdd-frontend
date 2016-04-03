@@ -59,8 +59,6 @@ Ext.define('Rdd.view.owner.OwnerController', {
 
         this.getView().setLoading('Saving...');
 
-        // TEMP FIX for encoded sub-object
-        params.socialContacts = Ext.encode(params.socialContacts);
         Ext.Ajax.request({
             url: Urls.get('saveowner'),
             method: 'PUT',
