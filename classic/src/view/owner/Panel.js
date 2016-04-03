@@ -23,6 +23,10 @@ Ext.define('Rdd.view.owner.Panel', {
         align: 'center'
     },
 
+    listeners: {
+        afterrender: 'loadTransportsStore'
+    },
+
     items: [{
         xtype: 'panel',
         width: 1000,

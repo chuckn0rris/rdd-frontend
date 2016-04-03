@@ -8,7 +8,7 @@ Ext.define('Rdd.view.owner.transport.PhotosList', {
     },
 
     store: {
-        fields: ['id', 'url', 'transportId']
+        fields: ['id', 'src']
     },
 
     hideHeaders: true,
@@ -20,7 +20,7 @@ Ext.define('Rdd.view.owner.transport.PhotosList', {
             menuDisabled: true
         },
         items: [{
-            dataIndex: 'url',
+            dataIndex: 'src',
             width: 340,
             renderer: function(val, meta, record) {
                 meta.style = 'height: 250px;';

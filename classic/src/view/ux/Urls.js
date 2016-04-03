@@ -33,6 +33,7 @@ Ext.define('Rdd.view.ux.Urls', {
         getownerid: 'owners',
         getowner: 'owners',
         setowneravatar: 'owners/{0}/image',
-        saveowner: 'user'
+        saveowner: 'user',
+        transportlist: 'owners/{0}/transports'
     }
 });

@@ -17,7 +17,11 @@ Ext.define('Rdd.view.owner.OwnerModel', {
         'mobilePhone': null,
         'phone': null,
         'socialContacts': null
-    }
+    },
 
-    //TODO - add data, formulas and/or methods to support your view
+    stores: {
+        transports: {
+            type: 'transports'
+        }
+    }
 });

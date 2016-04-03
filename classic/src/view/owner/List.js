@@ -3,25 +3,22 @@ Ext.define('Rdd.view.owner.List', {
     xtype: 'transportlist',
 
     requires: [
-        'Rdd.store.Offers',
+        'Rdd.store.Transports',
         'Ext.toolbar.Paging',
         'Rdd.view.owner.ListController',
         'Ext.grid.column.RowNumberer'
     ],
 
-    store: {
-        type: 'offers'
-    },
-
     controller: 'transportlist',
-    viewModel: {
-        type: 'owner'
+
+    bind: {
+        store: '{transports}'
     },
 
     dockedItems: [{
         xtype: 'pagingtoolbar',
-        store: {
-            type: 'offers'
+        bind: {
+            store: '{transports}'
         },
         dock: 'bottom',
         displayInfo: true
@@ -41,12 +38,12 @@ Ext.define('Rdd.view.owner.List', {
             }
         }, {
             text: 'Photo',
-            dataIndex: 'photo',
+            dataIndex: 'photos',
             width: 200,
             renderer: function(val, meta, record) {
                 meta.style = 'height: 160px;'
-                if (val) {
-                    var html = Ext.String.format('<div align="center"> <img style="max-height: 160px; max-width: 160px;" src="{0}"/></div><a style="padding-left: 10px;"', val);
+                if (val && val.length) {
+                    var html = Ext.String.format('<div align="center"> <img style="max-height: 160px; max-width: 160px;" src="{0}"/></div><a style="padding-left: 10px;"', val[0].src);
                     return html;
                 } else {
                     return '';
@@ -65,8 +62,6 @@ Ext.define('Rdd.view.owner.List', {
                 if (record.get('mileage')) {
                     html += Ext.String.format("<b>{0}:</b>&nbsp;{1}</br>", 'Mileage', Ext.util.Format.distance(record.get('mileage')));
                 }
-                html += Ext.String.format("<b>{0}:</b>&nbsp;{1}</br>", 'District', record.get('district'));
-                html += Ext.String.format("<b>Owner:</b>&nbsp;{0}, {1}</br>", owner, record.get('company'));
 
                 html += "</br>";
                 if (record.get('isAvailable')) {

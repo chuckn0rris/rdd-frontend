@@ -11,10 +11,10 @@ Ext.define('Rdd.store.Transports', {
 
     proxy: {
         type: 'ajax',
-        url: Urls.get('transports'),
+        url: null, // will be defined after owner model load
         reader: {
             type: 'json',
-            rootProperty: 'results',
+            rootProperty: '',
             totalProperty: 'count'
         }
     }

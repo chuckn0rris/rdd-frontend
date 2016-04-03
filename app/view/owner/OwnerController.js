@@ -17,6 +17,14 @@ Ext.define('Rdd.view.owner.OwnerController', {
 
     },
 
+    loadTransportsStore: function() {
+        var model = this.getView().getViewModel(),
+            store = model.getStore('transports');
+
+        store.getProxy().url = Urls.get('transportlist', model.get('id'));
+        store.load();
+    },
+
     editProfile: function() {
         var vm = this.getView().getViewModel(),
             ownerData = vm.getData();
@@ -73,7 +81,31 @@ Ext.define('Rdd.view.owner.OwnerController', {
                 this.getView().setLoading(false);
             },
             scope: this
-        })
+        });
+    },
+
+    saveTransport: function() {
+        debugger
+        // get owner id
+        var transport = this.getView().getViewModel().data;
+
+        this.getView().setLoading('Saving changes...');
+
+         Ext.Ajax.request({
+            url: Urls.get('savetransport', transport.id),
+            method: 'PUT',
+            jsonData: params,
+            success: function() {
+                var vm = this.getView().getParentViewModel();
+                vm.setData(currentOwner.data);
+                this.getView().setLoading(false);
+                this.getView().close();
+            },
+            failure: function() {
+                this.getView().setLoading(false);
+            },
+            scope: this
+        });
     },
 
     closeWindow: function() {

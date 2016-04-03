@@ -95,6 +95,7 @@ Ext.define('Rdd.view.owner.EditProfile', {
                 }, {
                     xtype: 'fieldcontainer',
                     layout: 'hbox',
+                    disabled: true,
                     width: '100%',
                     items: [{
                         xtype: 'textfield',
