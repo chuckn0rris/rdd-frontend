@@ -19,8 +19,9 @@ Ext.define('Rdd.view.owner.OwnerController', {
 
     loadTransportsStore: function() {
         var model = this.getView().getViewModel(),
-            store = model.getStore('transports');
+            store = this.getView().down('transportlist').getStore();
 
+        debugger
         store.getProxy().url = Urls.get('transportlist', model.get('id'));
         store.load();
     },
@@ -63,7 +64,7 @@ Ext.define('Rdd.view.owner.OwnerController', {
 
     saveProfileChanges: function() {
         var currentOwner = this.getView().getViewModel(),
-            params = currentOwner.data;
+            params = Ext.clone(currentOwner.data);
 
         this.getView().setLoading('Saving...');
 
@@ -85,16 +86,14 @@ Ext.define('Rdd.view.owner.OwnerController', {
     },
 
     saveTransport: function() {
-
-        // get owner id
         var transport = this.getView().getViewModel().data;
 
         this.getView().setLoading('Saving changes...');
 
          Ext.Ajax.request({
-            url: Urls.get('savetransport', transport.id),
+            url: Urls.get('savetransport', [transport.owner, transport.id]),
             method: 'PUT',
-            jsonData: params,
+            jsonData: transport,
             success: function() {
                 var vm = this.getView().getParentViewModel();
                 vm.setData(currentOwner.data);

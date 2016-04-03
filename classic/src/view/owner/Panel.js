@@ -127,7 +127,7 @@ Ext.define('Rdd.view.owner.Panel', {
         flex: 1,
         items: [{
             xtype: 'transportlist',
-            title: 'Offers'
+            title: 'Transport'
         }]
     }]
 });

@@ -11,14 +11,14 @@ Ext.define('Rdd.view.owner.List', {
 
     controller: 'transportlist',
 
-    bind: {
-        store: '{transports}'
+    store: {
+        type: 'transports'
     },
 
     dockedItems: [{
         xtype: 'pagingtoolbar',
-        bind: {
-            store: '{transports}'
+        store: {
+            type: 'transports'
         },
         dock: 'bottom',
         displayInfo: true

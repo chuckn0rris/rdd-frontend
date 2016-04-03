@@ -27,6 +27,8 @@ Ext.define('Rdd.Application', {
 
     checkCurrentUser: function() {
         if (!localStorage.getItem('user-key')) {
+            this.redirectTo('#home');
+            this.mainPageXtype = 'mainview';
             this.createMainView({firstName: null});
             return;
         }
