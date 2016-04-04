@@ -47,6 +47,7 @@ Ext.define('Rdd.Application', {
             failure: function(xhr) {
                 if (xhr.status < 500) {
                     localStorage.removeItem('user-key');
+                    this.redirectTo('#home');
                 }
                 this.createMainView(null);
             },

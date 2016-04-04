@@ -119,13 +119,29 @@ Ext.define('Rdd.view.owner.OwnerController', {
     },
 
     loadAvatarPhoto: function(btn, val) {
-        var ownerData = this.getView().getViewModel().data;
+        var ownerData = this.getView().getViewModel().data,
+            key = localStorage.getItem('user-key');
 
         btn.up('form').submit({
             url: Urls.get('setowneravatar', ownerData.id),
-            waitMsg: 'Uploading Photo',
+            headers: {
+                Authorization: Ext.String.format("Token {0}", key)
+            },
+            waitMsg: 'Uploading Photo...',
             success: function(fp, o) {
                 Ext.Msg.alert('Success', 'Your photo "' + o.result.file + '" has been uploaded.');
+            },
+            failure: function(form, action) {
+                switch (action.failureType) {
+                    case Ext.form.action.Action.CLIENT_INVALID:
+                        Ext.Msg.alert('Failure', 'Form fields may not be submitted with invalid values');
+                        break;
+                    case Ext.form.action.Action.CONNECT_FAILURE:
+                        Ext.Msg.alert('Failure', 'Ajax communication failed');
+                        break;
+                    case Ext.form.action.Action.SERVER_INVALID:
+                       Ext.Msg.alert('Failure', action.result.msg);
+               }
             }
         })
     },

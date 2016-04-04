@@ -14,7 +14,7 @@ Ext.define('Rdd.store.Transports', {
         url: null, // will be defined after owner model load
         reader: {
             type: 'json',
-            rootProperty: '',
+            rootProperty: 'results',
             totalProperty: 'count'
         }
     }
