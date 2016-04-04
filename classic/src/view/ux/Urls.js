@@ -3,13 +3,17 @@ Ext.define('Rdd.view.ux.Urls', {
     alternateClassName: 'Urls',
 
     apiVersion: 'v1',
-    get: function(id, params) {
+    get: function() {
+        var id = arguments[0],
+            p1 = arguments[1], p2 = arguments[2],
+            p3 = arguments[3], p4 = arguments[4], p5 = arguments[5];
         var urlPath = Urls.urls[id];
         if (!urlPath) {
             Ext.Msg.alert('Undefined URL', 'No URL defined for id "'+id+'". Please, check it again!.');
             return '';
         }
-        var url = Ext.String.format(urlPath, params);
+
+        var url = Ext.String.format(urlPath, p1, p2, p3, p4, p5);
 
         return Ext.String.format("{0}/api/{1}/{2}/", Urls.getHost(), Urls.apiVersion, url);
     },
@@ -34,6 +38,7 @@ Ext.define('Rdd.view.ux.Urls', {
         getowner: 'owners',
         setowneravatar: 'owners/{0}/image',
         saveowner: 'user',
-        transportlist: 'owners/{0}/transports'
+        transportlist: 'owners/{0}/transports',
+        loadtransportphoto: 'owners/{0}/transports/{1}/image'
     }
 });

@@ -118,7 +118,7 @@ Ext.define('Rdd.view.owner.OwnerController', {
         this.getView().close();
     },
 
-    loadAvatarPhoto: function(btn, val) {
+    loadAvatarPhoto: function(btn) {
         var ownerData = this.getView().getViewModel().data,
             key = localStorage.getItem('user-key');
 
@@ -143,7 +143,43 @@ Ext.define('Rdd.view.owner.OwnerController', {
                        Ext.Msg.alert('Failure', action.result.msg || 'Internal server error.');
                }
             }
-        })
+        });
+    },
+
+    loadTransportPhoto: function(btn) {
+        var transport = this.getView().getViewModel().data,
+            key = localStorage.getItem('user-key');
+
+        btn.up('form').submit({
+            url: Urls.get('loadtransportphoto', transport.owner, transport.id),
+            params: {
+                token: key
+            },
+            waitMsg: 'Uploading Photo...',
+            success: function(fp, o) {
+                Ext.Msg.alert('Success', 'Your photo "' + o.result.file + '" has been uploaded.');
+            },
+            failure: function(form, action) {
+                switch (action.failureType) {
+                    case Ext.form.action.Action.CLIENT_INVALID:
+                        Ext.Msg.alert('Failure', 'Form fields may not be submitted with invalid values');
+                        break;
+                    case Ext.form.action.Action.CONNECT_FAILURE:
+                        Ext.Msg.alert('Failure', 'Ajax communication failed');
+                        break;
+                    case Ext.form.action.Action.SERVER_INVALID:
+                       Ext.Msg.alert('Failure', action.result.msg || 'Internal server error.');
+               }
+            }
+        });
+    },
+
+    removeTransportPhoto: function(grid, rowIndex) {
+        Ext.Msg.confirm('Confirm action', 'Are you sure you want to delete the photo?', function (choice) {
+            if (choice === 'yes') {
+                grid.getStore().removeAt(rowIndex);
+            }
+        });
     },
 
     removeAvatarImage: function() {

@@ -43,7 +43,7 @@ Ext.define('Rdd.view.owner.transport.EditForm', {
                         msgTarget: 'side',
                         buttonText: 'Add Photo',
                         listeners: {
-                            change: 'onLoadPhotoFormChange'
+                            change: 'loadTransportPhoto'
                         }
                     }]
                 }],

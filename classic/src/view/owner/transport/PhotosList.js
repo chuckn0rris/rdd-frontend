@@ -40,7 +40,7 @@ Ext.define('Rdd.view.owner.transport.PhotosList', {
                 icon: 'classic/resources/images/delete.png',
                 iconCls: 'rdd-owner-list-actionicon',
                 tooltip: 'Remove',
-                handler: 'removePhoto'
+                handler: 'removeTransportPhoto'
             }]
         }]
     }
