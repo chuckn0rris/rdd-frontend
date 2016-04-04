@@ -127,6 +127,9 @@ Ext.define('Rdd.view.owner.OwnerController', {
             headers: {
                 Authorization: Ext.String.format("Token {0}", key)
             },
+            params: {
+                format: 'json'
+            },
             waitMsg: 'Uploading Photo...',
             success: function(fp, o) {
                 Ext.Msg.alert('Success', 'Your photo "' + o.result.file + '" has been uploaded.');
