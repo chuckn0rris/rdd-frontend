@@ -124,11 +124,9 @@ Ext.define('Rdd.view.owner.OwnerController', {
 
         btn.up('form').submit({
             url: Urls.get('setowneravatar', ownerData.id),
-            headers: {
-                Authorization: Ext.String.format("Token {0}", key)
-            },
             params: {
-                format: 'json'
+                format: 'json',
+                token: key
             },
             waitMsg: 'Uploading Photo...',
             success: function(fp, o) {
