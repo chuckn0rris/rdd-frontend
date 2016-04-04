@@ -36,7 +36,7 @@ Ext.define('Rdd.view.owner.transport.EditForm', {
                     height: 33,
                     items: [{
                         xtype: 'filefield',
-                        name: 'photo',
+                        name: 'avatar',
                         width: 100,
                         hideLabel: true,
                         buttonOnly: true,
