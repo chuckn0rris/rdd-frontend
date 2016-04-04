@@ -125,7 +125,6 @@ Ext.define('Rdd.view.owner.OwnerController', {
         btn.up('form').submit({
             url: Urls.get('setowneravatar', ownerData.id),
             params: {
-                format: 'json',
                 token: key
             },
             waitMsg: 'Uploading Photo...',
@@ -141,7 +140,7 @@ Ext.define('Rdd.view.owner.OwnerController', {
                         Ext.Msg.alert('Failure', 'Ajax communication failed');
                         break;
                     case Ext.form.action.Action.SERVER_INVALID:
-                       Ext.Msg.alert('Failure', action.result.msg);
+                       Ext.Msg.alert('Failure', action.result.msg || 'Internal server error.');
                }
             }
         })
