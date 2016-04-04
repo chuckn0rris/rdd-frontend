@@ -49,7 +49,7 @@ Ext.define('Rdd.view.owner.EditProfile', {
                     height: 33,
                     items: [{
                         xtype: 'filefield',
-                        name: 'photo',
+                        name: 'avatar',
                         flex: 1,
                         buttonConfig: {
                             width: 120
