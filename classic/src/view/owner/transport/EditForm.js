@@ -86,7 +86,7 @@ Ext.define('Rdd.view.owner.transport.EditForm', {
                             store: {
                                 type: 'brands'
                             },
-                            valueField: 'id',
+                            valueField: 'name',
                             displayField: 'name',
                             bind: '{brand}'
                         }, {

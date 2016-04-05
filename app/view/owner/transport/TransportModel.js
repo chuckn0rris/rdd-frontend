@@ -4,7 +4,21 @@ Ext.define('Rdd.view.owner.transport.TransportModel', {
     alias: 'viewmodel.transport',
 
     data: {
-        isAvailable: true
+        isAvailable: null,
+        'id': null,
+        'type': null,
+        'photos': [],
+        'brand': null,
+        'model': null,
+        'color': null,
+        'year': null,
+        'isAvailable': null,
+        'mileage': null,
+        'availableFrom': null,
+        'meta': null,
+        'desc': null,
+        'prices': null,
+        'owner': null
     },
 
     formulas: {

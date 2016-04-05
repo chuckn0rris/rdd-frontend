@@ -3,9 +3,6 @@ Ext.define('Rdd.view.owner.transport.PhotosList', {
     xtype: 'photosgrid',
 
     controller: 'owner',
-    viewModel: {
-        type: 'transport'
-    },
 
     store: {
         fields: ['id', 'src']

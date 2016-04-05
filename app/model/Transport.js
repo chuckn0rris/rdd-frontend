@@ -19,6 +19,7 @@ Ext.define('Rdd.model.Transport', {
         },
         'meta',
         'desc',
-        'prices'
+        'prices',
+        'owner'
     ]
 });
