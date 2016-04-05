@@ -39,6 +39,8 @@ Ext.define('Rdd.view.ux.Urls', {
         setowneravatar: 'owners/{0}/image',
         saveowner: 'user',
         transportlist: 'owners/{0}/transports',
+        createtransport: 'owners/{0}/transports',
+        savetransport: 'owners/{0}/transports/{1}',
         loadtransportphoto: 'owners/{0}/transports/{1}/image'
     }
 });

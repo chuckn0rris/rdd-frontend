@@ -56,17 +56,34 @@ Ext.define('Rdd.view.owner.OwnerController', {
             mainTabPanel = this.getView().mainTabPanel,
             title = Ext.String.format("{0} {1} {2}", values.color, values.brand, values.model);
 
-        mainTabPanel.add({
-            xtype: 'edittransport',
-            title: title,
-            closable: true,
-            viewModel: {
-                data: values
-            }
+        this.getView().setLoading('Creating record...');
+        Ext.Ajax.request({
+            url: Urls.get('createtransport', this.getViewModel().get('id')),
+            method: 'POST',
+            params: values,
+            success: function(xhr) {
+                this.getView().setLoading(false);
+                var result = Ext.encode(xhr.responseText);
+                mainTabPanel.add({
+                    xtype: 'edittransport',
+                    title: title,
+                    closable: true,
+                    viewModel: {
+                        data: result
+                    }
+                });
+
+                mainTabPanel.setActiveTab(mainTabPanel.items.length-1);
+                this.closeWindow();
+
+            },
+            failure: function() {
+                this.getView().setLoading(false);
+            },
+            scope: this
         });
 
-        mainTabPanel.setActiveTab(mainTabPanel.items.length-1);
-        this.closeWindow();
+
     },
 
     saveProfileChanges: function() {
@@ -98,13 +115,13 @@ Ext.define('Rdd.view.owner.OwnerController', {
         this.getView().setLoading('Saving changes...');
 
          Ext.Ajax.request({
-            url: Urls.get('savetransport', [transport.owner, transport.id]),
+            url: Urls.get('savetransport', transport.owner, transport.id),
             method: 'PUT',
             jsonData: transport,
-            success: function() {
-                var vm = this.getView().getParentViewModel();
-                vm.setData(currentOwner.data);
+            success: function(xhr) {
                 this.getView().setLoading(false);
+                var tp = this.getView().up('tabpanel');
+                tp.down('transportlist').getStore().reload();
                 this.getView().close();
             },
             failure: function() {
