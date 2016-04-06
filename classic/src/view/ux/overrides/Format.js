@@ -9,6 +9,6 @@ Ext.define('Rdd.view.ux.overrides.Format', {
     },
 
     date: function(value) {
-        return value ? Ext.Date.format(new Date("2016-03-26T16:28:51Z"), 'm/d/Y') : '-';
+        return value ? Ext.Date.format(new Date(value), Utils.format.date) : '-';
     }
 });

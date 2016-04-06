@@ -67,11 +67,7 @@ Ext.define('Rdd.view.main.List', {
                 html += Ext.String.format("<b>Owner:</b>&nbsp;{0}, {1}</br>", fullName, owner.company);
 
                 html += "</br>";
-                if (record.get('isAvailable')) {
-                    html += "<span style='color: green'>Available right now!</span>";
-                } else if (record.get('availableFrom')) {
-                    html += Ext.String.format("<b>Available from:</b>&nbsp;{0}</br>", record.get('availableFrom'));
-                }
+                html += Utils.renderer.renderIsAvailableHtml(record);
                 return html;
             }
         },{
