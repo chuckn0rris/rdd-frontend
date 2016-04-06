@@ -343,14 +343,14 @@ Ext.define('Rdd.view.owner.transport.EditForm', {
             }]
         }, {
             xtype: 'checkbox',
-            margin: '20 10 10 10',
+            margin: '20 10 0 10',
             value: false,
+            formBind: true,
             bind: '{publicAccess}',
             boxLabel: 'Open public access (available only after all required field was filled)'
         }],
         buttons: [{
             text: 'Save',
-            formBind: true,
             width: 100,
             handler: 'saveTransport'
         }, {

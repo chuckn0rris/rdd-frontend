@@ -142,7 +142,8 @@ Ext.define('Rdd.view.owner.OwnerController', {
         btn.up('form').submit({
             url: Urls.get('setowneravatar', ownerData.id),
             params: {
-                token: key
+                token: key,
+                format: 'json'
             },
             waitMsg: 'Uploading Photo',
             success: function(fp, o) {
@@ -170,7 +171,8 @@ Ext.define('Rdd.view.owner.OwnerController', {
         btn.up('form').submit({
             url: Urls.get('loadtransportphoto', transport.owner, transport.id),
             params: {
-                token: key
+                token: key,
+                format: 'json'
             },
             waitMsg: 'Uploading Photo...',
             success: function(fp, o) {
