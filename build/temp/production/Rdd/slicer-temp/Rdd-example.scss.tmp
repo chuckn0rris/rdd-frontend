@@ -911,6 +911,7 @@ $include-rdd-view-ux-urls: dynamic(true);;
 $include-rdd-view-ux-utils: dynamic(true);;
 $include-rdd-view-ux-overrides-format: dynamic(true);;
 $include-rdd-view-ux-overrides-requiredfieldlabelpatch: dynamic(true);;
+$include-rdd-view-ux-overrides-restproxy: dynamic(true);;
 $include-urls: dynamic(true);;
 $include-utils: dynamic(true);;
 
