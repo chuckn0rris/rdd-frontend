@@ -165,7 +165,7 @@ Ext.define('Rdd.view.owner.OwnerController', {
     },
 
     loadTransportPhoto: function(btn) {
-        var transport = this.getView().getViewModel().data,
+        var transport = this.getViewModel().data,
             key = localStorage.getItem('user-key');
 
         btn.up('form').submit({
