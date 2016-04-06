@@ -356,7 +356,7 @@ Ext.define('Rdd.view.owner.transport.EditForm', {
         }, {
             text: 'Close',
             width: 100,
-            handler: 'closeProfileWindow'
+            handler: 'closeWindow'
         }]
     }]
 });

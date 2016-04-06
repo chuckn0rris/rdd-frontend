@@ -170,6 +170,6 @@ Ext.define('Rdd.view.owner.ViewProfile', {
     buttons: [{
         text: 'Close',
         width: 100,
-        handler: 'closeProfileWindow'
+        handler: 'closeWindow'
     }]
 });

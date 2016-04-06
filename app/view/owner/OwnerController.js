@@ -47,7 +47,7 @@ Ext.define('Rdd.view.owner.OwnerController', {
 
     },
 
-    closeProfileWindow: function() {
+    closeWindow: function() {
         this.getView().close();
     },
 

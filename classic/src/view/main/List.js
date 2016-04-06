@@ -74,40 +74,7 @@ Ext.define('Rdd.view.main.List', {
             text: 'Prices',
             dataIndex: 'prices',
             flex: 1,
-            renderer: function(val, meta, record) {
-                if (!val) {
-                    return 'No information';
-                }
-
-                var getString = function(title, val) {
-                        var htmlTpl = "<b>{0}:</b>&nbsp;{1}</br>";
-                        return Ext.String.format(htmlTpl, title, Ext.util.Format.currentCurrency(val));
-                    }
-                    html = '';
-
-                html += getString('1 day', val.perDay);
-                if (val.perWeek) {
-                    html += getString('1 week', val.perWeek);
-                }
-                if (val.perMonth) {
-                    html += getString('1 month', val.perMonth);
-                }
-                if (val.perMonth3m) {
-                    html += getString('1 month (3 months cotract)', val.perMonth3m);
-                }
-                if (val.perMonth6m) {
-                    html += getString('1 month (6 months cotract)', val.perMonth6m);
-                }
-                if (val.perMonth1y) {
-                    html += getString('1 month (1 year contract)', val.perMonth1y);
-                }
-                if (val.comment) {
-                    html += getString('Comments', val.comment);
-                }
-
-                return html;
-
-            }
+            renderer: Utils.renderer.renderPrices
         }, {
             xtype: 'widgetcolumn',
             text: '',
