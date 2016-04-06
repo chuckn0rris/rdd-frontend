@@ -6,7 +6,7 @@ Ext.define('Rdd.view.owner.transport.TransportModel', {
     data: {
         isAvailable: null,
         'id': null,
-        'type': null,
+        'atype': null,
         'photos': [],
         'brand': null,
         'model': null,
@@ -23,7 +23,7 @@ Ext.define('Rdd.view.owner.transport.TransportModel', {
 
     formulas: {
     	isAuto: function(get) {
-    		return get('type') == 'auto';
+    		return get('atype') == 'auto';
     	}
     }
 });

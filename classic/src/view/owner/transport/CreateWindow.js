@@ -25,19 +25,19 @@ Ext.define('Rdd.view.owner.transport.CreateWindow', {
             xtype: 'radiogroup',
             layout: 'hbox',
             value: {
-                type: 'auto'
+                atype: 'auto'
             },
             fieldLabel: 'Type',
             items: [{
                 xtype: 'radio',
                 boxLabel: 'Auto',
-                name: 'type',
+                name: 'atype',
                 style: 'padding-right: 10px;',
                 inputValue: 'auto'
             }, {
                 xtype: 'radio',
                 boxLabel: 'Moto',
-                name: 'type',
+                name: 'atype',
                 inputValue: 'moto'
             }]
         }, {
