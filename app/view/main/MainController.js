@@ -31,6 +31,7 @@ Ext.define('Rdd.view.main.MainController', {
         btn.setDisabled(true);
         var ownerId = this.getView().offer.owner;
 
+        debugger
         var owner = Rdd.model.Owner.load(ownerId, {
             failure: function() {
                 btn.setDisabled(false);

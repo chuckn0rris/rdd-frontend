@@ -12,6 +12,7 @@ Ext.define('Rdd.view.main.Main', {
         'Rdd.view.ux.Urls',
         'Rdd.view.ux.overrides.RequiredFieldLabelPatch',
         'Rdd.view.ux.overrides.Format',
+        'Rdd.view.ux.overrides.RestProxy',
         'Rdd.view.ux.Utils',
         'Rdd.store.Brands',
         'Rdd.store.Locations',
