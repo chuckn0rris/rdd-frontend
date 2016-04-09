@@ -55,10 +55,11 @@ Ext.define('Rdd.view.main.MainController', {
             title = Ext.String.format("{0} {1} {2}", offer.color, offer.brand, offer.model),
             offerTab = tabPanel.down('#offer-'+offer.id);
 
-        if (offer.photos.length) {
+        if (offer.photos && offer.photos.length) {
             offer.photo = offer.photos.shift();
         } else {
             offer.photo = {};
+            offer.photos = [];
         }
 
         if (offerTab) {
