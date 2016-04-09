@@ -196,10 +196,10 @@ Ext.define('Rdd.view.owner.OwnerController', {
     removeTransportPhoto: function(grid, rowIndex) {
         var photoRec = grid.getStore().getAt(rowIndex),
             transport = this.getViewModel();
-        grid.setLoading('Please, wait...');
 
         Ext.Msg.confirm('Confirm action', 'Are you sure you want to delete the photo?', function (choice) {
             if (choice === 'yes') {
+                grid.setLoading('Please, wait...');
                 Ext.Ajax.request({
                     url: Urls.get('deletetransportphoto', transport.get('owner'), transport.get('id'), photoRec.get('id')),
                     method: 'DELETE',

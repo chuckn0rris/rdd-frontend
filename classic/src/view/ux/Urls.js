@@ -41,6 +41,7 @@ Ext.define('Rdd.view.ux.Urls', {
         transportlist: 'owners/{0}/transports',
         createtransport: 'owners/{0}/transports',
         savetransport: 'owners/{0}/transports/{1}',
+        deletetransport: 'owners/{0}/transports/{1}',
         loadtransportphoto: 'owners/{0}/transports/{1}/image',
         deletetransportphoto: 'owners/{0}/transports/{1}/image/{2}'
     }

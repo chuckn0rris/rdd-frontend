@@ -20,8 +20,20 @@ Ext.define('Rdd.view.owner.ListController', {
         mainTabPanel.setActiveTab(mainTabPanel.items.length-1);
     },
 
-    removeTransport: function() {
-
+    removeTransport: function(grid, rowIndex) {
+        var transport = grid.getStore().getAt(rowIndex);
+        Ext.Msg.confirm('Confirm action', 'Are you sure you want to delete this item?', function (choice) {
+            if (choice === 'yes') {
+                Ext.Ajax.request({
+                    url: Urls.get('deletetransport', transport.get('owner'), transport.get('id')),
+                    method: 'DELETE',
+                    success: function() {
+                        grid.getStore().reload();
+                    },
+                    scope: this
+                });
+            }
+        });
     },
 
     openOffer: function(widget) {
