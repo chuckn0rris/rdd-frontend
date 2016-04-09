@@ -17,6 +17,7 @@ Ext.define('Rdd.view.main.Main', {
         'Rdd.store.Brands',
         'Rdd.store.Locations',
         'Rdd.model.Owner',
+        'Rdd.view.owner.ViewProfile',
         'Rdd.model.Transport',
         'Rdd.view.main.Filters',
         'Rdd.view.main.UserBar',
