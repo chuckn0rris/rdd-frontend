@@ -41,8 +41,8 @@ Ext.define('Rdd.view.main.List', {
             width: 200,
             renderer: function(val, meta, record) {
                 meta.style = 'height: 160px;'
-                var photo = val[0];
-                if (photo) {
+                if (val && val.length) {
+                    var photo = val[0];
                     var html = Ext.String.format('<div align="center"> <img style="max-height: 160px; max-width: 160px;" src="{0}"/></div><a style="padding-left: 10px;"', photo.src);
                     return html;
                 } else {
