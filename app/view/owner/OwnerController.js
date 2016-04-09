@@ -75,7 +75,6 @@ Ext.define('Rdd.view.owner.OwnerController', {
 
                 mainTabPanel.setActiveTab(mainTabPanel.items.length-1);
                 this.closeWindow();
-
             },
             failure: function() {
                 this.getView().setLoading(false);

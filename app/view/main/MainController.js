@@ -45,7 +45,6 @@ Ext.define('Rdd.view.main.MainController', {
             },
             scope: this
         });
-
     },
 
     openOffer: function(widget) {

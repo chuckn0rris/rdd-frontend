@@ -6,7 +6,7 @@ Ext.define('Rdd.view.owner.ListController', {
     editTransport: function(view, rowIdx, colIdx, item, evnt, record) {
         var data = Ext.clone(record.data),
             mainTabPanel = this.getView().up('tabpanel'),
-            title = Ext.String.format("{0} {1} {2}", data.color, data.brand, data.model);
+            title = Ext.String.format('{0} {1} {2}', data.color, data.brand, data.model);
 
         mainTabPanel.add({
             xtype: 'edittransport',

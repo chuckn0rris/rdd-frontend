@@ -1,6 +1,10 @@
 Ext.define('Rdd.view.ux.overrides.RestProxy', {
     override: 'Ext.data.proxy.Rest',
 
+    requires: [
+        'Ext.data.proxy.Rest'
+    ],
+
     buildUrl: function(request) {
         var me        = this,
             operation = request.getOperation(),
