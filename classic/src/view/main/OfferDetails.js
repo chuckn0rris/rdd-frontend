@@ -115,21 +115,17 @@ Ext.define('Rdd.view.main.OfferDetails', {
                 margin: '0 10 0 10',
                 hidden: true,
                 bind: {
-                    hidden: '{!offer.desc}'
+                    hidden: '{!offer.description}'
                 },
                 items: [{
                     xtype: 'container',
                     bind: {
-                        html: '{offer.desc}'
+                        html: '{offer.description}'
                     }
                 }]
             }, {
                 xtype: 'fieldset',
                 title: 'Features',
-                // disabled: true,
-                // bind: {
-                //     disabled: '{!isAuto}'
-                // },
                 defaults: {
                     xtype: 'container',
                     layout: 'vbox',
@@ -246,6 +242,11 @@ Ext.define('Rdd.view.main.OfferDetails', {
                 label: '1 month (1 year contract)',
                 bind: {
                     value: '{offer.prices.perMonth1y:currentCurrency}'
+                }
+            }, {
+                label: 'Comments',
+                bind: {
+                    value: '{offer.prices.comments}'
                 }
             }]
         }, {

@@ -5,7 +5,7 @@ Ext.define('Rdd.view.ux.Utils', {
     format: {
         date: 'm/d/Y',
         currency: '{0}฿',
-        milage: '{0}km'
+        mileage: '{0}km'
     },
 
     renderer: {
@@ -56,8 +56,8 @@ Ext.define('Rdd.view.ux.Utils', {
             if (val.perMonth1y) {
                 html += getString('1 month (1 year contract)', val.perMonth1y);
             }
-            if (val.comment) {
-                html += Ext.String.format(htmlTpl, 'Comments', val.comment);
+            if (val.comments) {
+                html += Ext.String.format(htmlTpl, 'Comments', val.comments);
             }
 
             return html;

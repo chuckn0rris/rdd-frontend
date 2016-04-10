@@ -241,6 +241,7 @@ Ext.define('Rdd.view.owner.transport.EditForm', {
                     fieldLabel: 'Details',
                     emptyText: 'Please, describe all that you want to say about this item of transport.',
                     width: '100%',
+                    bind: '{description}',
                     height: 120,
                     labelAlign: 'top'
                 }, {
@@ -258,6 +259,12 @@ Ext.define('Rdd.view.owner.transport.EditForm', {
                         style: 'padding-right: 10px;',
                         inputValue: true
                     }, {
+                        xtype: 'radio',
+                        boxLabel: 'Not Available',
+                        name: 'isAvailable',
+                        style: 'padding-right: 10px;',
+                        inputValue: false
+                    }, {
                         xtype: 'fieldcontainer',
                         layout: 'hbox',
                         items: [{
@@ -265,7 +272,7 @@ Ext.define('Rdd.view.owner.transport.EditForm', {
                             boxLabel: 'Available From',
                             name: 'isAvailable',
                             style: 'padding-right: 5px;',
-                            inputValue: false
+                            inputValue: null
                         }, {
                             xtype: 'datefield',
                             name: 'availableFrom',
@@ -335,6 +342,8 @@ Ext.define('Rdd.view.owner.transport.EditForm', {
                 }, {
                     xtype: 'textarea',
                     fieldLabel: 'Comments',
+                    name: 'comments',
+                    bind: '{prices.comments}',
                     emptyText: 'Any comments about discounts, extra rules, deposits, etc.',
                     width: '100%',
                     height: 120,
@@ -346,7 +355,7 @@ Ext.define('Rdd.view.owner.transport.EditForm', {
             margin: '20 10 0 10',
             value: false,
             formBind: true,
-            bind: '{publicAccess}',
+            bind: '{isActive}',
             boxLabel: 'Open public access (available only after all required field was filled)'
         }],
         buttons: [{
