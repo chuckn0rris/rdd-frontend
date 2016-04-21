@@ -38,8 +38,8 @@ Ext.define('Rdd.view.main.OfferDetails', {
                 height: 200,
                 bind: {
                     html:   '<div align="center">' +
-                                '<a href="{offer.photo.src}" data-lightbox="image-{offer.transportId}">' +
-                                    '<img style="max-height: 200px; max-width: 300px; padding: 5px;" src="{offer.photo.src}"/>' +
+                                '<a href="{offer.photo.photo}" data-lightbox="image-{offer.transportId}">' +
+                                    '<img style="max-height: 200px; max-width: 300px; padding: 5px;" src="{offer.photo.photo}"/>' +
                                 '</a>' +
                             '</div>'
                 }
@@ -60,8 +60,8 @@ Ext.define('Rdd.view.main.OfferDetails', {
                         '<tpl for=".">',
                             '<div class="thumb-wrap" id="{name:stripTags}">',
                                 '<div class="thumb">',
-                                    '<a href="{src}" data-lightbox="image-{transportId}">',
-                                        '<img src="{src}">',
+                                    '<a href="{photo}" data-lightbox="image-{transportId}">',
+                                        '<img src="{photo}">',
                                     '</a>',
                                 '</div>',
                             '</div>',
