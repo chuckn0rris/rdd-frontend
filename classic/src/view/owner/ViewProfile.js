@@ -25,10 +25,10 @@ Ext.define('Rdd.view.owner.ViewProfile', {
             marign: 10,
             items: [{
                 xtype: 'image',
-                margin: 10,
+                margin: '20 10 10 10',
                 cls: 'rdd-owner-editform-avatar',
-                height: 120,
-                width: 120,
+                height: 170,
+                width: 170,
                 bind: {
                     src: '{avatar}'
                 }
@@ -45,13 +45,9 @@ Ext.define('Rdd.view.owner.ViewProfile', {
                 allowBlank: false
             },
             items: [{
-                fieldLabel: 'First Name',
+                fieldLabel: 'Name',
                 name: 'firstName',
-                bind: '{firstName}'
-            }, {
-                fieldLabel: 'Last Name',
-                name: 'lastName',
-                bind: '{lastName}'
+                bind: '{firstName} {lastName}'
             }, {
                 fieldLabel: 'Company',
                 name: 'company',
