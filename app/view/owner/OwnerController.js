@@ -178,6 +178,8 @@ Ext.define('Rdd.view.owner.OwnerController', {
                 Ext.Msg.alert('Success', 'Your photo "' + o.result.file + '" has been uploaded.');
             },
             failure: function(form, action) {
+                console.log(action);
+                console.log(action.status);
                 switch (action.failureType) {
                     case Ext.form.action.Action.CLIENT_INVALID:
                         Ext.Msg.alert('Failure', 'Form fields may not be submitted with invalid values');
