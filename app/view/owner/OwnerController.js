@@ -135,7 +135,8 @@ Ext.define('Rdd.view.owner.OwnerController', {
     },
 
     loadAvatarPhoto: function(btn) {
-        var ownerData = this.getView().getViewModel().data,
+        var viewModel = this.getView().getViewModel(),
+            ownerData = viewModel.data,
             key = localStorage.getItem('user-key');
 
         btn.up('form').submit({
@@ -146,18 +147,24 @@ Ext.define('Rdd.view.owner.OwnerController', {
             },
             waitMsg: 'Uploading Photo',
             success: function(fp, o) {
-                Ext.Msg.alert('Success', 'Your photo "' + o.result.file + '" has been uploaded.');
+
             },
             failure: function(form, action) {
-                switch (action.failureType) {
-                    case Ext.form.action.Action.CLIENT_INVALID:
-                        Ext.Msg.alert('Failure', 'Form fields may not be submitted with invalid values');
-                        break;
-                    case Ext.form.action.Action.CONNECT_FAILURE:
-                        Ext.Msg.alert('Failure', 'Ajax communication failed');
-                        break;
-                    case Ext.form.action.Action.SERVER_INVALID:
-                       Ext.Msg.alert('Failure', action.result.msg || 'Internal server error.');
+                // workaround for server-side
+                if (action.response.status >= 200) {
+                    var response = Ext.encode(action.response.responseText);
+                    viewModel.set('avatar', response.avatar);
+                } else {
+                    switch (action.failureType) {
+                        case Ext.form.action.Action.CLIENT_INVALID:
+                            Ext.Msg.alert('Failure', 'Form fields may not be submitted with invalid values');
+                            break;
+                        case Ext.form.action.Action.CONNECT_FAILURE:
+                            Ext.Msg.alert('Failure', 'Ajax communication failed');
+                            break;
+                        case Ext.form.action.Action.SERVER_INVALID:
+                           Ext.Msg.alert('Failure', action.result.msg || 'Internal server error.');
+                   }
                }
             }
         });
@@ -165,7 +172,8 @@ Ext.define('Rdd.view.owner.OwnerController', {
 
     loadTransportPhoto: function(btn) {
         var transport = this.getViewModel().data,
-            key = localStorage.getItem('user-key');
+            key = localStorage.getItem('user-key'),
+            store = this.getView().getStore();
 
         btn.up('form').submit({
             url: Urls.get('loadtransportphoto', transport.owner, transport.id),
@@ -175,21 +183,29 @@ Ext.define('Rdd.view.owner.OwnerController', {
             },
             waitMsg: 'Uploading Photo...',
             success: function(fp, o) {
-                Ext.Msg.alert('Success', 'Your photo "' + o.result.file + '" has been uploaded.');
+
             },
             failure: function(form, action) {
-                console.log(action);
-                console.log(action.status);
-                switch (action.failureType) {
-                    case Ext.form.action.Action.CLIENT_INVALID:
-                        Ext.Msg.alert('Failure', 'Form fields may not be submitted with invalid values');
-                        break;
-                    case Ext.form.action.Action.CONNECT_FAILURE:
-                        Ext.Msg.alert('Failure', 'Ajax communication failed');
-                        break;
-                    case Ext.form.action.Action.SERVER_INVALID:
-                       Ext.Msg.alert('Failure', action.result.msg || 'Internal server error.');
-               }
+                // workaround for server-side
+                if (action.response.status >= 200) {
+                    var response = Ext.encode(action.response.responseText);
+                    store.add({
+                        id: response.id,
+                        photo: response.photo,
+                        owner: response.owner
+                    });
+                } else {
+                    switch (action.failureType) {
+                        case Ext.form.action.Action.CLIENT_INVALID:
+                            Ext.Msg.alert('Failure', 'Form fields may not be submitted with invalid values');
+                            break;
+                        case Ext.form.action.Action.CONNECT_FAILURE:
+                            Ext.Msg.alert('Failure', 'Ajax communication failed');
+                            break;
+                        case Ext.form.action.Action.SERVER_INVALID:
+                           Ext.Msg.alert('Failure', action.result.msg || 'Internal server error.');
+                   }
+                }
             }
         });
     },
